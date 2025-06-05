@@ -1,0 +1,120 @@
+executor: LocalKubernetesExecutor
+fernetKey: "I_RnHa2I4LY20sxzFu6QaYARZBSmBWDSJ9tZ3b-cA0c="
+webserverSecretKey: "RnHa2I4LY20sxzFu6QaYARZBSmBWDSJ9tZ3b"
+defaultAirflowRepository: apache/airflow
+defaultAirflowTag: 2.7.3
+
+env:
+  - name: NO_PROXY
+    value: 127.0.0.1,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,*cluster.local
+
+createUserJob:
+  useHelmHooks: false
+migrateDatabaseJob:
+  enabled: true
+  useHelmHooks: false
+
+airflow:
+  image:
+    tag: 2.7.3
+  config:
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:123456@airflow-postgresql:5432/airflow
+  useDefaultImageForMigration: false
+  migrationsWaitTimeout: 60
+  extraEnv:
+    - name: AIRFLOW__KUBERNETES__NAMESPACE
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.namespace
+    - name: AIRFLOW__CORE__FERNET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: airflow-fernet-key
+          key: fernet-key
+    - name: AIRFLOW__SECRETS__BACKEND
+      value: 'airflow.providers.hashicorp.secrets.vault.VaultBackend'
+
+enableBuiltInSecretEnvVars:
+  AIRFLOW__CORE__FERNET_KEY: true
+  # For Airflow <2.3, backward compatibility; moved to [database] in 2.3
+  AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: true
+  AIRFLOW_CONN_AIRFLOW_DB: true
+  AIRFLOW__WEBSERVER__SECRET_KEY: true
+
+# Airflow database & redis config
+data:
+  metadataSecretName: ~
+  resultBackendSecretName: ~
+  brokerUrlSecretName: ~
+  metadataConnection:
+    user: postgres
+    pass: "123456"
+    protocol: postgresql
+    host: 10.96.167.134
+    port: 5434
+    db: postgres
+    sslmode: disable
+
+webserver:
+  service:
+    type: LoadBalancer
+    ports:
+      - name: airflow-ui
+        port: 8080
+
+postgresql:
+  enabled: true
+  auth:
+    postgresPassword: "123456"
+    username: postgres
+    password: "123456"
+
+scheduler:
+  logGroomerSidecar:
+    # Whether to deploy the Airflow scheduler log groomer sidecar.
+    enabled: true
+    # Command to use when running the Airflow scheduler log groomer sidecar (templated).
+    command: ~
+    # Args to use when running the Airflow scheduler log groomer sidecar (templated).
+    args: ["bash", "/clean-logs"]
+    # Number of days to retain logs
+    retentionDays: 15
+  livenessProbe:
+    initialDelaySeconds: 10
+    timeoutSeconds: 20
+    failureThreshold: 5
+    periodSeconds: 60
+    command:
+      - sh
+      - -c
+      - |
+        CONNECTION_CHECK_MAX_COUNT=0 AIRFLOW__LOGGING__LOGGING_LEVEL=ERROR exec /entrypoint airflow jobs check --job-type SchedulerJob
+  replicas: 1
+  waitForMigrations:
+    enabled: true
+
+# Airflow Triggerer Config
+triggerer:
+  enabled: true
+  waitForMigrations:
+    enabled: true
+    env: []
+
+# Airflow Dag Processor Config
+dagProcessor:
+  enabled: true
+  replicas: 1
+  livenessProbe:
+    initialDelaySeconds: 10
+    timeoutSeconds: 20
+    failureThreshold: 5
+    periodSeconds: 60
+    command:
+      - sh
+      - -c
+      - |
+        CONNECTION_CHECK_MAX_COUNT=0 AIRFLOW__LOGGING__LOGGING_LEVEL=ERROR exec /entrypoint \
+        airflow jobs check
+  waitForMigrations:
+    enabled: true
+

@@ -1,0 +1,23 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"name\":\"local-path-storage\"}}\n"
+        },
+        "creationTimestamp": "2024-05-20T09:00:13Z",
+        "deletionTimestamp": "2024-05-29T06:45:03Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "local-path-storage"
+        },
+        "name": "local-path-storage",
+        "resourceVersion": "641423",
+        "uid": "000a0d48-3873-47c5-be16-d2dc32bcb756"
+    },
+    "spec": {
+        "finalizers": []
+    },
+    "status": {
+        "phase": "Terminating"
+    }
+}

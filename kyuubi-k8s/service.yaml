@@ -1,0 +1,13 @@
+# instead of using kubectl expose cmds, it's easy to mistype something,
+apiVersion: v1
+kind: Service
+metadata:
+  name: kyuubi-service
+spec:
+  selector:
+    app: kyuubi
+  ports:
+  - protocol: TCP
+    port: 10009
+    targetPort: 10009
+  - type: LoadBalancer

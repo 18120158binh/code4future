@@ -1,0 +1,649 @@
+
+==> Audit <==
+|----------------|--------------------------------|----------|--------|---------|---------------------|---------------------|
+|    Command     |              Args              | Profile  |  User  | Version |     Start Time      |      End Time       |
+|----------------|--------------------------------|----------|--------|---------|---------------------|---------------------|
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:11 +07 |                     |
+| delete         |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:18 +07 | 04 Jan 24 11:18 +07 |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:18 +07 |                     |
+| delete         |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:26 +07 | 04 Jan 24 11:26 +07 |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:26 +07 |                     |
+| delete         |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:30 +07 | 04 Jan 24 11:30 +07 |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:30 +07 |                     |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:35 +07 |                     |
+| update-context |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:38 +07 | 04 Jan 24 11:38 +07 |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 11:38 +07 |                     |
+| delete         |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:39 +07 | 04 Jan 24 13:39 +07 |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:39 +07 |                     |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:41 +07 |                     |
+| stop           |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:46 +07 | 04 Jan 24 13:46 +07 |
+| start          |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:46 +07 |                     |
+| ip             |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:49 +07 | 04 Jan 24 13:49 +07 |
+| docker-env     |                                | minikube | binhln | v1.32.0 | 04 Jan 24 13:49 +07 | 04 Jan 24 13:49 +07 |
+| start          | --cpus=4 --memory=8192         | minikube | binhln | v1.33.1 | 30 May 24 08:53 +07 |                     |
+| start          | --driver=docker                | minikube | binhln | v1.33.1 | 30 May 24 08:59 +07 |                     |
+| start          | --driver=docker                | minikube | binhln | v1.33.1 | 30 May 24 08:59 +07 |                     |
+|                | --alsologtostderr -v=7         |          |        |         |                     |                     |
+| start          | --driver=virtualbox            | minikube | binhln | v1.33.1 | 30 May 24 08:59 +07 |                     |
+| start          | --driver=kvm2                  | minikube | binhln | v1.33.1 | 30 May 24 08:59 +07 |                     |
+| start          |                                | minikube | binhln | v1.33.1 | 04 Jun 24 10:11 +07 |                     |
+|----------------|--------------------------------|----------|--------|---------|---------------------|---------------------|
+
+
+==> Last Start <==
+Log file created at: 2024/06/04 10:11:39
+Running on machine: binhln-desktop
+Binary: Built with gc go1.22.3 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0604 10:11:39.331559 3300138 out.go:291] Setting OutFile to fd 1 ...
+I0604 10:11:39.334621 3300138 out.go:343] isatty.IsTerminal(1) = true
+I0604 10:11:39.334627 3300138 out.go:304] Setting ErrFile to fd 2...
+I0604 10:11:39.334633 3300138 out.go:343] isatty.IsTerminal(2) = true
+I0604 10:11:39.336065 3300138 root.go:338] Updating PATH: /home/binhln/.minikube/bin
+I0604 10:11:39.352725 3300138 out.go:298] Setting JSON to false
+I0604 10:11:39.384786 3300138 start.go:129] hostinfo: {"hostname":"binhln-desktop","uptime":679517,"bootTime":1716791183,"procs":498,"os":"linux","platform":"ubuntu","platformFamily":"debian","platformVersion":"20.04","kernelVersion":"5.15.0-105-generic","kernelArch":"x86_64","virtualizationSystem":"kvm","virtualizationRole":"host","hostId":"f7d2238e-2c90-42b4-94fb-628570a436de"}
+I0604 10:11:39.387067 3300138 start.go:139] virtualization: kvm host
+I0604 10:11:39.401116 3300138 out.go:177] 😄  minikube v1.33.1 on Ubuntu 20.04
+W0604 10:11:39.419503 3300138 preload.go:294] Failed to list preload files: open /home/binhln/.minikube/cache/preloaded-tarball: no such file or directory
+I0604 10:11:39.421092 3300138 notify.go:220] Checking for updates...
+I0604 10:11:39.424073 3300138 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.28.3
+I0604 10:11:39.440712 3300138 out.go:177] 🆕  Kubernetes 1.30.0 is now available. If you would like to upgrade, specify: --kubernetes-version=v1.30.0
+I0604 10:11:39.446386 3300138 driver.go:392] Setting default libvirt URI to qemu:///system
+I0604 10:11:40.180170 3300138 docker.go:122] docker version: linux-20.10.18:Docker Engine - Community
+I0604 10:11:40.192418 3300138 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0604 10:11:42.641867 3300138 cli_runner.go:217] Completed: docker system info --format "{{json .}}": (2.440207943s)
+I0604 10:11:42.770797 3300138 info.go:266] docker info: {ID:2MLD:OLYK:DT6I:WR4G:NXEY:J3LM:T2WF:VM7S:BKYQ:F7R3:SBMO:MBES Containers:5 ContainersRunning:4 ContainersPaused:0 ContainersStopped:1 Images:5 Driver:zfs DriverStatus:[[Zpool rpool] [Zpool Health ONLINE] [Parent Dataset rpool/ROOT/ubuntu_nh3002/var/lib] [Space Used By Parent 34924138496] [Space Available 68453605376] [Parent Quota no] [Compression lz4]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:true KernelMemoryTCP:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:56 OomKillDisable:true NGoroutines:58 SystemTime:2024-06-04 10:11:40.286328504 +0700 +07 LoggingDriver:json-file CgroupDriver:cgroupfs NEventsListener:0 KernelVersion:5.15.0-105-generic OperatingSystem:Ubuntu 20.04.5 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:6 MemTotal:16424411136 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:binhln-desktop Labels:[] ExperimentalBuild:false ServerVersion:20.10.18 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:9cd3357b7fd7218e4aec3eae239db1f68a5a6ec6 Expected:9cd3357b7fd7218e4aec3eae239db1f68a5a6ec6} RuncCommit:{ID:v1.1.4-0-g5fd4c4d Expected:v1.1.4-0-g5fd4c4d} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=default] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Experimental:true Name:app Path:/usr/libexec/docker/cli-plugins/docker-app SchemaVersion:0.1.0 ShortDescription:Docker App Vendor:Docker Inc. Version:v0.9.1-beta3] map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.9.1-docker] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.10.2] map[Name:scan Path:/usr/libexec/docker/cli-plugins/docker-scan SchemaVersion:0.1.0 ShortDescription:Docker Scan Vendor:Docker Inc. Version:v0.17.0]] Warnings:<nil>}}
+I0604 10:11:42.778920 3300138 docker.go:295] overlay module found
+I0604 10:11:42.799115 3300138 out.go:177] ✨  Using the docker driver based on existing profile
+I0604 10:11:42.816394 3300138 start.go:297] selected driver: docker
+I0604 10:11:42.817331 3300138 start.go:901] validating driver "docker" against &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.42@sha256:d35ac07dfda971cabee05e0deca8aeac772f885a5348e1a0c0b0a36db20fcfc0 Memory:3900 CPUs:2 DiskSize:20000 Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.28.3 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP:192.168.49.2 Port:8443 KubernetesVersion:v1.28.3 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/home/binhln:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s}
+I0604 10:11:42.823260 3300138 start.go:912] status for docker: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0604 10:11:42.828118 3300138 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0604 10:11:43.685746 3300138 info.go:266] docker info: {ID:2MLD:OLYK:DT6I:WR4G:NXEY:J3LM:T2WF:VM7S:BKYQ:F7R3:SBMO:MBES Containers:5 ContainersRunning:4 ContainersPaused:0 ContainersStopped:1 Images:5 Driver:zfs DriverStatus:[[Zpool rpool] [Zpool Health ONLINE] [Parent Dataset rpool/ROOT/ubuntu_nh3002/var/lib] [Space Used By Parent 34924138496] [Space Available 68453605376] [Parent Quota no] [Compression lz4]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:true KernelMemoryTCP:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:56 OomKillDisable:true NGoroutines:58 SystemTime:2024-06-04 10:11:42.875579164 +0700 +07 LoggingDriver:json-file CgroupDriver:cgroupfs NEventsListener:0 KernelVersion:5.15.0-105-generic OperatingSystem:Ubuntu 20.04.5 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:6 MemTotal:16424411136 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:binhln-desktop Labels:[] ExperimentalBuild:false ServerVersion:20.10.18 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:9cd3357b7fd7218e4aec3eae239db1f68a5a6ec6 Expected:9cd3357b7fd7218e4aec3eae239db1f68a5a6ec6} RuncCommit:{ID:v1.1.4-0-g5fd4c4d Expected:v1.1.4-0-g5fd4c4d} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=default] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Experimental:true Name:app Path:/usr/libexec/docker/cli-plugins/docker-app SchemaVersion:0.1.0 ShortDescription:Docker App Vendor:Docker Inc. Version:v0.9.1-beta3] map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.9.1-docker] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.10.2] map[Name:scan Path:/usr/libexec/docker/cli-plugins/docker-scan SchemaVersion:0.1.0 ShortDescription:Docker Scan Vendor:Docker Inc. Version:v0.17.0]] Warnings:<nil>}}
+W0604 10:11:43.690218 3300138 out.go:239] ❗  docker is currently using the zfs storage driver, setting preload=false
+I0604 10:11:43.767505 3300138 cni.go:84] Creating CNI manager for ""
+I0604 10:11:43.773063 3300138 cni.go:158] "docker" driver + "docker" container runtime found on kubernetes v1.24+, recommending bridge
+I0604 10:11:43.781161 3300138 start.go:340] cluster config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.42@sha256:d35ac07dfda971cabee05e0deca8aeac772f885a5348e1a0c0b0a36db20fcfc0 Memory:3900 CPUs:2 DiskSize:20000 Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.28.3 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP:192.168.49.2 Port:8443 KubernetesVersion:v1.28.3 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/home/binhln:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s}
+I0604 10:11:43.787427 3300138 out.go:177] 👍  Starting "minikube" primary control-plane node in "minikube" cluster
+I0604 10:11:43.798384 3300138 cache.go:121] Beginning downloading kic base image for docker with docker
+I0604 10:11:43.806533 3300138 out.go:177] 🚜  Pulling base image v0.0.44 ...
+I0604 10:11:43.828505 3300138 image.go:79] Checking for gcr.io/k8s-minikube/kicbase:v0.0.42@sha256:d35ac07dfda971cabee05e0deca8aeac772f885a5348e1a0c0b0a36db20fcfc0 in local docker daemon
+I0604 10:11:43.828502 3300138 preload.go:132] Checking if preload exists for k8s version v1.28.3 and runtime docker
+I0604 10:11:43.835234 3300138 profile.go:143] Saving config to /home/binhln/.minikube/profiles/minikube/config.json ...
+I0604 10:11:43.845102 3300138 cache.go:107] acquiring lock: {Name:mkadeb534ec4212bf25563badfc781525811b01f Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.845151 3300138 cache.go:107] acquiring lock: {Name:mk0ea5dd434813cd7025c677ada379c85664771b Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.845102 3300138 cache.go:107] acquiring lock: {Name:mk2055b81593bece201c45ef9e5fad0debc0b2e8 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.845163 3300138 cache.go:107] acquiring lock: {Name:mk5503c6c3493d5a259ac42411df66c404af49ed Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.846518 3300138 cache.go:107] acquiring lock: {Name:mkb1297996fca2efb3186b70e793c09360a68730 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.845127 3300138 cache.go:107] acquiring lock: {Name:mkcff0f8f9738906a39b346c693c0dff28478af7 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.851059 3300138 cache.go:107] acquiring lock: {Name:mk30cf84515c41a0a66b06fdcb9b921da033de2c Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.851119 3300138 cache.go:107] acquiring lock: {Name:mkb480851bf9ffc7afd42e7c7995abac73f30b21 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.861344 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/gcr.io/k8s-minikube/storage-provisioner_v5 exists
+I0604 10:11:43.861353 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/pause_3.9 exists
+I0604 10:11:43.861353 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-scheduler_v1.28.3 exists
+I0604 10:11:43.861396 3300138 cache.go:96] cache image "registry.k8s.io/kube-scheduler:v1.28.3" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-scheduler_v1.28.3" took 18.595806ms
+I0604 10:11:43.861393 3300138 cache.go:96] cache image "gcr.io/k8s-minikube/storage-provisioner:v5" -> "/home/binhln/.minikube/cache/images/amd64/gcr.io/k8s-minikube/storage-provisioner_v5" took 17.986411ms
+I0604 10:11:43.861392 3300138 cache.go:96] cache image "registry.k8s.io/pause:3.9" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/pause_3.9" took 18.714189ms
+I0604 10:11:43.861419 3300138 cache.go:80] save to tar file registry.k8s.io/pause:3.9 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/pause_3.9 succeeded
+I0604 10:11:43.861421 3300138 cache.go:80] save to tar file gcr.io/k8s-minikube/storage-provisioner:v5 -> /home/binhln/.minikube/cache/images/amd64/gcr.io/k8s-minikube/storage-provisioner_v5 succeeded
+I0604 10:11:43.861419 3300138 cache.go:80] save to tar file registry.k8s.io/kube-scheduler:v1.28.3 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-scheduler_v1.28.3 succeeded
+I0604 10:11:43.861492 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-proxy_v1.28.3 exists
+I0604 10:11:43.861498 3300138 cache.go:96] cache image "registry.k8s.io/kube-proxy:v1.28.3" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-proxy_v1.28.3" took 18.845022ms
+I0604 10:11:43.861501 3300138 cache.go:80] save to tar file registry.k8s.io/kube-proxy:v1.28.3 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-proxy_v1.28.3 succeeded
+I0604 10:11:43.861522 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/coredns/coredns_v1.10.1 exists
+I0604 10:11:43.861539 3300138 cache.go:96] cache image "registry.k8s.io/coredns/coredns:v1.10.1" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/coredns/coredns_v1.10.1" took 10.413385ms
+I0604 10:11:43.861548 3300138 cache.go:80] save to tar file registry.k8s.io/coredns/coredns:v1.10.1 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/coredns/coredns_v1.10.1 succeeded
+I0604 10:11:43.862461 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-apiserver_v1.28.3 exists
+I0604 10:11:43.862463 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-controller-manager_v1.28.3 exists
+I0604 10:11:43.862468 3300138 cache.go:96] cache image "registry.k8s.io/kube-apiserver:v1.28.3" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-apiserver_v1.28.3" took 19.701753ms
+I0604 10:11:43.862472 3300138 cache.go:80] save to tar file registry.k8s.io/kube-apiserver:v1.28.3 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-apiserver_v1.28.3 succeeded
+I0604 10:11:43.862471 3300138 cache.go:96] cache image "registry.k8s.io/kube-controller-manager:v1.28.3" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-controller-manager_v1.28.3" took 19.843183ms
+I0604 10:11:43.862476 3300138 cache.go:80] save to tar file registry.k8s.io/kube-controller-manager:v1.28.3 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/kube-controller-manager_v1.28.3 succeeded
+I0604 10:11:43.862513 3300138 cache.go:115] /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/etcd_3.5.9-0 exists
+I0604 10:11:43.862519 3300138 cache.go:96] cache image "registry.k8s.io/etcd:3.5.9-0" -> "/home/binhln/.minikube/cache/images/amd64/registry.k8s.io/etcd_3.5.9-0" took 16.010765ms
+I0604 10:11:43.862523 3300138 cache.go:80] save to tar file registry.k8s.io/etcd:3.5.9-0 -> /home/binhln/.minikube/cache/images/amd64/registry.k8s.io/etcd_3.5.9-0 succeeded
+I0604 10:11:43.862543 3300138 cache.go:87] Successfully saved all images to host disk.
+I0604 10:11:43.931655 3300138 image.go:83] Found gcr.io/k8s-minikube/kicbase:v0.0.42@sha256:d35ac07dfda971cabee05e0deca8aeac772f885a5348e1a0c0b0a36db20fcfc0 in local docker daemon, skipping pull
+I0604 10:11:43.932580 3300138 cache.go:144] gcr.io/k8s-minikube/kicbase:v0.0.42@sha256:d35ac07dfda971cabee05e0deca8aeac772f885a5348e1a0c0b0a36db20fcfc0 exists in daemon, skipping load
+I0604 10:11:43.936152 3300138 cache.go:194] Successfully downloaded all kic artifacts
+I0604 10:11:43.947282 3300138 start.go:360] acquireMachinesLock for minikube: {Name:mk96e62679292489472c056b4effc8050b4802ce Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0604 10:11:43.948058 3300138 start.go:364] duration metric: took 749.071µs to acquireMachinesLock for "minikube"
+I0604 10:11:43.948955 3300138 start.go:96] Skipping create...Using existing machine configuration
+I0604 10:11:43.948987 3300138 fix.go:54] fixHost starting: 
+I0604 10:11:43.965008 3300138 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0604 10:11:43.999497 3300138 fix.go:112] recreateIfNeeded on minikube: state=Running err=<nil>
+W0604 10:11:44.000196 3300138 fix.go:138] unexpected machine state, will restart: <nil>
+I0604 10:11:44.005475 3300138 out.go:177] 🏃  Updating the running docker "minikube" container ...
+I0604 10:11:44.009839 3300138 machine.go:94] provisionDockerMachine start ...
+I0604 10:11:44.017796 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:44.059068 3300138 main.go:141] libmachine: Using SSH client type: native
+I0604 10:11:44.095298 3300138 main.go:141] libmachine: &{{{<nil> 0 [] [] []} docker [0x82d820] 0x830580 <nil>  [] 0s} 127.0.0.1 49157 <nil> <nil>}
+I0604 10:11:44.095326 3300138 main.go:141] libmachine: About to run SSH command:
+hostname
+I0604 10:11:44.397639 3300138 main.go:141] libmachine: SSH cmd err, output: <nil>: minikube
+
+I0604 10:11:44.402217 3300138 ubuntu.go:169] provisioning hostname "minikube"
+I0604 10:11:44.403769 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:44.479604 3300138 main.go:141] libmachine: Using SSH client type: native
+I0604 10:11:44.488764 3300138 main.go:141] libmachine: &{{{<nil> 0 [] [] []} docker [0x82d820] 0x830580 <nil>  [] 0s} 127.0.0.1 49157 <nil> <nil>}
+I0604 10:11:44.488773 3300138 main.go:141] libmachine: About to run SSH command:
+sudo hostname minikube && echo "minikube" | sudo tee /etc/hostname
+I0604 10:11:45.678980 3300138 main.go:141] libmachine: SSH cmd err, output: <nil>: minikube
+
+I0604 10:11:45.680780 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:45.741033 3300138 main.go:141] libmachine: Using SSH client type: native
+I0604 10:11:45.752838 3300138 main.go:141] libmachine: &{{{<nil> 0 [] [] []} docker [0x82d820] 0x830580 <nil>  [] 0s} 127.0.0.1 49157 <nil> <nil>}
+I0604 10:11:45.752855 3300138 main.go:141] libmachine: About to run SSH command:
+
+		if ! grep -xq '.*\sminikube' /etc/hosts; then
+			if grep -xq '127.0.1.1\s.*' /etc/hosts; then
+				sudo sed -i 's/^127.0.1.1\s.*/127.0.1.1 minikube/g' /etc/hosts;
+			else 
+				echo '127.0.1.1 minikube' | sudo tee -a /etc/hosts; 
+			fi
+		fi
+I0604 10:11:45.908157 3300138 main.go:141] libmachine: SSH cmd err, output: <nil>: 
+I0604 10:11:45.909139 3300138 ubuntu.go:175] set auth options {CertDir:/home/binhln/.minikube CaCertPath:/home/binhln/.minikube/certs/ca.pem CaPrivateKeyPath:/home/binhln/.minikube/certs/ca-key.pem CaCertRemotePath:/etc/docker/ca.pem ServerCertPath:/home/binhln/.minikube/machines/server.pem ServerKeyPath:/home/binhln/.minikube/machines/server-key.pem ClientKeyPath:/home/binhln/.minikube/certs/key.pem ServerCertRemotePath:/etc/docker/server.pem ServerKeyRemotePath:/etc/docker/server-key.pem ClientCertPath:/home/binhln/.minikube/certs/cert.pem ServerCertSANs:[] StorePath:/home/binhln/.minikube}
+I0604 10:11:45.909185 3300138 ubuntu.go:177] setting up certificates
+I0604 10:11:45.911463 3300138 provision.go:84] configureAuth start
+I0604 10:11:45.914586 3300138 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0604 10:11:45.953453 3300138 provision.go:143] copyHostCerts
+I0604 10:11:45.960435 3300138 exec_runner.go:144] found /home/binhln/.minikube/ca.pem, removing ...
+I0604 10:11:45.962716 3300138 exec_runner.go:203] rm: /home/binhln/.minikube/ca.pem
+I0604 10:11:45.962827 3300138 exec_runner.go:151] cp: /home/binhln/.minikube/certs/ca.pem --> /home/binhln/.minikube/ca.pem (1078 bytes)
+I0604 10:11:45.969278 3300138 exec_runner.go:144] found /home/binhln/.minikube/cert.pem, removing ...
+I0604 10:11:45.969289 3300138 exec_runner.go:203] rm: /home/binhln/.minikube/cert.pem
+I0604 10:11:45.969373 3300138 exec_runner.go:151] cp: /home/binhln/.minikube/certs/cert.pem --> /home/binhln/.minikube/cert.pem (1123 bytes)
+I0604 10:11:45.970139 3300138 exec_runner.go:144] found /home/binhln/.minikube/key.pem, removing ...
+I0604 10:11:45.970146 3300138 exec_runner.go:203] rm: /home/binhln/.minikube/key.pem
+I0604 10:11:45.970219 3300138 exec_runner.go:151] cp: /home/binhln/.minikube/certs/key.pem --> /home/binhln/.minikube/key.pem (1675 bytes)
+I0604 10:11:45.971673 3300138 provision.go:117] generating server cert: /home/binhln/.minikube/machines/server.pem ca-key=/home/binhln/.minikube/certs/ca.pem private-key=/home/binhln/.minikube/certs/ca-key.pem org=binhln.minikube san=[127.0.0.1 192.168.49.2 localhost minikube]
+I0604 10:11:46.240331 3300138 provision.go:177] copyRemoteCerts
+I0604 10:11:46.252189 3300138 ssh_runner.go:195] Run: sudo mkdir -p /etc/docker /etc/docker /etc/docker
+I0604 10:11:46.252300 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:46.288879 3300138 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:49157 SSHKeyPath:/home/binhln/.minikube/machines/minikube/id_rsa Username:docker}
+I0604 10:11:46.447649 3300138 ssh_runner.go:362] scp /home/binhln/.minikube/certs/ca.pem --> /etc/docker/ca.pem (1078 bytes)
+I0604 10:11:46.556637 3300138 ssh_runner.go:362] scp /home/binhln/.minikube/machines/server.pem --> /etc/docker/server.pem (1180 bytes)
+I0604 10:11:46.651998 3300138 ssh_runner.go:362] scp /home/binhln/.minikube/machines/server-key.pem --> /etc/docker/server-key.pem (1679 bytes)
+I0604 10:11:46.700689 3300138 provision.go:87] duration metric: took 786.740295ms to configureAuth
+I0604 10:11:46.700706 3300138 ubuntu.go:193] setting minikube options for container-runtime
+I0604 10:11:46.706222 3300138 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.28.3
+I0604 10:11:46.706322 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:46.736555 3300138 main.go:141] libmachine: Using SSH client type: native
+I0604 10:11:46.737028 3300138 main.go:141] libmachine: &{{{<nil> 0 [] [] []} docker [0x82d820] 0x830580 <nil>  [] 0s} 127.0.0.1 49157 <nil> <nil>}
+I0604 10:11:46.737043 3300138 main.go:141] libmachine: About to run SSH command:
+df --output=fstype / | tail -n 1
+I0604 10:11:46.879115 3300138 main.go:141] libmachine: SSH cmd err, output: <nil>: zfs
+
+I0604 10:11:46.879126 3300138 ubuntu.go:71] root file system type: zfs
+I0604 10:11:46.883671 3300138 provision.go:314] Updating docker unit: /lib/systemd/system/docker.service ...
+I0604 10:11:46.885100 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:46.916348 3300138 main.go:141] libmachine: Using SSH client type: native
+I0604 10:11:46.916534 3300138 main.go:141] libmachine: &{{{<nil> 0 [] [] []} docker [0x82d820] 0x830580 <nil>  [] 0s} 127.0.0.1 49157 <nil> <nil>}
+I0604 10:11:46.916610 3300138 main.go:141] libmachine: About to run SSH command:
+sudo mkdir -p /lib/systemd/system && printf %!s(MISSING) "[Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+BindsTo=containerd.service
+After=network-online.target firewalld.service containerd.service
+Wants=network-online.target
+Requires=docker.socket
+StartLimitBurst=3
+StartLimitIntervalSec=60
+
+[Service]
+Type=notify
+Restart=on-failure
+
+
+
+# This file is a systemd drop-in unit that inherits from the base dockerd configuration.
+# The base configuration already specifies an 'ExecStart=...' command. The first directive
+# here is to clear out that command inherited from the base configuration. Without this,
+# the command from the base configuration and the command specified here are treated as
+# a sequence of commands, which is not the desired behavior, nor is it valid -- systemd
+# will catch this invalid input and refuse to start the service with an error like:
+#  Service has more than one ExecStart= setting, which is only allowed for Type=oneshot services.
+
+# NOTE: default-ulimit=nofile is set to an arbitrary number for consistency with other
+# container runtimes. If left unlimited, it may result in OOM issues with MySQL.
+ExecStart=
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --default-ulimit=nofile=1048576:1048576 --tlsverify --tlscacert /etc/docker/ca.pem --tlscert /etc/docker/server.pem --tlskey /etc/docker/server-key.pem --label provider=docker --insecure-registry 10.96.0.0/12 
+ExecReload=/bin/kill -s HUP \$MAINPID
+
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+
+# Uncomment TasksMax if your systemd version supports it.
+# Only systemd 226 and above support this version.
+TasksMax=infinity
+TimeoutStartSec=0
+
+# set delegate yes so that systemd does not reset the cgroups of docker containers
+Delegate=yes
+
+# kill only the docker process, not all processes in the cgroup
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+" | sudo tee /lib/systemd/system/docker.service.new
+I0604 10:11:47.064233 3300138 main.go:141] libmachine: SSH cmd err, output: <nil>: [Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+BindsTo=containerd.service
+After=network-online.target firewalld.service containerd.service
+Wants=network-online.target
+Requires=docker.socket
+StartLimitBurst=3
+StartLimitIntervalSec=60
+
+[Service]
+Type=notify
+Restart=on-failure
+
+
+
+# This file is a systemd drop-in unit that inherits from the base dockerd configuration.
+# The base configuration already specifies an 'ExecStart=...' command. The first directive
+# here is to clear out that command inherited from the base configuration. Without this,
+# the command from the base configuration and the command specified here are treated as
+# a sequence of commands, which is not the desired behavior, nor is it valid -- systemd
+# will catch this invalid input and refuse to start the service with an error like:
+#  Service has more than one ExecStart= setting, which is only allowed for Type=oneshot services.
+
+# NOTE: default-ulimit=nofile is set to an arbitrary number for consistency with other
+# container runtimes. If left unlimited, it may result in OOM issues with MySQL.
+ExecStart=
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --default-ulimit=nofile=1048576:1048576 --tlsverify --tlscacert /etc/docker/ca.pem --tlscert /etc/docker/server.pem --tlskey /etc/docker/server-key.pem --label provider=docker --insecure-registry 10.96.0.0/12 
+ExecReload=/bin/kill -s HUP $MAINPID
+
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+
+# Uncomment TasksMax if your systemd version supports it.
+# Only systemd 226 and above support this version.
+TasksMax=infinity
+TimeoutStartSec=0
+
+# set delegate yes so that systemd does not reset the cgroups of docker containers
+Delegate=yes
+
+# kill only the docker process, not all processes in the cgroup
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+
+I0604 10:11:47.065214 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:47.099961 3300138 main.go:141] libmachine: Using SSH client type: native
+I0604 10:11:47.101787 3300138 main.go:141] libmachine: &{{{<nil> 0 [] [] []} docker [0x82d820] 0x830580 <nil>  [] 0s} 127.0.0.1 49157 <nil> <nil>}
+I0604 10:11:47.101805 3300138 main.go:141] libmachine: About to run SSH command:
+sudo diff -u /lib/systemd/system/docker.service /lib/systemd/system/docker.service.new || { sudo mv /lib/systemd/system/docker.service.new /lib/systemd/system/docker.service; sudo systemctl -f daemon-reload && sudo systemctl -f enable docker && sudo systemctl -f restart docker; }
+I0604 10:11:47.235409 3300138 main.go:141] libmachine: SSH cmd err, output: <nil>: 
+I0604 10:11:47.235424 3300138 machine.go:97] duration metric: took 3.225577264s to provisionDockerMachine
+I0604 10:11:47.238532 3300138 start.go:293] postStartSetup for "minikube" (driver="docker")
+I0604 10:11:47.239367 3300138 start.go:322] creating required directories: [/etc/kubernetes/addons /etc/kubernetes/manifests /var/tmp/minikube /var/lib/minikube /var/lib/minikube/certs /var/lib/minikube/images /var/lib/minikube/binaries /tmp/gvisor /usr/share/ca-certificates /etc/ssl/certs]
+I0604 10:11:47.239465 3300138 ssh_runner.go:195] Run: sudo mkdir -p /etc/kubernetes/addons /etc/kubernetes/manifests /var/tmp/minikube /var/lib/minikube /var/lib/minikube/certs /var/lib/minikube/images /var/lib/minikube/binaries /tmp/gvisor /usr/share/ca-certificates /etc/ssl/certs
+I0604 10:11:47.239527 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:47.266457 3300138 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:49157 SSHKeyPath:/home/binhln/.minikube/machines/minikube/id_rsa Username:docker}
+I0604 10:11:47.376549 3300138 ssh_runner.go:195] Run: cat /etc/os-release
+I0604 10:11:47.385816 3300138 main.go:141] libmachine: Couldn't set key VERSION_CODENAME, no corresponding struct field found
+I0604 10:11:47.385845 3300138 main.go:141] libmachine: Couldn't set key PRIVACY_POLICY_URL, no corresponding struct field found
+I0604 10:11:47.385854 3300138 main.go:141] libmachine: Couldn't set key UBUNTU_CODENAME, no corresponding struct field found
+I0604 10:11:47.385860 3300138 info.go:137] Remote host: Ubuntu 22.04.3 LTS
+I0604 10:11:47.386725 3300138 filesync.go:126] Scanning /home/binhln/.minikube/addons for local assets ...
+I0604 10:11:47.386881 3300138 filesync.go:126] Scanning /home/binhln/.minikube/files for local assets ...
+I0604 10:11:47.386978 3300138 start.go:296] duration metric: took 147.616846ms for postStartSetup
+I0604 10:11:47.387615 3300138 ssh_runner.go:195] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0604 10:11:47.387681 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:47.416017 3300138 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:49157 SSHKeyPath:/home/binhln/.minikube/machines/minikube/id_rsa Username:docker}
+I0604 10:11:47.514506 3300138 ssh_runner.go:195] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0604 10:11:47.519597 3300138 fix.go:56] duration metric: took 3.570625565s for fixHost
+I0604 10:11:47.519609 3300138 start.go:83] releasing machines lock for "minikube", held for 3.571543408s
+I0604 10:11:47.519695 3300138 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0604 10:11:47.551648 3300138 ssh_runner.go:195] Run: cat /version.json
+I0604 10:11:47.551715 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:47.553348 3300138 ssh_runner.go:195] Run: curl -sS -m 2 https://registry.k8s.io/
+I0604 10:11:47.556309 3300138 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0604 10:11:47.582624 3300138 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:49157 SSHKeyPath:/home/binhln/.minikube/machines/minikube/id_rsa Username:docker}
+I0604 10:11:47.593137 3300138 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:49157 SSHKeyPath:/home/binhln/.minikube/machines/minikube/id_rsa Username:docker}
+W0604 10:11:47.677763 3300138 out.go:239] ❗  Image was not built for the current minikube version. To resolve this you can delete and recreate your minikube cluster using the latest images. Expected minikube version: v1.32.0 -> Actual minikube version: v1.33.1
+I0604 10:11:47.686385 3300138 ssh_runner.go:195] Run: systemctl --version
+I0604 10:11:48.056484 3300138 ssh_runner.go:195] Run: sh -c "stat /etc/cni/net.d/*loopback.conf*"
+I0604 10:11:48.061653 3300138 ssh_runner.go:195] Run: sudo find /etc/cni/net.d -maxdepth 1 -type f -name *loopback.conf* -not -name *.mk_disabled -exec sh -c "grep -q loopback {} && ( grep -q name {} || sudo sed -i '/"type": "loopback"/i \ \ \ \ "name": "loopback",' {} ) && sudo sed -i 's|"cniVersion": ".*"|"cniVersion": "1.0.0"|g' {}" ;
+I0604 10:11:48.089568 3300138 cni.go:230] loopback cni configuration patched: "/etc/cni/net.d/*loopback.conf*" found
+I0604 10:11:48.091140 3300138 ssh_runner.go:195] Run: sudo find /etc/cni/net.d -maxdepth 1 -type f ( ( -name *bridge* -or -name *podman* ) -and -not -name *.mk_disabled ) -printf "%!p(MISSING), " -exec sh -c "sudo mv {} {}.mk_disabled" ;
+I0604 10:11:48.099173 3300138 cni.go:259] no active bridge cni configs found in "/etc/cni/net.d" - nothing to disable
+I0604 10:11:48.099189 3300138 start.go:494] detecting cgroup driver to use...
+I0604 10:11:48.100362 3300138 detect.go:196] detected "cgroupfs" cgroup driver on host os
+I0604 10:11:48.111657 3300138 ssh_runner.go:195] Run: /bin/bash -c "sudo mkdir -p /etc && printf %!s(MISSING) "runtime-endpoint: unix:///run/containerd/containerd.sock
+" | sudo tee /etc/crictl.yaml"
+I0604 10:11:48.130468 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i -r 's|^( *)sandbox_image = .*$|\1sandbox_image = "registry.k8s.io/pause:3.9"|' /etc/containerd/config.toml"
+I0604 10:11:48.140474 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i -r 's|^( *)restrict_oom_score_adj = .*$|\1restrict_oom_score_adj = false|' /etc/containerd/config.toml"
+I0604 10:11:48.150529 3300138 containerd.go:146] configuring containerd to use "cgroupfs" as cgroup driver...
+I0604 10:11:48.150610 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i -r 's|^( *)SystemdCgroup = .*$|\1SystemdCgroup = false|g' /etc/containerd/config.toml"
+I0604 10:11:48.159497 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i 's|"io.containerd.runtime.v1.linux"|"io.containerd.runc.v2"|g' /etc/containerd/config.toml"
+I0604 10:11:48.168561 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i '/systemd_cgroup/d' /etc/containerd/config.toml"
+I0604 10:11:48.177418 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i 's|"io.containerd.runc.v1"|"io.containerd.runc.v2"|g' /etc/containerd/config.toml"
+I0604 10:11:48.185948 3300138 ssh_runner.go:195] Run: sh -c "sudo rm -rf /etc/cni/net.mk"
+I0604 10:11:48.196533 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i -r 's|^( *)conf_dir = .*$|\1conf_dir = "/etc/cni/net.d"|g' /etc/containerd/config.toml"
+I0604 10:11:48.207811 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i '/^ *enable_unprivileged_ports = .*/d' /etc/containerd/config.toml"
+I0604 10:11:48.216148 3300138 ssh_runner.go:195] Run: sh -c "sudo sed -i -r 's|^( *)\[plugins."io.containerd.grpc.v1.cri"\]|&\n\1  enable_unprivileged_ports = true|' /etc/containerd/config.toml"
+I0604 10:11:48.224868 3300138 ssh_runner.go:195] Run: sudo sysctl net.bridge.bridge-nf-call-iptables
+I0604 10:11:48.232573 3300138 ssh_runner.go:195] Run: sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+I0604 10:11:48.239733 3300138 ssh_runner.go:195] Run: sudo systemctl daemon-reload
+I0604 10:11:48.399080 3300138 ssh_runner.go:195] Run: sudo systemctl restart containerd
+I0604 10:11:48.811020 3300138 start.go:494] detecting cgroup driver to use...
+I0604 10:11:48.811053 3300138 detect.go:196] detected "cgroupfs" cgroup driver on host os
+I0604 10:11:48.813109 3300138 ssh_runner.go:195] Run: sudo systemctl cat docker.service
+I0604 10:11:48.861520 3300138 cruntime.go:279] skipping containerd shutdown because we are bound to it
+I0604 10:11:48.862641 3300138 ssh_runner.go:195] Run: sudo systemctl is-active --quiet service crio
+I0604 10:11:48.878285 3300138 ssh_runner.go:195] Run: /bin/bash -c "sudo mkdir -p /etc && printf %!s(MISSING) "runtime-endpoint: unix:///var/run/cri-dockerd.sock
+" | sudo tee /etc/crictl.yaml"
+I0604 10:11:48.900954 3300138 ssh_runner.go:195] Run: which cri-dockerd
+I0604 10:11:48.909725 3300138 ssh_runner.go:195] Run: sudo mkdir -p /etc/systemd/system/cri-docker.service.d
+I0604 10:11:48.918735 3300138 ssh_runner.go:362] scp memory --> /etc/systemd/system/cri-docker.service.d/10-cni.conf (189 bytes)
+I0604 10:11:48.936991 3300138 ssh_runner.go:195] Run: sudo systemctl unmask docker.service
+I0604 10:11:49.084662 3300138 ssh_runner.go:195] Run: sudo systemctl enable docker.socket
+I0604 10:11:49.175766 3300138 docker.go:574] configuring docker to use "cgroupfs" as cgroup driver...
+I0604 10:11:49.207907 3300138 ssh_runner.go:362] scp memory --> /etc/docker/daemon.json (130 bytes)
+I0604 10:11:49.228985 3300138 ssh_runner.go:195] Run: sudo systemctl daemon-reload
+I0604 10:11:49.470318 3300138 ssh_runner.go:195] Run: sudo systemctl restart docker
+I0604 10:11:52.642395 3300138 ssh_runner.go:235] Completed: sudo systemctl restart docker: (3.172029438s)
+I0604 10:11:52.647255 3300138 ssh_runner.go:195] Run: sudo journalctl --no-pager -u docker
+I0604 10:11:52.748778 3300138 out.go:177] 
+W0604 10:11:52.756595 3300138 out.go:239] ❌  Exiting due to RUNTIME_ENABLE: Failed to enable container runtime: sudo systemctl restart docker: Process exited with status 1
+stdout:
+
+stderr:
+Job for docker.service failed because the control process exited with error code.
+See "systemctl status docker.service" and "journalctl -xeu docker.service" for details.
+
+sudo journalctl --no-pager -u docker:
+-- stdout --
+May 30 01:54:21 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.691728697Z" level=info msg="Starting up"
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.721110442Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.721191956Z" level=error msg="exec: \"fuse-overlayfs\": executable file not found in $PATH" storage-driver=fuse-overlayfs
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.722345834Z" level=info msg="Loading containers: start."
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.828726643Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.880209370Z" level=info msg="Loading containers: done."
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.896414400Z" level=info msg="Docker daemon" commit=311b9ff graphdriver=vfs version=24.0.7
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.896544696Z" level=info msg="Daemon has completed initialization"
+May 30 01:54:21 minikube dockerd[410]: time="2024-05-30T01:54:21.926741019Z" level=info msg="API listen on /run/docker.sock"
+May 30 01:54:21 minikube systemd[1]: Started Docker Application Container Engine.
+May 30 01:54:24 minikube systemd[1]: docker.service: Current command vanished from the unit file, execution of the command list won't be resumed.
+May 30 01:54:25 minikube systemd[1]: Stopping Docker Application Container Engine...
+May 30 01:54:25 minikube dockerd[410]: time="2024-05-30T01:54:25.157940799Z" level=info msg="Processing signal 'terminated'"
+May 30 01:54:25 minikube dockerd[410]: time="2024-05-30T01:54:25.158963828Z" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+May 30 01:54:25 minikube dockerd[410]: time="2024-05-30T01:54:25.159417840Z" level=info msg="Daemon shutdown complete"
+May 30 01:54:25 minikube dockerd[410]: time="2024-05-30T01:54:25.159450429Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+May 30 01:54:25 minikube systemd[1]: docker.service: Deactivated successfully.
+May 30 01:54:25 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:54:25 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.193603566Z" level=info msg="Starting up"
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.214991513Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.215030110Z" level=error msg="exec: \"fuse-overlayfs\": executable file not found in $PATH" storage-driver=fuse-overlayfs
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.215261873Z" level=info msg="Loading containers: start."
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.308924854Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.360498072Z" level=info msg="Loading containers: done."
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.365491385Z" level=info msg="Docker daemon" commit=311b9ff graphdriver=vfs version=24.0.7
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.365533442Z" level=info msg="Daemon has completed initialization"
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.395679132Z" level=info msg="API listen on /var/run/docker.sock"
+May 30 01:54:25 minikube systemd[1]: Started Docker Application Container Engine.
+May 30 01:54:25 minikube dockerd[744]: time="2024-05-30T01:54:25.396416884Z" level=info msg="API listen on [::]:2376"
+May 30 01:54:27 minikube systemd[1]: Stopping Docker Application Container Engine...
+May 30 01:54:27 minikube dockerd[744]: time="2024-05-30T01:54:27.774540938Z" level=info msg="Processing signal 'terminated'"
+May 30 01:54:27 minikube dockerd[744]: time="2024-05-30T01:54:27.775152432Z" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+May 30 01:54:27 minikube dockerd[744]: time="2024-05-30T01:54:27.775696779Z" level=info msg="Daemon shutdown complete"
+May 30 01:54:27 minikube systemd[1]: docker.service: Deactivated successfully.
+May 30 01:54:27 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:54:27 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:54:27 minikube dockerd[1084]: time="2024-05-30T01:54:27.869156964Z" level=info msg="Starting up"
+May 30 01:54:27 minikube dockerd[1084]: time="2024-05-30T01:54:27.890564864Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:54:27 minikube dockerd[1084]: time="2024-05-30T01:54:27.890610528Z" level=error msg="exec: \"fuse-overlayfs\": executable file not found in $PATH" storage-driver=fuse-overlayfs
+May 30 01:54:27 minikube dockerd[1084]: time="2024-05-30T01:54:27.890892414Z" level=info msg="Loading containers: start."
+May 30 01:54:27 minikube dockerd[1084]: time="2024-05-30T01:54:27.994171378Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.045107856Z" level=info msg="Loading containers: done."
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.049744655Z" level=info msg="Docker daemon" commit=311b9ff graphdriver=vfs version=24.0.7
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.049785004Z" level=info msg="Daemon has completed initialization"
+May 30 01:54:28 minikube systemd[1]: Started Docker Application Container Engine.
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.076773010Z" level=info msg="API listen on /var/run/docker.sock"
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.076798382Z" level=info msg="API listen on [::]:2376"
+May 30 01:54:28 minikube systemd[1]: Stopping Docker Application Container Engine...
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.168128757Z" level=info msg="Processing signal 'terminated'"
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.168749888Z" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+May 30 01:54:28 minikube dockerd[1084]: time="2024-05-30T01:54:28.169230230Z" level=info msg="Daemon shutdown complete"
+May 30 01:54:28 minikube systemd[1]: docker.service: Deactivated successfully.
+May 30 01:54:28 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:54:28 minikube dockerd[1281]: time="2024-05-30T01:54:28.206358719Z" level=info msg="Starting up"
+May 30 01:54:28 minikube dockerd[1281]: time="2024-05-30T01:54:28.225679872Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:54:28 minikube dockerd[1281]: time="2024-05-30T01:54:28.226624109Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:54:28 minikube dockerd[1281]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:54:28 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:54:28 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:54:28 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 1.
+May 30 01:54:28 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:54:28 minikube dockerd[1292]: time="2024-05-30T01:54:28.449650919Z" level=info msg="Starting up"
+May 30 01:54:28 minikube dockerd[1292]: time="2024-05-30T01:54:28.470987848Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:54:28 minikube dockerd[1292]: time="2024-05-30T01:54:28.472012210Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:54:28 minikube dockerd[1292]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:54:28 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:54:28 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:54:28 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 2.
+May 30 01:54:28 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:54:28 minikube dockerd[1305]: time="2024-05-30T01:54:28.698899804Z" level=info msg="Starting up"
+May 30 01:54:28 minikube dockerd[1305]: time="2024-05-30T01:54:28.718871095Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:54:28 minikube dockerd[1305]: time="2024-05-30T01:54:28.720062838Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:54:28 minikube dockerd[1305]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:54:28 minikube dockerd[1305]: time="2024-05-30T01:54:28.721123175Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+May 30 01:54:28 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:54:28 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:54:28 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 3.
+May 30 01:54:28 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:54:28 minikube systemd[1]: docker.service: Start request repeated too quickly.
+May 30 01:54:28 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:54:28 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:21 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:21 minikube dockerd[1708]: time="2024-05-30T01:59:21.604112582Z" level=info msg="Starting up"
+May 30 01:59:21 minikube dockerd[1708]: time="2024-05-30T01:59:21.624904680Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:21 minikube dockerd[1708]: time="2024-05-30T01:59:21.625868557Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:21 minikube dockerd[1708]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:21 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:21 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:21 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:21 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 1.
+May 30 01:59:21 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:21 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:22 minikube dockerd[1722]: time="2024-05-30T01:59:22.011121863Z" level=info msg="Starting up"
+May 30 01:59:22 minikube dockerd[1722]: time="2024-05-30T01:59:22.032386277Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:22 minikube dockerd[1722]: time="2024-05-30T01:59:22.033323876Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:22 minikube dockerd[1722]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:22 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:22 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:22 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:22 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 2.
+May 30 01:59:22 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:22 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:22 minikube dockerd[1732]: time="2024-05-30T01:59:22.240439888Z" level=info msg="Starting up"
+May 30 01:59:22 minikube dockerd[1732]: time="2024-05-30T01:59:22.259851589Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:22 minikube dockerd[1732]: time="2024-05-30T01:59:22.260822559Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:22 minikube dockerd[1732]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:22 minikube dockerd[1732]: time="2024-05-30T01:59:22.264208539Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+May 30 01:59:22 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:22 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:22 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:22 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 3.
+May 30 01:59:22 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:22 minikube systemd[1]: docker.service: Start request repeated too quickly.
+May 30 01:59:22 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:22 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:31 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:31 minikube dockerd[2005]: time="2024-05-30T01:59:31.863093347Z" level=info msg="Starting up"
+May 30 01:59:31 minikube dockerd[2005]: time="2024-05-30T01:59:31.882972910Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:31 minikube dockerd[2005]: time="2024-05-30T01:59:31.884096056Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:31 minikube dockerd[2005]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:31 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:31 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:31 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 1.
+May 30 01:59:32 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.221984686Z" level=info msg="Starting up"
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.243118657Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.244241496Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:32 minikube dockerd[2020]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.245673550Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+May 30 01:59:32 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:32 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:32 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 2.
+May 30 01:59:32 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:32 minikube dockerd[2033]: time="2024-05-30T01:59:32.484637050Z" level=info msg="Starting up"
+May 30 01:59:32 minikube dockerd[2033]: time="2024-05-30T01:59:32.504785925Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:32 minikube dockerd[2033]: time="2024-05-30T01:59:32.506001014Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:32 minikube dockerd[2033]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:32 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:32 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:32 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 3.
+May 30 01:59:32 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Start request repeated too quickly.
+May 30 01:59:32 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:32 minikube systemd[1]: Failed to start Docker Application Container Engine.
+Jun 04 03:11:49 minikube systemd[1]: Starting Docker Application Container Engine...
+Jun 04 03:11:52 minikube dockerd[2483]: time="2024-06-04T03:11:52.331717219Z" level=info msg="Starting up"
+Jun 04 03:11:52 minikube dockerd[2483]: time="2024-06-04T03:11:52.592877041Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+Jun 04 03:11:52 minikube dockerd[2483]: time="2024-06-04T03:11:52.603910683Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+Jun 04 03:11:52 minikube dockerd[2483]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+Jun 04 03:11:52 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+Jun 04 03:11:52 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+Jun 04 03:11:52 minikube systemd[1]: Failed to start Docker Application Container Engine.
+
+-- /stdout --
+W0604 10:11:52.757180 3300138 out.go:239] 
+W0604 10:11:52.796300 3300138 out.go:239] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0604 10:11:52.801423 3300138 out.go:177] 
+
+
+==> Docker <==
+May 30 01:59:31 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 1.
+May 30 01:59:32 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.221984686Z" level=info msg="Starting up"
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.243118657Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.244241496Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:32 minikube dockerd[2020]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:32 minikube dockerd[2020]: time="2024-05-30T01:59:32.245673550Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+May 30 01:59:32 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:32 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:32 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 2.
+May 30 01:59:32 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: Starting Docker Application Container Engine...
+May 30 01:59:32 minikube dockerd[2033]: time="2024-05-30T01:59:32.484637050Z" level=info msg="Starting up"
+May 30 01:59:32 minikube dockerd[2033]: time="2024-05-30T01:59:32.504785925Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+May 30 01:59:32 minikube dockerd[2033]: time="2024-05-30T01:59:32.506001014Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+May 30 01:59:32 minikube dockerd[2033]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+May 30 01:59:32 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+May 30 01:59:32 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:32 minikube systemd[1]: Failed to start Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 3.
+May 30 01:59:32 minikube systemd[1]: Stopped Docker Application Container Engine.
+May 30 01:59:32 minikube systemd[1]: docker.service: Start request repeated too quickly.
+May 30 01:59:32 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+May 30 01:59:32 minikube systemd[1]: Failed to start Docker Application Container Engine.
+Jun 04 03:11:49 minikube systemd[1]: Starting Docker Application Container Engine...
+Jun 04 03:11:52 minikube dockerd[2483]: time="2024-06-04T03:11:52.331717219Z" level=info msg="Starting up"
+Jun 04 03:11:52 minikube dockerd[2483]: time="2024-06-04T03:11:52.592877041Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+Jun 04 03:11:52 minikube dockerd[2483]: time="2024-06-04T03:11:52.603910683Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+Jun 04 03:11:52 minikube dockerd[2483]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+Jun 04 03:11:52 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+Jun 04 03:11:52 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+Jun 04 03:11:52 minikube systemd[1]: Failed to start Docker Application Container Engine.
+Jun 04 03:11:52 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 1.
+Jun 04 03:11:52 minikube systemd[1]: Stopped Docker Application Container Engine.
+Jun 04 03:11:52 minikube systemd[1]: Starting Docker Application Container Engine...
+Jun 04 03:11:53 minikube dockerd[2496]: time="2024-06-04T03:11:53.061727946Z" level=info msg="Starting up"
+Jun 04 03:11:53 minikube dockerd[2496]: time="2024-06-04T03:11:53.268603823Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+Jun 04 03:11:53 minikube dockerd[2496]: time="2024-06-04T03:11:53.274390397Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+Jun 04 03:11:53 minikube dockerd[2496]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+Jun 04 03:11:53 minikube systemd[1]: Failed to start Docker Application Container Engine.
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 2.
+Jun 04 03:11:53 minikube systemd[1]: Stopped Docker Application Container Engine.
+Jun 04 03:11:53 minikube systemd[1]: Starting Docker Application Container Engine...
+Jun 04 03:11:53 minikube dockerd[2508]: time="2024-06-04T03:11:53.557385620Z" level=info msg="Starting up"
+Jun 04 03:11:53 minikube dockerd[2508]: time="2024-06-04T03:11:53.588538472Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+Jun 04 03:11:53 minikube dockerd[2508]: time="2024-06-04T03:11:53.590459134Z" level=error msg="failed to mount overlay: invalid argument" storage-driver=overlay2
+Jun 04 03:11:53 minikube dockerd[2508]: failed to start daemon: error initializing graphdriver: driver not supported: overlay2
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+Jun 04 03:11:53 minikube systemd[1]: Failed to start Docker Application Container Engine.
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Scheduled restart job, restart counter is at 3.
+Jun 04 03:11:53 minikube systemd[1]: Stopped Docker Application Container Engine.
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Start request repeated too quickly.
+Jun 04 03:11:53 minikube systemd[1]: docker.service: Failed with result 'exit-code'.
+Jun 04 03:11:53 minikube systemd[1]: Failed to start Docker Application Container Engine.
+
+
+==> container status <==
+command /bin/bash -c "sudo `which crictl || echo crictl` ps -a || sudo docker ps -a" failed with error: /bin/bash -c "sudo `which crictl || echo crictl` ps -a || sudo docker ps -a": Process exited with status 1
+stdout:
+
+stderr:
+time="2024-06-04T03:12:13Z" level=fatal msg="unable to determine runtime API version: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial unix /var/run/cri-dockerd.sock: connect: no such file or directory\""
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+
+==> describe nodes <==
+command /bin/bash -c "sudo /var/lib/minikube/binaries/v1.28.3/kubectl describe nodes --kubeconfig=/var/lib/minikube/kubeconfig" failed with error: /bin/bash -c "sudo /var/lib/minikube/binaries/v1.28.3/kubectl describe nodes --kubeconfig=/var/lib/minikube/kubeconfig": Process exited with status 1
+stdout:
+
+stderr:
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+
+
+==> dmesg <==
+[Jun 4 03:11] overlayfs: upper fs does not support RENAME_WHITEOUT.
+[  +0.000121] overlayfs: upper fs missing required features.
+[  +0.675633] overlayfs: upper fs does not support RENAME_WHITEOUT.
+[  +0.000123] overlayfs: upper fs missing required features.
+[  +0.317469] overlayfs: upper fs does not support RENAME_WHITEOUT.
+[  +0.000050] overlayfs: upper fs missing required features.
+
+
+==> kernel <==
+ 03:12:13 up 7 days, 20:45,  0 users,  load average: 8.69, 7.19, 4.71
+Linux minikube 5.15.0-105-generic #115~20.04.1-Ubuntu SMP Mon Apr 15 17:33:04 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+
+
+==> kubelet <==
+-- No entries --
+

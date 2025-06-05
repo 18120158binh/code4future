@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kyuubi-config
+  namespace: default
+data:
+  kyuubi-defaults.conf: |
+    kyuubi.engine.share.level=SERVER
+    kyuubi.frontend.bind.port=10009
+    kyuubi.backend.hdfs.client.authentication=KERBEROS
+    kyuubi.backend.yarn.client.authentication=KERBEROS
+    kyuubi.backend.zookeeper.quorum=<zookeeper-quorum>
+    kyuubi.authentication=KERBEROS
+    kyuubi.authentication.principal=<principal>
+    kyuubi.authentication.keytab=<keytab-location>
+    # Add other Kyuubi configurations as needed

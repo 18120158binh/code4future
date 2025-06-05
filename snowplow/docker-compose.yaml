@@ -1,0 +1,52 @@
+name: ngocbinh-better-everyday
+
+services:
+    zookeeper:
+      image: confluentinc/cp-zookeeper:7.4.4
+      hostname: zookeeper
+      container_name: zookeeper
+      environment:
+        ZOOKEEPER_CLIENT_PORT: 2181
+        ZOOKEEPER_TICK_TIME: 2000
+      ports:
+          - 22181:2181
+      networks:
+          - snowplow-network
+
+    kafka:
+        image: confluentinc/cp-kafka:7.4.4
+        hostname: kafka
+        container_name: kafka
+        depends_on:
+            - zookeeper
+        ports:
+            - 9092:9092
+        environment:
+            KAFKA_BROKER_ID: 1
+            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+            KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+            KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+        networks:
+            - snowplow-network
+
+    snowplow-collector:
+        image: snowplow/scala-stream-collector-kafka:2.9.2 #3.2.1
+        container_name: snowplow
+        command: ['--config', '/snowplow/config/collector.hocon']
+        depends_on:
+            - kafka
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./snowplow-config:/snowplow/config
+        environment:
+            - "SP_JAVA_OPTS=-Xms512m -Xmx512m"
+        networks:
+            - snowplow-network
+
+networks:
+    # The presence of these objects is sufficient to define them
+    snowplow-network:
+        driver: bridge

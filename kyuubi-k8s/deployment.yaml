@@ -1,0 +1,37 @@
+apiVersion: apps/v1 # find in doc k8s
+kind: Deployment # type of k8s object we want to create, can be Service, Job, Deployment,...
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kyuubi
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kyuubi
+  template:
+    metadata:
+      labels:
+        app: kyuubi
+    spec:
+      containers:
+      - name: kyuubi
+        image: <your_registry>/kyuubi:latest
+        ports:
+        - containerPort: 10009
+        volumeMounts:
+        - name: kyuubi-config
+          mountPath: /opt/kyuubi/conf
+        - name: kyuubi-keytab
+          mountPath: /etc/security/keytabs
+      volumes:
+      - name: kyuubi-config
+        configMap:
+          name: kyuubi-config
+      - name: kyuubi-keytab
+        secret:
+          secretName: kyuubi-keytab-secret
+

@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadoop
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hadoop
+  template:
+    metadata:
+      labels:
+        app: hadoop
+    spec:
+      containers:
+      - name: hadoop-namenode
+        image: apache/hadoop:3
+        ports:
+        - containerPort: 9870
+      env_file:
+        - ./config
+      environment:
+          ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+        volumeMounts:
+        - name: hadoop-config
+          mountPath: /opt/hadoop/conf
+
+      - name: hadoop-datanode
+        image: apache/hadoop:3
+        ports:
+        - containerPort: 10009
+        volumeMounts:
+        - name: hadoop-config
+          mountPath: /opt/hadoop/conf
+
+      - name: hadoop-resourcemanager
+        image: apache/hadoop:3
+        ports:
+        - containerPort: 10009
+        volumeMounts:
+        - name: hadoop-config
+          mountPath: /opt/hadoop/conf
+
+      - name: hadoop-nodemanager
+        image: apache/hadoop:3
+        ports:
+        - containerPort: 10009
+        volumeMounts:
+        - name: hadoop-config
+          mountPath: /opt/hadoop/conf
+      volumes:
+      - name: kyuubi-config
+        configMap:
+          name: kyuubi-config
+      - name: kyuubi-keytab
+        secret:
+          secretName: kyuubi-keytab-secret
+
