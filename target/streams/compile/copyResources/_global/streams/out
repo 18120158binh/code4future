@@ -1,0 +1,3 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/binhln/Documents/code/test_api/src/main/resources/application.conf,/home/binhln/Documents/code/test_api/target/scala-2.13/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/binhln/Documents/code/test_api/src/main/resources/logback.xml,/home/binhln/Documents/code/test_api/target/scala-2.13/classes/logback.xml)[0m

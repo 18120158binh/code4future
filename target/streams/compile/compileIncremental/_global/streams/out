@@ -1,0 +1,240 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 0 products, 0 sources, 0 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/Routes.scala, ${BASE}/src/main/scala/App.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/App.scala, ${BASE}/src/main/scala/Routes.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mFull compilation, no sources in previous analysis.[0m
+[0m[[0m[0mdebug[0m] [0m[0mall 2 sources are invalidated[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all sources: number of invalidated sources > 50.0% of all sources[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /home/binhln/Documents/code/test_api/target/scala-2.13/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.7.1:compile for Scala 2.13.8[0m
+[0m[[0m[0minfo[0m] [0m[0mAttempting to fetch org.scala-sbt:compiler-bridge_2.13:1.7.1.[0m
+[0m[[0m[31merror[0m] [0m[0m## Exception when compiling 2 sources to /home/binhln/Documents/code/test_api/target/scala-2.13/classes[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincLMHelper$.update(ZincComponentCompiler.scala:308)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3(ZincComponentCompiler.scala:264)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3$adapted(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$2(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.BufferedLogger.bufferQuietly(BufferedLogger.scala:159)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1$adapted(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.compileAndInstall(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compiledBridgeJar$1(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IfMissing$Define.run(IfMissing.scala:19)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.createAndCache$1(ZincComponentManager.scala:51)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$3(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$2(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$lockSecondaryCache$1(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.Option.map(Option.scala:230)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lockSecondaryCache(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.fromSecondary$1(ZincComponentManager.scala:60)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$6(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$5(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lockLocalCache(ZincComponentManager.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.files(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.file(ZincComponentManager.scala:72)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.compiledBridgeJar(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.compiledBridge(ZincComponentCompiler.scala:63)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.fetchCompiledBridge(ZincComponentCompiler.scala:70)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.getDualLoader(AnalyzingCompiler.scala:354)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.getCompilerLoader(AnalyzingCompiler.scala:343)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:87)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:193)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:248)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:183)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:211)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:179)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:177)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:463)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:418)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:506)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.apply(Incremental.scala:171)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:488)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:425)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:2364)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.$anonfun$compileIncrementalTask$2(Defaults.scala:2314)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.server.BspCompileTask$.$anonfun$compute$1(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.io.Retry$.apply(Retry.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.io.Retry$.apply(Retry.scala:28)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.io.Retry$.apply(Retry.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.server.BspCompileTask$.compute(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:2312)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.std.Transform$$anon$4.work(Transform.scala:68)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.$anonfun$submit$2(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.work(Execute.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.$anonfun$submit$1(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.CompletionService$$anon$2.call(CompletionService.scala:64)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.Thread.run(Thread.java:750)[0m
+[0m[[0m[31merror[0m] [0m[0m           [0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincLMHelper$.update(ZincComponentCompiler.scala:308)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3(ZincComponentCompiler.scala:264)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3$adapted(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$2(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.BufferedLogger.bufferQuietly(BufferedLogger.scala:159)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1$adapted(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.compileAndInstall(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compiledBridgeJar$1(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IfMissing$Define.run(IfMissing.scala:19)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.createAndCache$1(ZincComponentManager.scala:51)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$3(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$2(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$lockSecondaryCache$1(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.map(Option.scala:230)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lockSecondaryCache(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.fromSecondary$1(ZincComponentManager.scala:60)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$6(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$5(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lockLocalCache(ZincComponentManager.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.files(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.file(ZincComponentManager.scala:72)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.compiledBridgeJar(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.compiledBridge(ZincComponentCompiler.scala:63)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.fetchCompiledBridge(ZincComponentCompiler.scala:70)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.AnalyzingCompiler.getDualLoader(AnalyzingCompiler.scala:354)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.AnalyzingCompiler.getCompilerLoader(AnalyzingCompiler.scala:343)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:87)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:193)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:248)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:183)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:211)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:179)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:177)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:463)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:418)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:506)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.apply(Incremental.scala:171)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:488)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:425)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:2364)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$compileIncrementalTask$2(Defaults.scala:2314)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.server.BspCompileTask$.$anonfun$compute$1(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.io.Retry$.apply(Retry.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.io.Retry$.apply(Retry.scala:28)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.io.Retry$.apply(Retry.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.server.BspCompileTask$.compute(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:2312)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(Transform.scala:68)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:64)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:750)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) sbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	Note: Unresolved dependencies path:[0m

@@ -1,0 +1,627 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtMapExec 501e21df-46a5-478f-b568-c2a45c72c925 __953914df-ff10-496f-b7d4-1b42ba008ebd, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(__953914df-ff10-496f-b7d4-1b42ba008ebd), Some(CommandSource(network-1)))[0m
+[0m[[0m[0mdebug[0m] [0m[0munmatched Processing event for requestId Some(__953914df-ff10-496f-b7d4-1b42ba008ebd): None[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 066d87ab-3c8c-4f75-859e-6013a6a30657, sbt/terminalPropertiesQuery, ""})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8c614b74-c864-4dc5-a580-f54e2cc9b18a, sbt/terminalPropertiesQuery, ""})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskStart, {"taskId":{"id":"2","parents":[]},"eventTime":1686194183983,"message":"Compiling datasharing","dataKind":"compile-task","data":{"target":{"uri":"file:/home/binhln/Documents/code/test_api/#datasharing/Compile"}}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7733c85a-ff6c-40d3-b769-e7fc4e8d651f, sbt/terminalPropertiesQuery, ""})[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /home/binhln/Documents/code/test_api/target/scala-2.13/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"compiling 2 Scala sources to /home/binhln/Documents/code/test_api/target/scala-2.13/classes ..."})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, sbt/systemErr, [68,111,119,110,108,111,97,100,105,110,103,32,104,116,116,112,115,58,47,47,114,101,112,111,49,46,109,97,118,101,110,46,111,114,103,47,109,97,118,101,110,50,47,111,114,103,47,115,99,97,108,97,45,115,98,116,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,47,49,46,55,46,49,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,45,49,46,55,46,49,46,112,111,109,10])[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, sbt/systemErr, [68,111,119,110,108,111,97,100,101,100,32,104,116,116,112,115,58,47,47,114,101,112,111,49,46,109,97,118,101,110,46,111,114,103,47,109,97,118,101,110,50,47,111,114,103,47,115,99,97,108,97,45,115,98,116,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,47,49,46,55,46,49,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,45,49,46,55,46,49,46,112,111,109,10])[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, sbt/systemErr, [68,111,119,110,108,111,97,100,105,110,103,32,104,116,116,112,115,58,47,47,114,101,112,111,49,46,109,97,118,101,110,46,111,114,103,47,109,97,118,101,110,50,47,111,114,103,47,115,99,97,108,97,45,115,98,116,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,47,49,46,55,46,49,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,45,49,46,55,46,49,46,112,111,109,46,115,104,97,49,10])[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, sbt/systemErr, [68,111,119,110,108,111,97,100,101,100,32,104,116,116,112,115,58,47,47,114,101,112,111,49,46,109,97,118,101,110,46,111,114,103,47,109,97,118,101,110,50,47,111,114,103,47,115,99,97,108,97,45,115,98,116,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,47,49,46,55,46,49,47,99,111,109,112,105,108,101,114,45,98,114,105,100,103,101,95,50,46,49,51,45,49,46,55,46,49,46,112,111,109,46,115,104,97,49,10])[0m
+[0m[[0m[0minfo[0m] [0m[0mAttempting to fetch org.scala-sbt:compiler-bridge_2.13:1.7.1.[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"Attempting to fetch org.scala-sbt:compiler-bridge_2.13:1.7.1."})[0m
+[0m[[0m[31merror[0m] [0m[0m## Exception when compiling 2 sources to /home/binhln/Documents/code/test_api/target/scala-2.13/classes[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincLMHelper$.update(ZincComponentCompiler.scala:308)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3(ZincComponentCompiler.scala:264)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3$adapted(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$2(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.BufferedLogger.bufferQuietly(BufferedLogger.scala:159)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1$adapted(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.compileAndInstall(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.$anonfun$compiledBridgeJar$1(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IfMissing$Define.run(IfMissing.scala:19)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.createAndCache$1(ZincComponentManager.scala:51)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$3(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$2(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$lockSecondaryCache$1(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.Option.map(Option.scala:230)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lockSecondaryCache(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.fromSecondary$1(ZincComponentManager.scala:60)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$6(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.$anonfun$files$5(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.lockLocalCache(ZincComponentManager.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.files(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentManager.file(ZincComponentManager.scala:72)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler.compiledBridgeJar(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.compiledBridge(ZincComponentCompiler.scala:63)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.fetchCompiledBridge(ZincComponentCompiler.scala:70)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.getDualLoader(AnalyzingCompiler.scala:354)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.getCompilerLoader(AnalyzingCompiler.scala:343)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:87)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:193)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:248)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:183)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:211)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:179)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:177)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:463)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:418)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:506)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.apply(Incremental.scala:171)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:488)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:425)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:2364)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.$anonfun$compileIncrementalTask$2(Defaults.scala:2314)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.server.BspCompileTask$.$anonfun$compute$1(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.io.Retry$.apply(Retry.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.io.Retry$.apply(Retry.scala:28)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.io.Retry$.apply(Retry.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.server.BspCompileTask$.compute(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:2312)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.std.Transform$$anon$4.work(Transform.scala:68)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.$anonfun$submit$2(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.work(Execute.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.$anonfun$submit$1(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.CompletionService$$anon$2.call(CompletionService.scala:64)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.Thread.run(Thread.java:750)[0m
+[0m[[0m[31merror[0m] [0m[0m           [0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":1,"message":"## Exception when compiling 2 sources to /home/binhln/Documents/code/test_api/target/scala-2.13/classes\nsbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.\n\n\tNote: Unresolved dependencies path:\nsbt.internal.inc.ZincLMHelper$.update(ZincComponentCompiler.scala:308)\nsbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3(ZincComponentCompiler.scala:264)\nsbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3$adapted(ZincComponentCompiler.scala:257)\nsbt.io.IO$.withTemporaryDirectory(IO.scala:490)\nsbt.io.IO$.withTemporaryDirectory(IO.scala:500)\nsbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$2(ZincComponentCompiler.scala:257)\nscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\nsbt.internal.util.BufferedLogger.bufferQuietly(BufferedLogger.scala:159)\nsbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1(ZincComponentCompiler.scala:257)\nsbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1$adapted(ZincComponentCompiler.scala:254)\nsbt.io.IO$.withTemporaryDirectory(IO.scala:490)\nsbt.io.IO$.withTemporaryDirectory(IO.scala:500)\nsbt.internal.inc.ZincComponentCompiler.compileAndInstall(ZincComponentCompiler.scala:254)\nsbt.internal.inc.ZincComponentCompiler.$anonfun$compiledBridgeJar$1(ZincComponentCompiler.scala:222)\nsbt.internal.inc.IfMissing$Define.run(IfMissing.scala:19)\nsbt.internal.inc.ZincComponentManager.createAndCache$1(ZincComponentManager.scala:51)\nsbt.internal.inc.ZincComponentManager.$anonfun$files$3(ZincComponentManager.scala:62)\nsbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)\nsbt.internal.inc.ZincComponentManager.$anonfun$files$2(ZincComponentManager.scala:62)\nsbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)\nxsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)\nxsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)\nxsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)\nxsbt.boot.Using$.withResource(Using.scala:12)\nxsbt.boot.Using$.apply(Using.scala:9)\nxsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)\nxsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)\nxsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)\nxsbt.boot.Locks$.apply0(Locks.scala:47)\nxsbt.boot.Locks$.apply(Locks.scala:36)\nsbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)\nsbt.internal.inc.ZincComponentManager.$anonfun$lockSecondaryCache$1(ZincComponentManager.scala:88)\nscala.Option.map(Option.scala:230)\nsbt.internal.inc.ZincComponentManager.lockSecondaryCache(ZincComponentManager.scala:88)\nsbt.internal.inc.ZincComponentManager.fromSecondary$1(ZincComponentManager.scala:60)\nsbt.internal.inc.ZincComponentManager.$anonfun$files$6(ZincComponentManager.scala:66)\nsbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)\nsbt.internal.inc.ZincComponentManager.$anonfun$files$5(ZincComponentManager.scala:66)\nsbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)\nxsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)\nxsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)\nxsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)\nxsbt.boot.Using$.withResource(Using.scala:12)\nxsbt.boot.Using$.apply(Using.scala:9)\nxsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)\nxsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)\nxsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)\nxsbt.boot.Locks$.apply0(Locks.scala:47)\nxsbt.boot.Locks$.apply(Locks.scala:36)\nsbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)\nsbt.internal.inc.ZincComponentManager.lockLocalCache(ZincComponentManager.scala:84)\nsbt.internal.inc.ZincComponentManager.files(ZincComponentManager.scala:66)\nsbt.internal.inc.ZincComponentManager.file(ZincComponentManager.scala:72)\nsbt.internal.inc.ZincComponentCompiler.compiledBridgeJar(ZincComponentCompiler.scala:222)\nsbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.compiledBridge(ZincComponentCompiler.scala:63)\nsbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.fetchCompiledBridge(ZincComponentCompiler.scala:70)\nsbt.internal.inc.AnalyzingCompiler.getDualLoader(AnalyzingCompiler.scala:354)\nsbt.internal.inc.AnalyzingCompiler.getCompilerLoader(AnalyzingCompiler.scala:343)\nsbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:87)\nsbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:193)\nscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\nsbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:248)\nsbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:183)\nsbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)\nsbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)\nsbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)\nsbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:211)\nsbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:534)\nsbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:534)\nsbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:179)\nsbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:177)\nsbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:463)\nsbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)\nsbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)\nsbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)\nsbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)\nsbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:418)\nsbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:506)\nsbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:405)\nsbt.internal.inc.Incremental$.apply(Incremental.scala:171)\nsbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:534)\nsbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:488)\nsbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)\nsbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:425)\nsbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)\nsbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:2364)\nsbt.Defaults$.$anonfun$compileIncrementalTask$2(Defaults.scala:2314)\nsbt.internal.server.BspCompileTask$.$anonfun$compute$1(BspCompileTask.scala:30)\nsbt.internal.io.Retry$.apply(Retry.scala:46)\nsbt.internal.io.Retry$.apply(Retry.scala:28)\nsbt.internal.io.Retry$.apply(Retry.scala:23)\nsbt.internal.server.BspCompileTask$.compute(BspCompileTask.scala:30)\nsbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:2312)\nscala.Function1.$anonfun$compose$1(Function1.scala:49)\nsbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)\nsbt.std.Transform$$anon$4.work(Transform.scala:68)\nsbt.Execute.$anonfun$submit$2(Execute.scala:282)\nsbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)\nsbt.Execute.work(Execute.scala:291)\nsbt.Execute.$anonfun$submit$1(Execute.scala:282)\nsbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)\nsbt.CompletionService$$anon$2.call(CompletionService.scala:64)\njava.util.concurrent.FutureTask.run(FutureTask.java:266)\njava.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\njava.util.concurrent.FutureTask.run(FutureTask.java:266)\njava.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\njava.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\njava.lang.Thread.run(Thread.java:750)\n           "})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/publishDiagnostics, {"textDocument":{"uri":"file:///home/binhln/Documents/code/test_api/src/main/scala/Routes.scala"},"buildTarget":{"uri":"file:/home/binhln/Documents/code/test_api/#datasharing/Compile"},"diagnostics":[],"reset":true})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/publishDiagnostics, {"textDocument":{"uri":"file:///home/binhln/Documents/code/test_api/src/main/scala/App.scala"},"buildTarget":{"uri":"file:/home/binhln/Documents/code/test_api/#datasharing/Compile"},"diagnostics":[],"reset":true})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskFinish, {"taskId":{"id":"2","parents":[]},"eventTime":1686194185700,"message":"Compiled datasharing","status":2,"dataKind":"compile-report","data":{"target":{"uri":"file:/home/binhln/Documents/code/test_api/#datasharing/Compile"},"errors":0,"warnings":0,"time":1717}})[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincLMHelper$.update(ZincComponentCompiler.scala:308)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3(ZincComponentCompiler.scala:264)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3$adapted(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$2(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.BufferedLogger.bufferQuietly(BufferedLogger.scala:159)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1(ZincComponentCompiler.scala:257)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1$adapted(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:490)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.IO$.withTemporaryDirectory(IO.scala:500)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.compileAndInstall(ZincComponentCompiler.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.$anonfun$compiledBridgeJar$1(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IfMissing$Define.run(IfMissing.scala:19)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.createAndCache$1(ZincComponentManager.scala:51)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$3(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$2(ZincComponentManager.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$lockSecondaryCache$1(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.map(Option.scala:230)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lockSecondaryCache(ZincComponentManager.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.fromSecondary$1(ZincComponentManager.scala:60)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$6(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.$anonfun$files$5(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.withResource(Using.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Using$.apply(Using.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply0(Locks.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0m	at xsbt.boot.Locks$.apply(Locks.scala:36)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.lockLocalCache(ZincComponentManager.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.files(ZincComponentManager.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentManager.file(ZincComponentManager.scala:72)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler.compiledBridgeJar(ZincComponentCompiler.scala:222)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.compiledBridge(ZincComponentCompiler.scala:63)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.fetchCompiledBridge(ZincComponentCompiler.scala:70)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.AnalyzingCompiler.getDualLoader(AnalyzingCompiler.scala:354)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.AnalyzingCompiler.getCompilerLoader(AnalyzingCompiler.scala:343)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:87)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:193)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:248)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:183)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:211)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:179)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:177)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:463)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:418)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:506)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.Incremental$.apply(Incremental.scala:171)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:534)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:488)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:425)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:2364)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$compileIncrementalTask$2(Defaults.scala:2314)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.server.BspCompileTask$.$anonfun$compute$1(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.io.Retry$.apply(Retry.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.io.Retry$.apply(Retry.scala:28)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.io.Retry$.apply(Retry.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.server.BspCompileTask$.compute(BspCompileTask.scala:30)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:2312)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(Transform.scala:68)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:282)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:64)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:750)[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":1,"message":"sbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.\n\n\tNote: Unresolved dependencies path:\n\tat sbt.internal.inc.ZincLMHelper$.update(ZincComponentCompiler.scala:308)\n\tat sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3(ZincComponentCompiler.scala:264)\n\tat sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$3$adapted(ZincComponentCompiler.scala:257)\n\tat sbt.io.IO$.withTemporaryDirectory(IO.scala:490)\n\tat sbt.io.IO$.withTemporaryDirectory(IO.scala:500)\n\tat sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$2(ZincComponentCompiler.scala:257)\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\n\tat sbt.internal.util.BufferedLogger.bufferQuietly(BufferedLogger.scala:159)\n\tat sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1(ZincComponentCompiler.scala:257)\n\tat sbt.internal.inc.ZincComponentCompiler.$anonfun$compileAndInstall$1$adapted(ZincComponentCompiler.scala:254)\n\tat sbt.io.IO$.withTemporaryDirectory(IO.scala:490)\n\tat sbt.io.IO$.withTemporaryDirectory(IO.scala:500)\n\tat sbt.internal.inc.ZincComponentCompiler.compileAndInstall(ZincComponentCompiler.scala:254)\n\tat sbt.internal.inc.ZincComponentCompiler.$anonfun$compiledBridgeJar$1(ZincComponentCompiler.scala:222)\n\tat sbt.internal.inc.IfMissing$Define.run(IfMissing.scala:19)\n\tat sbt.internal.inc.ZincComponentManager.createAndCache$1(ZincComponentManager.scala:51)\n\tat sbt.internal.inc.ZincComponentManager.$anonfun$files$3(ZincComponentManager.scala:62)\n\tat sbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)\n\tat sbt.internal.inc.ZincComponentManager.$anonfun$files$2(ZincComponentManager.scala:62)\n\tat sbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)\n\tat xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)\n\tat xsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)\n\tat xsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)\n\tat xsbt.boot.Using$.withResource(Using.scala:12)\n\tat xsbt.boot.Using$.apply(Using.scala:9)\n\tat xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)\n\tat xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)\n\tat xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)\n\tat xsbt.boot.Locks$.apply0(Locks.scala:47)\n\tat xsbt.boot.Locks$.apply(Locks.scala:36)\n\tat sbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)\n\tat sbt.internal.inc.ZincComponentManager.$anonfun$lockSecondaryCache$1(ZincComponentManager.scala:88)\n\tat scala.Option.map(Option.scala:230)\n\tat sbt.internal.inc.ZincComponentManager.lockSecondaryCache(ZincComponentManager.scala:88)\n\tat sbt.internal.inc.ZincComponentManager.fromSecondary$1(ZincComponentManager.scala:60)\n\tat sbt.internal.inc.ZincComponentManager.$anonfun$files$6(ZincComponentManager.scala:66)\n\tat sbt.internal.inc.ZincComponentManager.getOrElse$1(ZincComponentManager.scala:43)\n\tat sbt.internal.inc.ZincComponentManager.$anonfun$files$5(ZincComponentManager.scala:66)\n\tat sbt.internal.inc.ZincComponentManager$$anon$1.call(ZincComponentManager.scala:91)\n\tat xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:113)\n\tat xsbt.boot.Locks$GlobalLock.withChannelRetries$1(Locks.scala:91)\n\tat xsbt.boot.Locks$GlobalLock.$anonfun$withFileLock$1(Locks.scala:119)\n\tat xsbt.boot.Using$.withResource(Using.scala:12)\n\tat xsbt.boot.Using$.apply(Using.scala:9)\n\tat xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:119)\n\tat xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:71)\n\tat xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:59)\n\tat xsbt.boot.Locks$.apply0(Locks.scala:47)\n\tat xsbt.boot.Locks$.apply(Locks.scala:36)\n\tat sbt.internal.inc.ZincComponentManager.lock(ZincComponentManager.scala:91)\n\tat sbt.internal.inc.ZincComponentManager.lockLocalCache(ZincComponentManager.scala:84)\n\tat sbt.internal.inc.ZincComponentManager.files(ZincComponentManager.scala:66)\n\tat sbt.internal.inc.ZincComponentManager.file(ZincComponentManager.scala:72)\n\tat sbt.internal.inc.ZincComponentCompiler.compiledBridgeJar(ZincComponentCompiler.scala:222)\n\tat sbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.compiledBridge(ZincComponentCompiler.scala:63)\n\tat sbt.internal.inc.ZincComponentCompiler$ZincCompilerBridgeProvider.fetchCompiledBridge(ZincComponentCompiler.scala:70)\n\tat sbt.internal.inc.AnalyzingCompiler.getDualLoader(AnalyzingCompiler.scala:354)\n\tat sbt.internal.inc.AnalyzingCompiler.getCompilerLoader(AnalyzingCompiler.scala:343)\n\tat sbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:87)\n\tat sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$7(MixedAnalyzingCompiler.scala:193)\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\n\tat sbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:248)\n\tat sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4(MixedAnalyzingCompiler.scala:183)\n\tat sbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$4$adapted(MixedAnalyzingCompiler.scala:163)\n\tat sbt.internal.inc.JarUtils$.withPreviousJar(JarUtils.scala:239)\n\tat sbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:163)\n\tat sbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:211)\n\tat sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:534)\n\tat sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:534)\n\tat sbt.internal.inc.Incremental$.$anonfun$apply$5(Incremental.scala:179)\n\tat sbt.internal.inc.Incremental$.$anonfun$apply$5$adapted(Incremental.scala:177)\n\tat sbt.internal.inc.Incremental$$anon$2.run(Incremental.scala:463)\n\tat sbt.internal.inc.IncrementalCommon$CycleState.next(IncrementalCommon.scala:116)\n\tat sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:56)\n\tat sbt.internal.inc.IncrementalCommon$$anon$1.next(IncrementalCommon.scala:52)\n\tat sbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:263)\n\tat sbt.internal.inc.Incremental$.$anonfun$incrementalCompile$8(Incremental.scala:418)\n\tat sbt.internal.inc.Incremental$.withClassfileManager(Incremental.scala:506)\n\tat sbt.internal.inc.Incremental$.incrementalCompile(Incremental.scala:405)\n\tat sbt.internal.inc.Incremental$.apply(Incremental.scala:171)\n\tat sbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:534)\n\tat sbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:488)\n\tat sbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:332)\n\tat sbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:425)\n\tat sbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:137)\n\tat sbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:2364)\n\tat sbt.Defaults$.$anonfun$compileIncrementalTask$2(Defaults.scala:2314)\n\tat sbt.internal.server.BspCompileTask$.$anonfun$compute$1(BspCompileTask.scala:30)\n\tat sbt.internal.io.Retry$.apply(Retry.scala:46)\n\tat sbt.internal.io.Retry$.apply(Retry.scala:28)\n\tat sbt.internal.io.Retry$.apply(Retry.scala:23)\n\tat sbt.internal.server.BspCompileTask$.compute(BspCompileTask.scala:30)\n\tat sbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:2312)\n\tat scala.Function1.$anonfun$compose$1(Function1.scala:49)\n\tat sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)\n\tat sbt.std.Transform$$anon$4.work(Transform.scala:68)\n\tat sbt.Execute.$anonfun$submit$2(Execute.scala:282)\n\tat sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)\n\tat sbt.Execute.work(Execute.scala:291)\n\tat sbt.Execute.$anonfun$submit$1(Execute.scala:282)\n\tat sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)\n\tat sbt.CompletionService$$anon$2.call(CompletionService.scala:64)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)"})[0m
+[0m[[0m[0mdebug[0m] [0m[0munmatched json error for requestId Some(__953914df-ff10-496f-b7d4-1b42ba008ebd): {"code":-32603,"message":"(Compile / \u001b[31mcompileIncremental\u001b[0m) sbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.\n\n\tNote: Unresolved dependencies path:"}[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 17e1a332-6783-424e-8f99-2ae2370230ad, sbt/terminalPropertiesQuery, ""})[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) sbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":1,"message":"(Compile / \u001b[31mcompileIncremental\u001b[0m) sbt.internal.inc.InvalidComponent: The compiler bridge sources CoursierModuleDescriptor(ModuleDescriptorConfiguration(false, None, org.scala-sbt.temp:temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0:1.7.1:compile, ModuleInfo(temp-module-52f238aede5a1d8d7a484c2bec27a144810e2ac0, , None, None, Vector(), , None, None, Vector()), Vector(org.scala-sbt:compiler-bridge_2.13:1.7.1:compile), Vector(), Vector(), , Vector(compile, runtime, test, provided, optional), Some(compile), ConflictManager(latest-revision, *, *)),CoursierConfiguration(Some(sbt.internal.util.ManagedLogger@706c6cb7), Vector(FileRepository(local, Patterns(ivyPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=Vector(/home/binhln/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)([branch]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false), FileConfiguration(true, None)), public: https://repo1.maven.org/maven2/), 6, 100, Some(org.scala-lang), Some(2.12.16), Vector(/home/binhln/.sbt/boot/scala-2.12.16/lib/scala-library.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-reflect.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-compiler.jar, /home/binhln/.sbt/boot/scala-2.12.16/lib/scala-xml_2.12-1.0.6.jar), Vector(), Vector(), Vector(), true, false, Vector(), Vector(), Some(org.scala-lang), Some(2.13.8), Vector(), Vector(), None, Some(/home/binhln/.cache/coursier/v1), Some(/home/binhln/.ivy2), None, None, Vector(), Vector(), Vector((ModuleMatchers(Set(), Set(), true),Relaxed)), true, 0, Some(24 hours), Vector(Some(SHA-1), None), Vector(LocalUpdateChanging, LocalOnly, Update), false, false, false, Vector())) could not be retrieved.\n\n\tNote: Unresolved dependencies path:"})[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 5 s, completed Jun 8, 2023 10:16:25 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(resumeFromFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtPopOnFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtReportResult 501e21df-46a5-478f-b568-c2a45c72c925, Some(501e21df-46a5-478f-b568-c2a45c72c925), Some(CommandSource(network-1)))[0m
+[0m[[0m[0mdebug[0m] [0m[0munmatched Processing event for requestId Some(501e21df-46a5-478f-b568-c2a45c72c925): None[0m
+[0m[[0m[0mdebug[0m] [0m[0munmatched json error for requestId Some(501e21df-46a5-478f-b568-c2a45c72c925): {"code":-33000,"message":""}[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bba441d2-945b-4f73-a901-ee66fd012240, sbt/terminalCapabilities, {"numeric":"max_colors"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d1909ab7-f5bf-441f-8eb0-8af3d44ba32c, sbt/terminalCapabilities, {"string":"key_a1"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, cd38397b-eb30-44a2-a280-2ed127b3934b, sbt/terminalCapabilities, {"string":"key_a3"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 96029df7-27e7-4cb5-8e39-4fc1ac3ba85a, sbt/terminalCapabilities, {"string":"key_b2"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 940334fc-3ae3-43d7-a854-3838c0c9a49b, sbt/terminalCapabilities, {"string":"key_backspace"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 59470ff4-3af4-4fe4-8c50-37d82c9920a3, sbt/terminalCapabilities, {"string":"key_beg"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 186df339-f186-45e6-b8bf-c38d2fc604d6, sbt/terminalCapabilities, {"string":"key_btab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8a02a6af-03d2-4af6-8451-8ec0f97a726b, sbt/terminalCapabilities, {"string":"key_c1"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bb196d90-7e49-4095-a424-0b199dcd6f22, sbt/terminalCapabilities, {"string":"key_c3"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bdf55437-a6a7-496f-8fc4-a38a869a880f, sbt/terminalCapabilities, {"string":"key_cancel"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b8961957-a6b3-4f96-a70f-d451be5c9d36, sbt/terminalCapabilities, {"string":"key_catab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, cc627b79-913e-4a56-92fd-9bb70c4318cf, sbt/terminalCapabilities, {"string":"key_clear"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b05edca4-bb51-41a0-944e-d937e0a87498, sbt/terminalCapabilities, {"string":"key_close"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 0352c0eb-b506-455a-bdf3-66e459a1d9ac, sbt/terminalCapabilities, {"string":"key_command"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 54089773-e25b-47c3-a9aa-194104e99b9f, sbt/terminalCapabilities, {"string":"key_copy"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 70acfb99-e002-47d5-98af-924e5e694a70, sbt/terminalCapabilities, {"string":"key_create"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 85996de6-fef3-4cb3-85e5-282faf56c45c, sbt/terminalCapabilities, {"string":"key_ctab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3bac669f-aacb-4bf5-b01f-e42817eb9f3e, sbt/terminalCapabilities, {"string":"key_dc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 30b15564-6223-4471-8401-2023b5a14b1f, sbt/terminalCapabilities, {"string":"key_dl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bb09f5d8-126d-4247-9311-20818b7506ce, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 1fa0d331-b839-4098-b060-546e0ac26412, sbt/terminalCapabilities, {"string":"key_eic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 0a8d7d75-745e-4fc2-b07a-45d91ddac865, sbt/terminalCapabilities, {"string":"key_end"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 94316acb-fe91-4409-bec1-5d3547bdc181, sbt/terminalCapabilities, {"string":"key_enter"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a8d6bfe5-8e41-4e11-95d2-2e5a2be90064, sbt/terminalCapabilities, {"string":"key_eol"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 695623e5-b570-41bc-9461-f0dab64608a7, sbt/terminalCapabilities, {"string":"key_eos"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 30b17038-2268-4436-bf76-e17844e079eb, sbt/terminalCapabilities, {"string":"key_exit"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6dc4a13b-aa4c-4ab4-81c0-1b5b96879657, sbt/terminalCapabilities, {"string":"key_f0"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e62d4976-8a6b-44ca-b82f-f6494471d33c, sbt/terminalCapabilities, {"string":"key_f1"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 08c9988d-ea4c-4ab3-b21b-39c3c5c644e2, sbt/terminalCapabilities, {"string":"key_f10"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, ee8fd21d-027e-4347-ace5-8fe8441e7d0c, sbt/terminalCapabilities, {"string":"key_f11"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b79f7969-e4a0-4e18-8dd6-d1cb73621787, sbt/terminalCapabilities, {"string":"key_f12"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 48db35a6-7c7e-4233-ba9d-73060b0c1094, sbt/terminalCapabilities, {"string":"key_f13"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a387678f-e867-4e4b-9e6c-67ea0b2b95b5, sbt/terminalCapabilities, {"string":"key_f14"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e23598a3-b871-4ddc-8bd2-ba5f18243210, sbt/terminalCapabilities, {"string":"key_f15"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f190b870-30e5-47ec-9704-79d70d0af6e6, sbt/terminalCapabilities, {"string":"key_f16"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4bae439f-0a0c-4da6-a740-c002f693c5d9, sbt/terminalCapabilities, {"string":"key_f17"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 79a9651b-7d3c-4f7b-bf6b-a5d7e4a075f2, sbt/terminalCapabilities, {"string":"key_f18"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 361e8686-5859-4585-8008-e5534b196b58, sbt/terminalCapabilities, {"string":"key_f19"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, be0b2a80-4b45-4d24-8b56-2c44afa03e89, sbt/terminalCapabilities, {"string":"key_f2"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 54a71d9a-e84b-419c-915b-58b960f5313a, sbt/terminalCapabilities, {"string":"key_f20"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 0fddc243-c08f-40e6-b2e8-2e26b1ff0281, sbt/terminalCapabilities, {"string":"key_f21"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d173cbea-7e02-49c1-bee8-4ac4bafaf74e, sbt/terminalCapabilities, {"string":"key_f22"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a4c76456-be3b-4c2c-a8c7-938895982fc3, sbt/terminalCapabilities, {"string":"key_f23"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 10db212d-1ef4-4d5f-826f-840f5b31bdda, sbt/terminalCapabilities, {"string":"key_f24"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 58d05c7a-8828-4b78-a120-370a3281c00a, sbt/terminalCapabilities, {"string":"key_f25"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f0c600d5-bcff-471b-8537-c47b7e56a013, sbt/terminalCapabilities, {"string":"key_f26"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, eedf0d62-0ac0-44c8-9caf-d28392af590e, sbt/terminalCapabilities, {"string":"key_f27"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 693f66dd-dfef-47fc-9011-e309e544e9f4, sbt/terminalCapabilities, {"string":"key_f28"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 626a9dff-b527-411e-b003-9b3e394b41b5, sbt/terminalCapabilities, {"string":"key_f29"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a5de73e3-300e-41ed-a3e5-ed298db9c6a7, sbt/terminalCapabilities, {"string":"key_f3"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 27c298d3-9ef0-4885-8da9-db228cd65427, sbt/terminalCapabilities, {"string":"key_f30"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2061ebc8-f717-4b10-b36a-b015436df3ac, sbt/terminalCapabilities, {"string":"key_f31"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 19c3578f-579c-4ba6-932e-2768bd644e2a, sbt/terminalCapabilities, {"string":"key_f32"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9004d503-c06f-4bf9-982b-4ecf648b87a5, sbt/terminalCapabilities, {"string":"key_f33"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7143cf73-359f-4e08-ba8c-e2ceec45317c, sbt/terminalCapabilities, {"string":"key_f34"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8cb801b5-bc8c-40db-ad3e-cdb57a1caa97, sbt/terminalCapabilities, {"string":"key_f35"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2ff7607c-faad-400e-8326-0a864232ede6, sbt/terminalCapabilities, {"string":"key_f36"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fb37efaf-acae-4b77-9841-d2956d909c2a, sbt/terminalCapabilities, {"string":"key_f37"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c0374acb-cec2-480d-8872-9ab3116e9d83, sbt/terminalCapabilities, {"string":"key_f38"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e6aaaefd-8034-4681-9b7b-ac7d22a7f3fe, sbt/terminalCapabilities, {"string":"key_f39"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d2c7b255-163c-444a-8da4-6bd3128cbd8e, sbt/terminalCapabilities, {"string":"key_f4"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d0e4cff2-7915-49a0-85d0-8ce4a6242e61, sbt/terminalCapabilities, {"string":"key_f40"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 43972b0f-f480-4730-9594-37b9f4a5ade1, sbt/terminalCapabilities, {"string":"key_f41"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2e330b77-e9a1-4c64-9b72-b2a77769f738, sbt/terminalCapabilities, {"string":"key_f42"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fe7b1ef2-d56f-43e0-8e22-4e81122f88be, sbt/terminalCapabilities, {"string":"key_f43"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2fbd6292-98dd-46a5-a828-2012f0b04c4c, sbt/terminalCapabilities, {"string":"key_f44"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 11cdb2fc-9ab2-4567-a83c-88c048eb7504, sbt/terminalCapabilities, {"string":"key_f45"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5c874920-d879-4032-9be0-f17212887c78, sbt/terminalCapabilities, {"string":"key_f46"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 912c2c63-7565-40ac-9072-423c7cdaa550, sbt/terminalCapabilities, {"string":"key_f47"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9248b513-a18b-49f2-b844-5722e10bc7d1, sbt/terminalCapabilities, {"string":"key_f48"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9e296fc3-b768-4297-9aff-296c00ad6bc0, sbt/terminalCapabilities, {"string":"key_f49"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 105f9da7-0a3e-4a1a-aca7-2aece3145d3a, sbt/terminalCapabilities, {"string":"key_f5"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 346577b0-e1a6-4a63-b436-ed3ec69ca589, sbt/terminalCapabilities, {"string":"key_f50"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9e708cee-09c8-42cd-8980-77a5906a6d1c, sbt/terminalCapabilities, {"string":"key_f51"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 646c7fa2-5065-41d0-95c1-84717c7f356d, sbt/terminalCapabilities, {"string":"key_f52"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a80ce8c8-f88b-47ca-9681-a68dde6d6ae9, sbt/terminalCapabilities, {"string":"key_f53"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 00fa8e26-ad73-4eeb-b955-a55b3b328a9d, sbt/terminalCapabilities, {"string":"key_f54"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 17616140-10f3-426b-8c70-38517a1f4f7c, sbt/terminalCapabilities, {"string":"key_f55"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 73ff6e12-c58f-453f-8b9c-1f5243c4c3d6, sbt/terminalCapabilities, {"string":"key_f56"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 16cf8a4a-f74a-439b-83e7-2cc455676130, sbt/terminalCapabilities, {"string":"key_f57"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2ade5b0e-7ff6-4fb5-8f60-86542afc3ff9, sbt/terminalCapabilities, {"string":"key_f58"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, af6e87a9-70f8-478e-a0ec-d4353840571b, sbt/terminalCapabilities, {"string":"key_f59"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b0d8d9c4-a914-4f85-afc8-f8712145ce8b, sbt/terminalCapabilities, {"string":"key_f6"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 77c9504b-ea48-4d75-be77-859df28fb078, sbt/terminalCapabilities, {"string":"key_f60"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 83871218-a9b3-4ee0-b4a9-b11aae8047e3, sbt/terminalCapabilities, {"string":"key_f61"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e4650652-53bd-4f05-816d-834a55f189cb, sbt/terminalCapabilities, {"string":"key_f62"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 1a95e7a4-60f0-44b5-ae97-caeb8ea4c36e, sbt/terminalCapabilities, {"string":"key_f63"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, cfa670a5-c237-4a43-8ecb-fd4d7e2813f9, sbt/terminalCapabilities, {"string":"key_f7"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9ea4b1db-9c30-46de-9b13-baef0104dcc8, sbt/terminalCapabilities, {"string":"key_f8"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9caec48d-7d1b-4c22-ac5d-515cbe2e256d, sbt/terminalCapabilities, {"string":"key_f9"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 091fff9c-032c-4695-a5bc-bf6a3aa55335, sbt/terminalCapabilities, {"string":"key_find"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3dcf3698-c0e5-4877-8bbb-74a724bdadd1, sbt/terminalCapabilities, {"string":"key_help"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9a7786b5-faca-4c39-b14d-dfe5e281eb53, sbt/terminalCapabilities, {"string":"key_home"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, af8c94a1-14b5-4276-a9bd-d72da9b2fb5a, sbt/terminalCapabilities, {"string":"key_ic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 29a53630-3034-4394-a48f-e85dbad81126, sbt/terminalCapabilities, {"string":"key_il"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b051e6ae-fda9-411f-8f59-044e4caf1764, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 227bf8b5-e4d4-47b7-895f-6a0a80d326db, sbt/terminalCapabilities, {"string":"key_ll"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8fc66e54-6491-4cc5-bbc9-46d5fb723c70, sbt/terminalCapabilities, {"string":"key_mark"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e2cb00c1-3ecc-4c26-9a51-c3982fadc6e6, sbt/terminalCapabilities, {"string":"key_message"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 29414e42-a28e-4f3a-96ec-3907843bbc52, sbt/terminalCapabilities, {"string":"key_move"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9cdc49be-cc87-455d-8800-4fc3ff8f9488, sbt/terminalCapabilities, {"string":"key_next"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 13a863b9-f34d-4e5b-9561-197da1b91bab, sbt/terminalCapabilities, {"string":"key_npage"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 09bb2dab-2626-4234-a8d0-0248be68695b, sbt/terminalCapabilities, {"string":"key_open"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 79cf6846-b951-428f-a662-ce4bb3c1e0dc, sbt/terminalCapabilities, {"string":"key_options"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5760ec4c-c0b1-43d1-89ca-5440a2acfaba, sbt/terminalCapabilities, {"string":"key_ppage"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 58cb8afc-24f2-4357-9350-1a89b7196075, sbt/terminalCapabilities, {"string":"key_previous"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c0c49d30-678d-472e-b57f-ab99af9c914d, sbt/terminalCapabilities, {"string":"key_print"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f7839970-475d-4f11-a665-82418cc0ffc1, sbt/terminalCapabilities, {"string":"key_redo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f6e6c4d1-fea9-42f9-865e-092b77a9060b, sbt/terminalCapabilities, {"string":"key_reference"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f09c26f6-2fd6-4401-9f86-6727ca53aee8, sbt/terminalCapabilities, {"string":"key_refresh"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 17a77385-e268-44d0-83be-9892d9676d67, sbt/terminalCapabilities, {"string":"key_replace"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7cc9cf82-e72b-4f17-8b5b-e86de47ca67b, sbt/terminalCapabilities, {"string":"key_restart"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e3444082-2b06-4828-9de8-8e7bdffddcc2, sbt/terminalCapabilities, {"string":"key_resume"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 16dcba04-f06c-40f4-92bf-24ffd9c9ba70, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 465d73ee-61b9-46f8-8b79-eb27668788e6, sbt/terminalCapabilities, {"string":"key_save"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fb024828-eef4-4141-b566-a73959827e71, sbt/terminalCapabilities, {"string":"key_sbeg"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d91e9be3-5a7d-42cc-90e4-949ae5d28df9, sbt/terminalCapabilities, {"string":"key_scancel"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a19f1422-4898-4d62-9e7c-7804577ccde4, sbt/terminalCapabilities, {"string":"key_scommand"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a20b34ce-d4ec-4dd9-8cbd-115eb184a833, sbt/terminalCapabilities, {"string":"key_scopy"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 98551a78-b27e-4a06-9cdc-62a943130c88, sbt/terminalCapabilities, {"string":"key_screate"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4bf271ed-a3c3-4dfe-a711-6f1ff32c1177, sbt/terminalCapabilities, {"string":"key_sdc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d42440ce-1e7e-476b-b4f9-fe74d64aa78e, sbt/terminalCapabilities, {"string":"key_sdl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 95eed998-bc88-4f50-b98e-c2416bf41ba2, sbt/terminalCapabilities, {"string":"key_select"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 612a3895-7ecb-4aa6-a3d5-74f3a735e81f, sbt/terminalCapabilities, {"string":"key_send"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 48f63cfb-77e9-4387-b067-1bb6d0a8e01c, sbt/terminalCapabilities, {"string":"key_seol"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 71ae0330-9251-461f-ac87-9972088e7ced, sbt/terminalCapabilities, {"string":"key_sexit"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3179e6ba-bab3-481a-8f22-416e645c12e6, sbt/terminalCapabilities, {"string":"key_sf"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 23b51359-4b90-416a-ba68-5a3f777da7e8, sbt/terminalCapabilities, {"string":"key_sfind"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fd96f0c5-479a-4657-b915-cf066e084a5a, sbt/terminalCapabilities, {"string":"key_shelp"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f9b93298-76dc-45b9-9def-fbd8e4f840d0, sbt/terminalCapabilities, {"string":"key_shome"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7c1da962-685f-4c64-b911-5077ec5a3282, sbt/terminalCapabilities, {"string":"key_sic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 1371f131-5621-40cf-998b-04d2357172b8, sbt/terminalCapabilities, {"string":"key_sleft"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 18392bdf-2a59-42a0-a6d8-dac27cb98ea8, sbt/terminalCapabilities, {"string":"key_smessage"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3d78659b-9607-48a1-8118-e4bc6d80e6ad, sbt/terminalCapabilities, {"string":"key_smove"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f67239a2-b0a0-4a6a-a9a2-4139d30e4aec, sbt/terminalCapabilities, {"string":"key_snext"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b6a627c9-93a2-437d-a332-3573d017f8be, sbt/terminalCapabilities, {"string":"key_soptions"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4bd7f07f-5c01-406f-9af0-f95473cfc738, sbt/terminalCapabilities, {"string":"key_sprevious"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 85d43f60-1274-4641-99fc-1782b8da18df, sbt/terminalCapabilities, {"string":"key_sprint"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8b31898a-d7b1-46ce-bf93-c06c94b2e33a, sbt/terminalCapabilities, {"string":"key_sr"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 15ed7a39-dfd8-406a-820a-653bef237a38, sbt/terminalCapabilities, {"string":"key_sredo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 376f4bdb-f7c2-4078-b9ed-a50c21744c46, sbt/terminalCapabilities, {"string":"key_sreplace"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 49a02674-4df2-4732-8e00-bc24db7f6930, sbt/terminalCapabilities, {"string":"key_sright"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b41d36f5-ddde-4e7a-8817-cbab576a2f53, sbt/terminalCapabilities, {"string":"key_srsume"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d4b84278-c06c-41be-b567-4e1474215fcc, sbt/terminalCapabilities, {"string":"key_ssave"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8952c885-9c16-47f2-80db-5734c98c2ced, sbt/terminalCapabilities, {"string":"key_ssuspend"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9ce107bc-dc24-41d2-904f-be0b938d4984, sbt/terminalCapabilities, {"string":"key_stab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e5012c11-ac27-4371-884b-863af43a7feb, sbt/terminalCapabilities, {"string":"key_sundo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f5d7eb13-7a6a-43ce-a139-c8e1cd8866a6, sbt/terminalCapabilities, {"string":"key_suspend"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c09de1a9-7446-4f4c-98c8-ce28f244fb2c, sbt/terminalCapabilities, {"string":"key_undo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 386fef92-3f5c-4353-847b-cba4653510fa, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bce86e6a-96fb-4336-849b-0f8d9b6337eb, sbt/terminalCapabilities, {"string":"key_mouse"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7a4c161e-ac3a-4c89-82ae-312626b6b066, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 005a0315-6ca1-46fa-b460-08561b46bebc, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5ba4e235-c0d2-4b5e-ac19-06df84f3babe, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6a3c72a9-fe3e-47c0-8d1b-db572a7546f8, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bd60eed1-f44b-48f4-bae5-400800a68c26, sbt/terminalCapabilities, {"string":"key_home"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 44dffbf1-bcf1-443d-ab15-384db0315e7f, sbt/terminalCapabilities, {"string":"key_end"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5c90356b-a42b-4a58-a28a-f9af547c93c1, sbt/terminalCapabilities, {"string":"key_dc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8ae9378a-90e3-4114-bf93-9f81f8581cfb, sbt/terminalCapabilities, {"string":"key_dl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 0f2e5f24-297a-4491-a2fb-a49ddaeaa61d, sbt/terminalCapabilities, {"string":"key_ic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 038a72da-3c02-4d6e-91f7-63e67bb3b798, sbt/terminalCapabilities, {"string":"key_mouse"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 1a9a0e3b-7fe1-410a-adf6-16285b05e7d7, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bb15f377-b003-4c86-b14f-d9cccd944fd9, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 81111b10-a45a-44c5-a380-d1cb206fe827, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, dbaee345-0e79-4499-ae46-c42121b3313f, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b0a8c4aa-2fbe-466c-a1f5-fd8304b0f5a5, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 068f0785-1e7a-4283-997d-1871d4cf3b84, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 683cb776-cf9e-4ed5-bf80-870d1f79711c, sbt/terminalCapabilities, {"string":"key_home"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, ecf8db46-e668-4503-b7d3-7123005dcd18, sbt/terminalCapabilities, {"string":"key_end"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 587bf56e-6668-404c-8117-8c4b66708a3f, sbt/terminalCapabilities, {"string":"key_dc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e4aa0289-5325-4143-b63b-23213ac4b9fa, sbt/terminalCapabilities, {"string":"key_dl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, da6f6e04-9fa2-4153-989f-3321052c7f89, sbt/terminalCapabilities, {"string":"key_ic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7dbea3e6-0436-4431-ab0b-aadad9e22551, sbt/terminalCapabilities, {"string":"key_mouse"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 378e39a0-0492-42b5-8020-df27a0bd36bb, sbt/terminalCapabilities, {"string":"key_a1"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3691ec22-3a1d-47d0-b989-ca2a5e0733aa, sbt/terminalCapabilities, {"string":"key_a3"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d4a1c142-0bf5-40db-bc7b-2fd642774f05, sbt/terminalCapabilities, {"string":"key_b2"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 400f1644-124c-450d-9472-1c6b8bdf52a3, sbt/terminalCapabilities, {"string":"key_backspace"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e7d7a13f-b2d6-43e5-9be4-041591348ab5, sbt/terminalCapabilities, {"string":"key_beg"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6e14a402-ce51-483d-bf76-681c007f9ea4, sbt/terminalCapabilities, {"string":"key_btab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f7e02f1e-1eaa-4c9c-b428-1b1018582771, sbt/terminalCapabilities, {"string":"key_c1"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, cb5af2a4-a5d1-465b-9082-c89cf744118d, sbt/terminalCapabilities, {"string":"key_c3"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6fc4d327-11a2-462f-9bab-4a53e39d9582, sbt/terminalCapabilities, {"string":"key_cancel"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 06d744fe-a9a9-422c-be0f-656ffacb741a, sbt/terminalCapabilities, {"string":"key_catab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 693415cd-682b-44c4-a032-d279cee100a0, sbt/terminalCapabilities, {"string":"key_clear"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 636f2d6c-634f-40b5-a15b-9f7dc787d980, sbt/terminalCapabilities, {"string":"key_close"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5f85c3aa-e17c-4cf4-81a3-f29bf1ca5402, sbt/terminalCapabilities, {"string":"key_command"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2b73ed25-bec7-427a-90ab-5daa27ef3480, sbt/terminalCapabilities, {"string":"key_copy"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, db822509-e879-4005-8a59-3d811e8ee033, sbt/terminalCapabilities, {"string":"key_create"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 777cca43-2a9b-434e-b558-ce7becc58589, sbt/terminalCapabilities, {"string":"key_ctab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8201a57b-8f42-4c5e-9360-65860231c651, sbt/terminalCapabilities, {"string":"key_dc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d03803ce-f7cc-400a-9426-fb5dda433760, sbt/terminalCapabilities, {"string":"key_dl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e059fa48-d14e-4a2a-a757-afacc63e7d27, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4cd6e6df-b4c1-470a-880e-98e97e11f887, sbt/terminalCapabilities, {"string":"key_eic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 310117fe-8f32-4dac-8914-23dfb3ba6266, sbt/terminalCapabilities, {"string":"key_end"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4b33bd05-dca9-45e7-85fe-1068675c2141, sbt/terminalCapabilities, {"string":"key_enter"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, eeb193eb-7799-4f33-9f45-ea01606d034f, sbt/terminalCapabilities, {"string":"key_eol"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 242dd1e1-3b46-40a0-b379-91590d8b633e, sbt/terminalCapabilities, {"string":"key_eos"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b19e444f-5a9b-475e-b0ff-45101d604d22, sbt/terminalCapabilities, {"string":"key_exit"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 61035558-91ef-42a6-8040-178e2ef9840c, sbt/terminalCapabilities, {"string":"key_f0"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, da845cf8-77bb-4563-b1a2-9274ac21c640, sbt/terminalCapabilities, {"string":"key_f1"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 726ea421-0089-42da-8ed4-2ba84e4426dc, sbt/terminalCapabilities, {"string":"key_f10"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6af37bd0-42a5-48a4-a647-5ec8aab7c41f, sbt/terminalCapabilities, {"string":"key_f11"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 602d16d3-f7d9-49f5-a487-714ade783558, sbt/terminalCapabilities, {"string":"key_f12"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 96bed4f5-aa0f-461f-860a-31a1301ca8e1, sbt/terminalCapabilities, {"string":"key_f13"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 262193e3-8cca-41df-9ec1-64b7025b7cc8, sbt/terminalCapabilities, {"string":"key_f14"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 257de2d9-340f-483e-9d2b-65f67320c124, sbt/terminalCapabilities, {"string":"key_f15"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d0b3cf9f-c8a9-44e5-9248-2f2b3871546e, sbt/terminalCapabilities, {"string":"key_f16"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e06c4611-b571-4601-bc6d-7b6d845d2658, sbt/terminalCapabilities, {"string":"key_f17"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 21e730c9-ded7-41f6-8452-495c8f11531c, sbt/terminalCapabilities, {"string":"key_f18"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 27582bf5-c285-451a-a79f-0e899b018567, sbt/terminalCapabilities, {"string":"key_f19"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, be2a2b4b-b0a8-463a-852a-ae3b106290be, sbt/terminalCapabilities, {"string":"key_f2"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 43d3af27-7f13-48ae-a2d9-9174f753a446, sbt/terminalCapabilities, {"string":"key_f20"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 927953a8-b968-4299-910a-af9f7cf47ec9, sbt/terminalCapabilities, {"string":"key_f21"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 79d412a8-7bc4-4abd-906a-79e9145a78f2, sbt/terminalCapabilities, {"string":"key_f22"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 63178b39-e858-4f7e-ac95-e3a4f389263a, sbt/terminalCapabilities, {"string":"key_f23"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f885f790-a9e4-48be-9170-84bae848f164, sbt/terminalCapabilities, {"string":"key_f24"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9f722fdd-138b-4ca7-bda5-9f9177c5344c, sbt/terminalCapabilities, {"string":"key_f25"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, dd334710-1407-4684-991d-2959819face7, sbt/terminalCapabilities, {"string":"key_f26"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2d57bc12-3239-4513-820b-37a2b6f4be4e, sbt/terminalCapabilities, {"string":"key_f27"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3b5c55d3-4115-4afa-ad92-8704ea9d7d2e, sbt/terminalCapabilities, {"string":"key_f28"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f54b4de6-5a2c-4c3f-bcbe-ebcf49c4c4dc, sbt/terminalCapabilities, {"string":"key_f29"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 56f711c4-5ac6-4547-b962-34a3dc1a9fbf, sbt/terminalCapabilities, {"string":"key_f3"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, ac674b01-47bb-49d9-8ebb-5e238a1b0b62, sbt/terminalCapabilities, {"string":"key_f30"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c30c357e-b77d-4877-8976-12e4d6c9e9d7, sbt/terminalCapabilities, {"string":"key_f31"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6131a44b-ca15-4dea-900c-eab52bd4e310, sbt/terminalCapabilities, {"string":"key_f32"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 21a1da0e-4e47-4a33-97a0-4d7b08299248, sbt/terminalCapabilities, {"string":"key_f33"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 920287e7-66d4-4b4f-b061-35d3e365032e, sbt/terminalCapabilities, {"string":"key_f34"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 47f72ab5-d721-4c73-83a4-6b67b235fd8f, sbt/terminalCapabilities, {"string":"key_f35"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4be634fa-76e1-4067-b953-346037156a26, sbt/terminalCapabilities, {"string":"key_f36"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d2680dfa-580d-49dd-ae86-547935253d02, sbt/terminalCapabilities, {"string":"key_f37"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9f84bbbe-25e3-40e5-b847-a2908adb8e27, sbt/terminalCapabilities, {"string":"key_f38"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 268bbbc1-e2d1-47cb-a921-39ab26e05d99, sbt/terminalCapabilities, {"string":"key_f39"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 581d984c-3802-430e-b098-4bd6ab3bc375, sbt/terminalCapabilities, {"string":"key_f4"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a0bd17e4-e516-4a92-910e-45ec65f72bdf, sbt/terminalCapabilities, {"string":"key_f40"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e9489847-5023-4461-8aaf-aa745fc2c86f, sbt/terminalCapabilities, {"string":"key_f41"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b435207f-05ec-4cda-a771-2b89918fe04f, sbt/terminalCapabilities, {"string":"key_f42"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 53ba1960-b6fb-4ea3-84b4-376edf7d5e63, sbt/terminalCapabilities, {"string":"key_f43"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8820924e-e891-4514-ae6f-3e66bc731f85, sbt/terminalCapabilities, {"string":"key_f44"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 28fab581-e296-41b2-8a32-a22a08f2784a, sbt/terminalCapabilities, {"string":"key_f45"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c7a78ac6-7985-4b8a-b19a-d7d6cba72559, sbt/terminalCapabilities, {"string":"key_f46"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, ffc3dea7-3ddc-4f91-b07a-86fb7774ba4b, sbt/terminalCapabilities, {"string":"key_f47"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 75a6617b-1dc1-4235-9b45-fcaeb58ee7e0, sbt/terminalCapabilities, {"string":"key_f48"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 53809c07-10be-43a5-9a0a-4e6cae3dee6e, sbt/terminalCapabilities, {"string":"key_f49"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f198f5c1-841d-489e-be9e-cf43bcfde37c, sbt/terminalCapabilities, {"string":"key_f5"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 41a02853-d45a-499c-a206-f7b298d8ccf9, sbt/terminalCapabilities, {"string":"key_f50"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bdf98e6f-3e01-4b99-a47d-2da3bb8dc6d6, sbt/terminalCapabilities, {"string":"key_f51"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 839f07d1-75ab-4de3-b7d8-360aa6314766, sbt/terminalCapabilities, {"string":"key_f52"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 0ce56cc0-d372-4b6e-b732-0d8ee2b2e962, sbt/terminalCapabilities, {"string":"key_f53"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 40bb6c42-f713-4e8e-af2a-b6edcd480054, sbt/terminalCapabilities, {"string":"key_f54"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e106881f-60aa-4ee1-8e10-a1a56737339c, sbt/terminalCapabilities, {"string":"key_f55"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fde7dd79-82db-4838-946c-8f5e4f886793, sbt/terminalCapabilities, {"string":"key_f56"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a198643a-66f1-4f0e-bfc2-68cd2925d194, sbt/terminalCapabilities, {"string":"key_f57"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5d04d111-883a-424c-9c67-7a78be2c13d0, sbt/terminalCapabilities, {"string":"key_f58"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2886128b-c1e2-44fb-986e-0728a2328f04, sbt/terminalCapabilities, {"string":"key_f59"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f0a3f405-0d7e-4264-a22f-e44d45f5d8c4, sbt/terminalCapabilities, {"string":"key_f6"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 78f317ad-b794-453f-abf1-9893fd2fcefc, sbt/terminalCapabilities, {"string":"key_f60"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 0160d67f-c036-447a-9af1-380b0450eacf, sbt/terminalCapabilities, {"string":"key_f61"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2ca67bca-4aff-4f52-be98-5dac95d63076, sbt/terminalCapabilities, {"string":"key_f62"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 45d60e09-755a-4910-8842-94f7b578f710, sbt/terminalCapabilities, {"string":"key_f63"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, ed4dbce0-775e-484f-8b51-de19ae977f5e, sbt/terminalCapabilities, {"string":"key_f7"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9ef6b421-54a0-405d-8d97-bfc951595dec, sbt/terminalCapabilities, {"string":"key_f8"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d5e7822a-0fcf-462d-82f9-4eb2857ad03b, sbt/terminalCapabilities, {"string":"key_f9"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, ebd473e9-923c-40ce-805c-96b6b871634e, sbt/terminalCapabilities, {"string":"key_find"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c306d0fc-4b4c-4861-9449-0e5bcefd8916, sbt/terminalCapabilities, {"string":"key_help"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 96129bf1-c8ae-4f3d-bc4e-95ecafa96239, sbt/terminalCapabilities, {"string":"key_home"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c1be89d2-e7fc-4d9c-89ff-15f621f14cf8, sbt/terminalCapabilities, {"string":"key_ic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9e935436-5c89-4188-a6e2-87fb62e12f25, sbt/terminalCapabilities, {"string":"key_il"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 1626a864-1983-413f-8af8-45ecf76d0205, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8f638243-eb48-4ea9-8b87-da846ad6ffc4, sbt/terminalCapabilities, {"string":"key_ll"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, aaa5941a-574f-4c2d-a498-49a35ab99663, sbt/terminalCapabilities, {"string":"key_mark"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5794906d-24c6-4733-b5c3-79a4103b8858, sbt/terminalCapabilities, {"string":"key_message"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 83aff746-0e87-4486-b9c4-8c24de96d18b, sbt/terminalCapabilities, {"string":"key_move"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e664edd8-c718-4fde-9ca5-09fc3f365b15, sbt/terminalCapabilities, {"string":"key_next"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7550754a-38b4-4017-ba1a-97a0ef16dd8d, sbt/terminalCapabilities, {"string":"key_npage"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 26b325d3-f012-4896-aced-1ca494e4fd4b, sbt/terminalCapabilities, {"string":"key_open"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 29194a1b-6786-4c15-bc64-d3f1c5eb5c37, sbt/terminalCapabilities, {"string":"key_options"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, eafe2e8a-e11a-448b-88bf-c87a21b79a92, sbt/terminalCapabilities, {"string":"key_ppage"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, b6660f75-9c74-48b4-9097-d0803e59a578, sbt/terminalCapabilities, {"string":"key_previous"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f71565cc-f0df-4e87-bfbc-54e9c04ca968, sbt/terminalCapabilities, {"string":"key_print"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7b0ec642-4f0a-42b1-9d85-c84ce68bbfb2, sbt/terminalCapabilities, {"string":"key_redo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c8bd3345-e3a9-4b4c-ac11-abf01693b039, sbt/terminalCapabilities, {"string":"key_reference"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7dbeca31-252f-44f8-af85-50b14d5ab776, sbt/terminalCapabilities, {"string":"key_refresh"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d947eda0-2461-4974-ab04-6b795674e27c, sbt/terminalCapabilities, {"string":"key_replace"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7f976e52-bf33-4f82-820e-fc5024c8c49e, sbt/terminalCapabilities, {"string":"key_restart"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8db06581-6a9a-430a-85d5-989174d463cc, sbt/terminalCapabilities, {"string":"key_resume"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d2a604bc-4eaf-4291-b4c3-0f4c110c66e2, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8fad8885-157a-43c0-a961-6bb2f6e701f0, sbt/terminalCapabilities, {"string":"key_save"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 94c40b08-5dd9-4f27-8d3e-c20c7da22764, sbt/terminalCapabilities, {"string":"key_sbeg"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 31172ff0-6c53-4287-a9b6-fbc349345b1b, sbt/terminalCapabilities, {"string":"key_scancel"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, eeed1d2d-99c7-4c4b-9146-054546bf68b1, sbt/terminalCapabilities, {"string":"key_scommand"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fcd479bd-5e57-42db-9ddb-b087f5434011, sbt/terminalCapabilities, {"string":"key_scopy"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c6dd7112-5dae-4fdb-86c8-d444b742c65f, sbt/terminalCapabilities, {"string":"key_screate"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, da842390-aed4-4f04-b43a-c53841077dd3, sbt/terminalCapabilities, {"string":"key_sdc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 76a42d93-fd92-40b5-803d-95358e37d819, sbt/terminalCapabilities, {"string":"key_sdl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a2dd1a59-1ab4-4245-a9f9-ed878aee4328, sbt/terminalCapabilities, {"string":"key_select"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c0838aea-30c1-4560-9236-d6d179f82962, sbt/terminalCapabilities, {"string":"key_send"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5c2670da-878e-4105-ad3c-91ae99340bc0, sbt/terminalCapabilities, {"string":"key_seol"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f2a9cd90-41c6-47d4-a9f6-eff5b69c8dea, sbt/terminalCapabilities, {"string":"key_sexit"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9e941598-44b1-44bb-bb44-8f4f0de3a12c, sbt/terminalCapabilities, {"string":"key_sf"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d00e9107-73c8-4cb9-bf23-a3648131a756, sbt/terminalCapabilities, {"string":"key_sfind"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f8dc3926-99d3-45c1-9686-9431a581b862, sbt/terminalCapabilities, {"string":"key_shelp"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f1a9a364-ead9-401a-b962-49a16f45261e, sbt/terminalCapabilities, {"string":"key_shome"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 017270ab-932e-4de9-beae-32e024664e6b, sbt/terminalCapabilities, {"string":"key_sic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, adf2d07e-69db-4cea-a899-2ba5fc494276, sbt/terminalCapabilities, {"string":"key_sleft"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fffd1c01-0f83-44ef-8c8a-86fb60aa78dd, sbt/terminalCapabilities, {"string":"key_smessage"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 80993634-dba1-4572-a217-21e7811b0eb6, sbt/terminalCapabilities, {"string":"key_smove"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8e37b79e-ffe4-4ee4-ad2c-39f559cd1680, sbt/terminalCapabilities, {"string":"key_snext"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 13fd89a8-3e20-4466-9bea-99a60bf7d169, sbt/terminalCapabilities, {"string":"key_soptions"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d2bd8394-2789-4eb4-b968-8c1dbb07d132, sbt/terminalCapabilities, {"string":"key_sprevious"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6ba26a8a-e736-447d-8071-61fc5f145b28, sbt/terminalCapabilities, {"string":"key_sprint"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 32b0606c-aa6a-414e-9ff2-8cac86150b59, sbt/terminalCapabilities, {"string":"key_sr"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 2cb571c6-2368-4f21-9a19-6f75bf905bfe, sbt/terminalCapabilities, {"string":"key_sredo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 941a7726-85b0-477b-b2ef-ce60d2f90919, sbt/terminalCapabilities, {"string":"key_sreplace"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 244f0a47-3c9d-4375-9b3e-5646ee3eefad, sbt/terminalCapabilities, {"string":"key_sright"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bfdeb1fe-4a0e-4676-b69f-b4266ca86d24, sbt/terminalCapabilities, {"string":"key_srsume"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, db53d07d-0d8d-4504-a181-c36a373394c6, sbt/terminalCapabilities, {"string":"key_ssave"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, d0d19121-c7ae-43b3-a0ff-0aca8e17d868, sbt/terminalCapabilities, {"string":"key_ssuspend"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 978dc7b1-c030-4a02-8336-6021454f9b3b, sbt/terminalCapabilities, {"string":"key_stab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f1a71d28-c4b7-4b6a-b096-57174fee30f0, sbt/terminalCapabilities, {"string":"key_sundo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 5da46b84-7cea-48f7-b111-bd5b3fdef1f3, sbt/terminalCapabilities, {"string":"key_suspend"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9bcfec68-fe81-4a3b-b51d-ce7cf5b66be5, sbt/terminalCapabilities, {"string":"key_undo"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 09dfb0ba-c3e8-4594-992d-0382fbf0b095, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8171e705-f25b-4c66-8f28-b92cf701f527, sbt/terminalCapabilities, {"string":"key_mouse"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 428e86d5-3ccd-4ccf-9310-a6fe093b619b, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4363191a-b1ef-4188-9b27-ad893ec6c3e5, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 42cae672-6ee3-47a9-b878-4e1f1c5bc8de, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6394a331-4e9f-4cf3-8f59-ee0ec9d4f556, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 62c4dc42-cd82-49b6-877e-da574fd84757, sbt/terminalCapabilities, {"string":"key_home"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 910d7a02-38e8-4c4a-920a-5cd60bc4d61e, sbt/terminalCapabilities, {"string":"key_end"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c924ac72-dce8-4b66-98ba-627e6f6b2272, sbt/terminalCapabilities, {"string":"key_dc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7ee21708-1e51-4106-b081-5b92e92b4c53, sbt/terminalCapabilities, {"string":"key_dl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a22e94f3-cf3e-40f6-b9fc-ddce8386fc4d, sbt/terminalCapabilities, {"string":"key_ic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 8d8a737b-2a50-463b-b8fe-9648612718a9, sbt/terminalCapabilities, {"string":"key_mouse"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 9fdf349e-8632-40b2-9924-b5d66258be99, sbt/terminalCapabilities, {"string":"back_tab"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 474db7fd-9742-4dc6-aec5-9b065d73a9fb, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, a7ae10a9-3ace-4a86-b284-65ccaf906dd0, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, fa703950-76c4-4597-bb74-47af5dfc1d78, sbt/terminalCapabilities, {"string":"key_left"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f4a8267b-8dbf-4589-88de-edc56da7bd0b, sbt/terminalCapabilities, {"string":"key_right"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3d01f0b3-37c4-4e0d-a1ea-8b97f80ae6af, sbt/terminalCapabilities, {"string":"key_home"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c1826d01-6def-43fd-99ec-a502e23214f2, sbt/terminalCapabilities, {"string":"key_end"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, cea08327-0dbc-4d7d-91cf-8ce463dbf001, sbt/terminalCapabilities, {"string":"key_dc"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7764cad3-ce32-4881-9606-e9a78a23b154, sbt/terminalCapabilities, {"string":"key_dl"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, f580a666-4698-4fc6-9f08-ae2fe2cd55e1, sbt/terminalCapabilities, {"string":"key_ic"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 51b17193-bbe5-4432-8b92-03feedaf3c37, sbt/terminalCapabilities, {"string":"key_mouse"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 018feaa5-2eb9-46fc-b379-3acab0f13ad4, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 17ea60ef-8d54-46b2-a426-658409c19654, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 7da4c7ed-ec84-4bf4-84d3-a5234fb2db9c, sbt/terminalCapabilities, {"string":"key_up"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 16f8f66e-d9e7-4fdf-baf2-d28c240bc8b7, sbt/terminalCapabilities, {"string":"key_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c8420bd1-1a42-426c-8470-4278275d5ec9, sbt/getTerminalAttributes, {}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c477c618-3e9f-4e43-b4a9-fd63b398b27c, sbt/terminalCapabilities, {"string":"insert_line"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, dd3eb238-e41d-4b5e-89e7-6c62639ac879, sbt/terminalCapabilities, {"string":"delete_line"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 3136cb94-eb43-4450-bb3c-c90e3c5b9932, sbt/terminalCapabilities, {"boolean":"auto_right_margin"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, e3ffdc8f-69cc-412c-87a6-2bc5e7a043a7, sbt/terminalCapabilities, {"boolean":"eat_newline_glitch"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 08af3c5d-3a8a-4564-a245-ee4e36121e3c, sbt/terminalCapabilities, {"string":"cursor_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bb3f7c9e-0716-4531-aed4-ae0f887c2f6e, sbt/terminalSetRawMode, {"toggle":true}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, cbe3aa80-0c94-4f87-a7e1-92fed7516c54, sbt/getTerminalAttributes, {}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 391a1bba-a783-4ed7-9bca-afaa393991e8, sbt/terminalCapabilities, {"string":"insert_line"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 62a1aa5f-e5e6-40ec-8b14-360d6a757351, sbt/terminalCapabilities, {"string":"delete_line"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c2123b8c-5725-49c6-83f4-d132f1275abc, sbt/terminalCapabilities, {"boolean":"auto_right_margin"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, bc19a1a9-8255-4121-b32b-1e1d84d05b55, sbt/terminalCapabilities, {"boolean":"eat_newline_glitch"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 694785eb-0152-4c5d-8b86-a0aa7f762380, sbt/terminalCapabilities, {"string":"cursor_down"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 4f15824f-0b6e-4055-9249-6eac9cd3ab29, sbt/terminalCapabilities, {"string":"keypad_xmit"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c1785769-9574-4fcf-a7b5-f0008e7623e6, sbt/terminalCapabilities, {"numeric":"max_colors"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6526e93b-bbdd-4c30-99f3-dc7ed6745b68, sbt/terminalCapabilities, {"numeric":"max_colors"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, 6ab9e102-068e-4258-b24b-649121d14e81, sbt/terminalCapabilities, {"string":"enter_alt_charset_mode"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcRequest: JsonRpcRequestMessage(2.0, c6b3d44c-50fe-4712-8338-ad8b62d5b086, sbt/terminalCapabilities, {"string":"exit_alt_charset_mode"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, sbt/readSystemIn, "")[0m
