@@ -1,0 +1,71 @@
+apiVersion: spark.apache.org/v1beta1
+kind: SparkApplication
+metadata:
+  name: spark-connect-server
+spec:
+  mainClass: "org.apache.spark.sql.connect.service.SparkConnectServer"
+  sparkConf:
+    spark.master: "k8s://https://lb-apiserver-dev.kubernetes-dev.local:8443" # Run kubectl cluster-info to get info
+    spark.deployMode: "cluster"
+    spark.executor.cores: "1"
+    spark.cores.max: "3"
+    spark.kubernetes.authenticate.driver.serviceAccountName: "spark"
+    spark.kubernetes.container.image: "apache/spark:4.0.0"
+    spark.ui.reverseProxy: "true"
+  runtimeVersions:
+    sparkVersion: "4.0.0"
+  driverSpec:
+    podTemplateSpec:
+      spec:
+        containers:
+         - ports:
+            - protocol: TCP
+              containerPort: 15002
+  driverServiceIngressList:
+    - serviceMetadata:
+        name: "spark-connect-service"
+      serviceSpec:
+        ports:
+          - protocol: TCP
+            port: 15002
+            targetPort: 15002
+      ingressMetadata:
+        name: "spark-connect-ingress"
+        annotations:
+          nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spark-connect-service
+  namespace: lakehouse
+spec:
+  type: ClusterIP
+  selector:
+    spark-app-selector: spark-connect-server-0
+  ports:
+    - name: connect-port
+      protocol: TCP
+      port: 15002
+      targetPort: 15002
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spark-connect-ingress
+  namespace: lakehouse
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: dev-cadshouse.cads.live
+      http:
+        paths:
+          - path: /binhln
+            pathType: Prefix
+            backend:
+              service:
+                name: spark-connect-service
+                port:
+                  number: 15002
