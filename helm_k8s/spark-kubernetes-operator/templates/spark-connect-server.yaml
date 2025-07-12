@@ -12,6 +12,24 @@ spec:
     spark.kubernetes.authenticate.driver.serviceAccountName: "spark"
     spark.kubernetes.container.image: "apache/spark:4.0.0"
     spark.ui.reverseProxy: "true"
+    spark.sql.connect.grpc.binding: "0.0.0.0:15002"
+    # config hdfs
+    spark.hadoop.fs.defaultFS: "hdfs://namenode:8020"
+    spark.sql.catalogImplementation: "hive"
+    spark.hadoop.hive.metastore.uris: "thrift://hive-metastore:9083"
+    # config s3
+    spark.hadoop.fs.s3a.endpoint: "https://s3.amazonaws.com"
+    spark.hadoop.fs.s3a.access.key: "YOUR_ACCESS_KEY"
+    spark.hadoop.fs.s3a.secret.key: "YOUR_SECRET_KEY"
+    spark.hadoop.fs.s3a.impl: "org.apache.hadoop.fs.s3a.S3AFileSystem"
+    spark.hadoop.fs.s3a.path.style.access: "true"
+    # config delta
+    spark.sql.extensions: "io.delta.sql.DeltaSparkSessionExtension"
+    spark.sql.catalog.spark_catalog: "org.apache.spark.sql.delta.catalog.DeltaCatalog"
+    # config iceberg
+    spark.sql.catalog.my_catalog: "org.apache.iceberg.spark.SparkCatalog"
+    spark.sql.catalog.my_catalog.type: "hadoop"
+    spark.sql.catalog.my_catalog.warehouse: "s3a://my-bucket/iceberg/"
   runtimeVersions:
     sparkVersion: "4.0.0"
   driverSpec:
@@ -45,7 +63,6 @@ spec:
     spark-app-selector: spark-connect-server-0
   ports:
     - name: connect-port
-      protocol: TCP
       port: 15002
       targetPort: 15002
 ---
