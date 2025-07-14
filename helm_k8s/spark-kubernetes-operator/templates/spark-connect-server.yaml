@@ -4,6 +4,7 @@ metadata:
   name: spark-connect-server
 spec:
   mainClass: "org.apache.spark.sql.connect.service.SparkConnectServer"
+  jars: "local://delta-spark_2.13-4.0.0.jar"
   sparkConf:
     spark.master: "k8s://https://lb-apiserver-dev.kubernetes-dev.local:8443" # Run kubectl cluster-info to get info
     spark.deployMode: "cluster"
@@ -11,21 +12,25 @@ spec:
     spark.cores.max: "3"
     spark.kubernetes.authenticate.driver.serviceAccountName: "spark"
     spark.kubernetes.container.image: "apache/spark:4.0.0"
+    spark.jars.packages: "io.delta:delta-spark_2.13:4.0.0,org.apache.iceberg:iceberg-spark-runtime-3.5_2.13:1.9.1"
     spark.ui.reverseProxy: "true"
     spark.sql.connect.grpc.binding: "0.0.0.0:15002"
+    spark.driver.extraJavaOptions: "-Dhttp.proxyHost=<> -Dhttp.proxyPort=<> -Dhttps.proxyHost=<> -Dhttps.proxyPort=<> -Divy.cache.dir=/tmp -Divy.home=/tmp"
+    spark.jars.ivy: "/opt/spark/.ivy2"
+    spark.sql.defaultCatalog: "spark_catalog"
     # config hdfs
-    spark.hadoop.fs.defaultFS: "hdfs://namenode:8020"
+    spark.hadoop.fs.defaultFS: "hdfs://hdfs-cluster.lakehouse-dev.cads.live:8020"
     spark.sql.catalogImplementation: "hive"
-    spark.hadoop.hive.metastore.uris: "thrift://hive-metastore:9083"
+    spark.hadoop.hive.metastore.uris: "thrift://172.24.177.28:9083"
+    # config delta
+    spark.sql.extensions: "io.delta.sql.DeltaSparkSessionExtension"
+    spark.sql.catalog.spark_catalog: "org.apache.spark.sql.delta.catalog.DeltaCatalog"
     # config s3
     spark.hadoop.fs.s3a.endpoint: "https://s3.amazonaws.com"
     spark.hadoop.fs.s3a.access.key: "YOUR_ACCESS_KEY"
     spark.hadoop.fs.s3a.secret.key: "YOUR_SECRET_KEY"
     spark.hadoop.fs.s3a.impl: "org.apache.hadoop.fs.s3a.S3AFileSystem"
     spark.hadoop.fs.s3a.path.style.access: "true"
-    # config delta
-    spark.sql.extensions: "io.delta.sql.DeltaSparkSessionExtension"
-    spark.sql.catalog.spark_catalog: "org.apache.spark.sql.delta.catalog.DeltaCatalog"
     # config iceberg
     spark.sql.catalog.my_catalog: "org.apache.iceberg.spark.SparkCatalog"
     spark.sql.catalog.my_catalog.type: "hadoop"
@@ -39,6 +44,10 @@ spec:
          - ports:
             - protocol: TCP
               containerPort: 15002
+        hostAliases:
+          - ip: "172.24.177.51"
+            hostnames:
+              - "binhln.cads.live"
   driverServiceIngressList:
     - serviceMetadata:
         name: "spark-connect-service"
@@ -50,6 +59,7 @@ spec:
       ingressMetadata:
         name: "spark-connect-ingress"
         annotations:
+          kubernetes.io/ingress.class: nginx
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
 ---
 apiVersion: v1
@@ -58,31 +68,31 @@ metadata:
   name: spark-connect-service
   namespace: lakehouse
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     spark-app-selector: spark-connect-server-0
   ports:
     - name: connect-port
       port: 15002
       targetPort: 15002
+      nodePort: 30000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: spark-connect-ingress
-  namespace: lakehouse
   annotations:
+    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+  name: my-ingress
 spec:
-  ingressClassName: nginx
   rules:
-    - host: dev-cadshouse.cads.live
+    - host: binhln.cads.live
       http:
         paths:
-          - path: /binhln
-            pathType: Prefix
-            backend:
+          - backend:
               service:
                 name: spark-connect-service
                 port:
                   number: 15002
+            path: /
+            pathType: ImplementationSpecific
