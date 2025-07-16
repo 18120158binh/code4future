@@ -70,7 +70,8 @@ metadata:
 spec:
   type: NodePort
   selector:
-    spark-app-selector: spark-connect-server-0
+    spark-role: driver
+    spark-app-name: spark-connect-server
   ports:
     - name: connect-port
       port: 15002
