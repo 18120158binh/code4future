@@ -1,0 +1,27 @@
+name: mystarrocks
+
+services:
+  starrocks_fe:
+    image: starrocks/fe-ubuntu:3.3-latest
+    port:
+      - "9020:9020"
+      - "9030:9030"
+    environment:
+
+    volumes:
+
+    command: >
+      bash -c "./fe/bin/start_fe.sh"
+
+  starrocks_cn:
+    image: starrocks/cn-ubuntu:3.3-latest
+    port:
+      - "9060:9060"
+      - "9050:9050"
+
+  starrocks_be:
+    image: starrocks/be-ubuntu:3.3-latest
+    port:
+      - "9060:9060"
+      - "9050:9050"
+
