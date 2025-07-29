@@ -1,19 +1,19 @@
-FROM flink:1.20.0-scala_2.12-java11
+# 1. Start with the official Flink image with Python support
+# Make sure the version matches the connectors you will use
+FROM flink:1.19
 
-# Install Python3 & pip
-RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
+# Install Python 3 and pip
+RUN apt-get update -y && \
+    apt-get install -y python3 python3-pip && \
+    ln -s /usr/bin/python3 /usr/bin/python
 
-# Install PyFlink
+# Copy and install the Python dependencies
+# This step is cached by Docker as long as requirements.txt doesn't change
 COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Add Kafka connector JAR for Flink
-RUN wget -P /opt/flink/lib/ https://repo1.maven.org/maven2/org/apache/flink/flink-connector-kafka/3.3.0-1.20/flink-connector-kafka-3.3.0-1.20.jar \
- && wget -P /opt/flink/lib/ https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.5.1/kafka-clients-3.5.1.jar \
- && wget -P /opt/flink/lib/ https://repo1.maven.org/maven2/org/apache/flink/flink-connector-jdbc/3.3.0-1.20/flink-connector-jdbc-3.3.0-1.20.jar \
- && wget -P /opt/flink/lib/ https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar
+# 5. Copy all connector JARs into Flink's main library folder so they are auto-loaded.
+COPY ./jars/ /opt/flink/lib/
 
-# Copy job
-COPY job.py /opt/flink/usrlib/job.py
-
-CMD ["python3", "/opt/flink/usrlib/job.py"]
+# Set a working directory for our application files
+WORKDIR /app
