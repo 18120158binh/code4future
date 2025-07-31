@@ -49,14 +49,10 @@ services:
     user: root
     command: |
       bash /opt/starrocks/fe/bin/start_fe.sh --host_type FQDN
-#    volumes:
-#      - ./starrocks_config/fe.conf:/opt/starrocks/fe/conf/fe.conf
     ports:
       - 8030:8030
       - 9020:9020
       - 9030:9030
-    networks:
-      iceberg_net:
     environment:
       - AWS_ACCESS_KEY_ID=admin
       - AWS_SECRET_ACCESS_KEY=password
@@ -66,8 +62,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    networks:
+      iceberg_net:
 
   starrocks-be:
     image: starrocks/be-ubuntu:3.3.5
@@ -82,13 +78,12 @@ services:
         echo "block_cache_disk_size = 1073741824" >> /opt/starrocks/be/conf/be.conf
         sleep 15s
         mysql --connect-timeout 2 -h starrocks-fe -P 9030 -u root -e "ALTER SYSTEM ADD BACKEND \"starrocks-be:9050\";"
-        bash /opt/starrocks/be/bin/start_be.sh
+        bash /opt/starrocks/be/bin/start_be.sh --daemon
+        tail -f /opt/starrocks/be/log/be.out
     ports:
       - 8040:8040
     hostname: starrocks-be
     container_name: starrocks-be
-#    volumes:
-#      - ./starrocks_config/be.conf:/opt/starrocks/be/conf/be.conf
     user: root
     depends_on:
       starrocks-fe:
@@ -98,10 +93,10 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
-    networks:
-      iceberg_net:
     environment:
       - HOST_TYPE=FQDN
+    networks:
+      iceberg_net:
 
   rest:
     image: apache/iceberg-rest-fixture
