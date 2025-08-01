@@ -8,14 +8,12 @@ def main():
     t_env.get_config().get_configuration().set_string("execution.checkpointing.interval", "60s")
     t_env.get_config().get_configuration().set_string("execution.checkpointing.mode", "EXACTLY_ONCE")
 
-    job_dir = os.path.dirname(os.path.realpath(__file__))
-    deserialize_module_path = os.path.join(job_dir, "deserialize")
-    t_env.get_config().set("python.files", "deserialize/")
-    t_env.get_config().set("python.files", f"file://{deserialize_module_path}")
+    # job_dir = os.path.dirname(os.path.realpath(__file__))
+    # deserialize_module_path = os.path.join(job_dir, "deserialize")
+    # t_env.get_config().set("python.files", "deserialize/")
+    # t_env.get_config().set("python.files", f"file://{deserialize_module_path}")
     from deserialize.deserialize_thrift import deserialize_collector_payload
     t_env.create_temporary_system_function("DeserializeCollector", deserialize_collector_payload)
-#     jar_path = r"file:///C:/Users/binhln/Documents/work-space/code4future/deploy/simple_streaming_service/flink_job/jars/flink-sql-connector-kafka-3.3.0-1.20.jar;"
-#     t_env.get_config().set("pipeline.jars", jar_path)
 
     t_env.execute_sql("""
         CREATE TABLE kafka_source (
@@ -35,7 +33,7 @@ def main():
         SELECT
             schema_str,
             ipAddress,
-            `timestamp`,
+            TO_TIMESTAMP_LTZ(`timestamp`, 3) AS server_time,
             encoding,
             collector,
             userAgent,
@@ -54,98 +52,72 @@ def main():
                  path, querystring, body, headers, contentType, hostname, networkUserId)
     """)
 
-    # table = t_env.from_path("events_with_body")
-    # table.print_schema()
-
     t_env.execute_sql("""
         CREATE TEMPORARY VIEW structured_events AS
         SELECT
             schema_str,
-            ipAddress,
-            TO_TIMESTAMP_LTZ(`timestamp`, 3) AS server_time,
+            ipAddress AS ip_address,
+            server_time,
             encoding,
             collector,
-            userAgent,
+            userAgent AS user_agent,
             refererUri,
             path,
             querystring,
-            body_data.cx,
+            TO_TIMESTAMP_LTZ(CAST(body_data.dtm AS BIGINT), 3) AS user_time,
+            TO_TIMESTAMP_LTZ(CAST(body_data.stm AS BIGINT), 3) AS sent_time,
+            COALESCE(body_data.ue_pr.data.schema, body_data.ue_px.data.schema) AS schema_event,
+            COALESCE(body_data.co.schema, body_data.cx.schema) AS schema_context,
+            body_data.vid AS domain_session_index,
+            body_data.aid AS app_id,
+            body_data.uid AS user_id,
+            body_data.eid AS event_id,
+            body_data.p AS platform,
+            body_data.e AS event_type,
+            body_data.page AS page_title,
+            body_data.refr AS referrer_url,
+            body_data.tv AS track_verison,
+            body_data.tna AS tracker_name,
+            body_data.cs AS character_set,
+            body_data.lang AS `language`,
+            body_data.res AS screen_resolution,
+            body_data.cd AS color_depth,
+            body_data.tz AS time_zone,
+            body_data.vp AS viewport_size,
+            body_data.ds AS document_size,
+            body_data.sid AS domain_session_id,
+            body_data.duid AS domain_user_id,
             headers,
             contentType,
             hostname,
-            networkUserId
+            networkUserId AS network_user_id,
+            TO_DATE(CAST(server_time AS STRING)) AS d
         FROM events_with_body e
         CROSS JOIN UNNEST(e.body.data) AS body_data
     """)
 
-    # t_env.execute_sql("""
-    #     CREATE TEMPORARY VIEW transform AS
-    #     SELECT
-    #         cx
-    #     FROM structured_events
-    # """)
+    t_env.execute_sql("""
+                      CREATE CATALOG demo WITH (
+                          'type'='iceberg',
+                          'catalog-type'='rest',
+                          'uri'='http://iceberg-rest:8181',
+                          's3.access-key'='admin',
+                          's3.secret-key'='password',
+                          's3.endpoint'='http://minio:9000',
+                          's3.path-style-access'='true',
+                          'io-impl'='org.apache.iceberg.aws.s3.S3FileIO',
+                          's3.region'='us-east-1'
+                      )
+                      """)
 
-
-# ✅ Define StarRocks Sink Table (via JDBC)
-#     t_env.execute_sql("""
-#         CREATE TABLE starrocks_sink (
-#                mess STRING
-#         ) WITH (
-#             'connector' = 'starrocks',
-#             'jdbc-url' = 'jdbc:mysql://starrocks-fe:9030',
-#             'load-url' = 'starrocks-fe:8030',
-#             'database-name' = 'test_db',
-#             'table-name' = 'snowplow_events',
-#             'username' = 'root',
-#             'password' = '',
-#             'sink.buffer-flush.interval-ms' = '1000'
-#             )
-#     """)
-
-    # t_env.execute_sql("""
-    #     INSERT INTO starrocks_sink
-    #     SELECT `value` as mess FROM kafka_source
-    # """).wait()
-
-#     t_env.execute_sql("""
-#         INSERT INTO starrocks_sink VALUES ('ABC'), ('def');
-#     """).wait()
-
-    # t_env.execute_sql("""
-    #     CREATE TABLE print_sink (
-    #         schema_str STRING,
-    #         ipAddress STRING,
-    #         `timestamp` TIMESTAMP,
-    #         encoding STRING,
-    #         collector STRING,
-    #         userAgent STRING,
-    #         refererUri STRING,
-    #         path STRING,
-    #         querystring STRING,
-    #         body ROW<data ARRAY<ROW<aid STRING, cd STRING, cs STRING, cx STRING, ds STRING, uid STRING,
-    #             dtm STRING, duid STRING, e STRING, eid STRING, lang STRING, p STRING,
-    #             ue_px STRING, page STRING, refr STRING, res STRING, sid STRING,
-    #             stm STRING, tna STRING, tv STRING, tz STRING, url STRING, vid STRING,
-    #             vp STRING, ue_pr STRING, co STRING>>>,
-    #         headers ARRAY<STRING>,
-    #         contentType STRING,
-    #         hostname STRING,
-    #         networkUserId STRING
-    #     ) WITH (
-    #         'connector' = 'print'
-    #     )
-    # """)
+    # t_env.execute_sql("USE CATALOG demo")
+    # t_env.execute_sql("USE test_db")
 
     t_env.execute_sql("""
-      CREATE TABLE print_sink1 (
-          cx ROW<schema STRING,data ARRAY<ROW<schema STRING, data map<string,string>>>>
-      ) WITH (
-            'connector' = 'print'
-            )
-      """)
-
-    print("Job starting... reading from Kafka and printing to console.")
-    t_env.execute_sql("""INSERT INTO print_sink1 SELECT   cx  FROM structured_events""").wait()
+        INSERT INTO demo.test_db.snowplow_events
+        SELECT user_time, schema_event, schema_context, screen_resolution, d
+        FROM structured_events
+    """).wait()
 
 if __name__ == "__main__":
     main()

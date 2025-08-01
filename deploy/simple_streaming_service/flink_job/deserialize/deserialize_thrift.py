@@ -74,23 +74,27 @@ result_type = DataTypes.ROW([
     DataTypes.FIELD("networkUserId", DataTypes.STRING())
 ])
 
-def parse_ue_pr(json_obj) -> Row:
-    json_obj = json.loads(json_obj)
-    data = json_obj.get("data")
-    data_map = {k: str(v) for k, v in data.items()} if isinstance(data, dict) else {}
-
-    return Row(json_obj.get("schema"), data_map)
-
-def parse_co(json_obj) -> Row:
-    json_obj = json.loads(json_obj)
-    data_array = []
-    for item in json_obj["data"]:
-        schema = item.get("schema")
-        data = item.get("data")
+def parse_ue_pr(json_str) -> Row:
+    if json_str:
+        json_obj = json.loads(json_obj)
+        data = json_obj.get("data")
         data_map = {k: str(v) for k, v in data.items()} if isinstance(data, dict) else {}
-        data_array.append(Row(schema, data_map))
 
-    return Row(json_obj.get("schema"), data_array)
+        return Row(json_obj.get("schema"), data_map)
+    return None
+
+def parse_co(json_str) -> Row:
+    if json_str:
+        json_obj = json.loads(json_str)
+        data_array = []
+        for item in json_obj["data"]:
+            schema = item.get("schema")
+            data = item.get("data")
+            data_map = {k: str(v) for k, v in data.items()} if isinstance(data, dict) else {}
+            data_array.append(Row(schema, data_map))
+
+        return Row(json_obj.get("schema"), data_array)
+    return None
 
 @udtf(result_types=result_type)
 def deserialize_collector_payload(data: bytes) -> typing.Iterable[Row]:
@@ -116,8 +120,8 @@ def deserialize_collector_payload(data: bytes) -> typing.Iterable[Row]:
                 if "data" in body_dict and isinstance(body_dict["data"], list):
                     structured_data = []
                     for item in body_dict["data"]:
-                        ue_px = base64.b64decode(item.get("ue_px")).decode('utf-8')
-                        cx = base64.b64decode(item.get("cx")).decode('utf-8')
+                        ue_px = base64.b64decode(item.get("ue_px")).decode('utf-8') if item.get("ue_px") else None
+                        cx = base64.b64decode(item.get("cx")).decode('utf-8') if item.get("cx") else None
 
                         structured_data.append(Row(
                             item.get("aid"),

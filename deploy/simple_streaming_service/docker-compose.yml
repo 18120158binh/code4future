@@ -149,5 +149,39 @@ services:
       /usr/bin/mc policy set public minio/warehouse;
       tail -f /dev/null
       "
+
+
+  jobmanager:
+    image: pyflink_runner
+    ports:
+      - "8081:8081"
+    container_name: flink-jobmanager
+    command: jobmanager
+    volumes:
+      - ./flink_job:/app
+    environment:
+      - FLINK_ENV_JAVA_OPTS=-Daws.region=us-east-1
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+      - AWS_REGION=us-east-1
+    networks:
+      - iceberg_net
+
+  taskmanager:
+    image: pyflink_runner
+    depends_on:
+      - jobmanager
+    container_name: flink-taskmanager
+    command: taskmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - FLINK_ENV_JAVA_OPTS=-Daws.region=us-east-1
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+      - AWS_REGION=us-east-1
+    networks:
+      - iceberg_net
+
 networks:
   iceberg_net:
