@@ -1,2 +1,4 @@
 # Default ignored files
 project
+deploy/simple_streaming_service/custom-thrift-converter
+deploy/simple_streaming_service/starrocks-kafka-connector-1.0.4
