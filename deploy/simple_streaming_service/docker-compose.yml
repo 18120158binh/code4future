@@ -22,9 +22,41 @@ services:
       KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9093,EXTERNAL://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
-      KAFKA_CREATE_TOPICS: "snowplow.good.events.1000:1:1,snowplow.bad.events.1000:1:1"
+      KAFKA_CREATE_TOPICS: "snowplow.good.events.1000:1:1,snowplow.bad.events.1000:1:1,test.json:1:1"
     depends_on:
       - zookeeper
+    networks:
+      iceberg_net:
+
+  connect:
+    image: confluentinc/cp-kafka-connect:6.2.10
+    hostname: kafka-connect
+    container_name: kafka-connect
+    ports:
+      - "8083:8083"
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: "kafka:9093"
+      CONNECT_REST_ADVERTISED_HOST_NAME: "connect"
+      CONNECT_REST_PORT: 8083
+      CONNECT_GROUP_ID: "starrocks-connect-cluster"
+      CONNECT_CONFIG_STORAGE_TOPIC: "connect-configs"
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: "1"
+      CONNECT_OFFSET_FLUSH_INTERVAL_MS: "10000"
+      CONNECT_OFFSET_STORAGE_TOPIC: "connect-offsets"
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: "1"
+      CONNECT_STATUS_STORAGE_TOPIC: "connect-status"
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: "1"
+      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components,/usr/share/java/starrocks-connector,/usr/share/java/custom-thrift-converter"
+    volumes:
+      - ./starrocks-kafka-connector-1.0.4:/usr/share/java/starrocks-connector
+      - ./custom-thrift-converter:/usr/share/java/custom-thrift-converter
+    depends_on:
+      - zookeeper
+      - kafka
     networks:
       iceberg_net:
 
