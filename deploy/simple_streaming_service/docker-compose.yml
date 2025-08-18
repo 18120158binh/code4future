@@ -50,10 +50,9 @@ services:
       CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
       CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
       CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
-      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components,/usr/share/java/starrocks-connector,/usr/share/java/custom-thrift-converter"
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
     volumes:
       - ./starrocks-kafka-connector-1.0.4:/usr/share/java/starrocks-connector
-      - ./custom-thrift-converter:/usr/share/java/custom-thrift-converter
     depends_on:
       - zookeeper
       - kafka

@@ -72,8 +72,8 @@ curl -i http://localhost:8083/connectors -H "Content-Type: application/json" -X 
   "config":{
     "connector.class":"com.starrocks.connector.kafka.StarRocksSinkConnector",
     "topics":"snowplow.good.events.1000",
-    "key.converter":"org.apache.kafka.connect.json.JsonConverter",
-    "value.converter":"org.apache.kafka.converter.ThriftConverter",
+    "key.converter":"org.apache.kafka.connect.storage.StringConverter",
+    "value.converter":"com.vn.fpt.cads.kafka.converter.ThriftConverter",
     "key.converter.schemas.enable":"true",
     "value.converter.schemas.enable":"false",
     "starrocks.http.url":"starrocks-fe:8030",
