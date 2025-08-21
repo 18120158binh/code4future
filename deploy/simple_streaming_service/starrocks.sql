@@ -1,3 +1,5 @@
+docker exec -it starrocks-fe mysql -h 127.0.0.1 -P 9030 -u root
+
 CREATE EXTERNAL CATALOG 'demo'
 COMMENT "External catalog to Apache Iceberg on MinIO"
 PROPERTIES
@@ -40,7 +42,11 @@ CREATE TABLE snowplow_events (
                                     refererUri TEXT,
                                     path TEXT,
                                     querystring TEXT,
-                                    body JSON,
+                                    body STRUCT<data ARRAY<STRUCT<aid STRING, cd STRING, cs STRING, cx STRING, ds STRING, uid STRING,
+                                                 dtm STRING, duid STRING, e STRING, eid STRING, lang STRING, p STRING,
+                                                 ue_px STRING, page STRING, refr STRING, res STRING, sid STRING,
+                                                 stm STRING, tna STRING, tv STRING, tz STRING, url STRING, vid STRING,
+                                                 vp STRING, ue_pr STRING, co STRING>>>,
                                     headers ARRAY<STRING>,
                                     contentType VARCHAR(128),
                                     hostname VARCHAR(255),
@@ -81,9 +87,13 @@ curl -i http://localhost:8083/connectors -H "Content-Type: application/json" -X 
     "starrocks.username":"root",
     "starrocks.password":"",
     "starrocks.database.name":"test_db",
-    "sink.properties.strip_outer_array":"true"
+    "sink.properties.strip_outer_array":"true",
+    "bufferflush.intervalms": "30000"
   }
 }'
+
+      curl -i -X DELETE http://localhost:8083/connectors/starrocks-kafka-connector
+      curl http://localhost:8083/connectors/starrocks-kafka-connector/status
 
 curl -i http://localhost:8083/connectors -H "Content-Type: application/json" -X POST -d '{
   "name":"starrocks-kafka-connector",
