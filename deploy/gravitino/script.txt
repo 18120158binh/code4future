@@ -1,0 +1,22 @@
+curl -X POST http://localhost:8090/api/metalakes \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "test",
+  "comment": "Metalake for development and testing",
+  "properties": {}
+}'
+
+curl -X POST http://localhost:8090/api/metalakes/test/catalogs \
+ -H "Content-Type: application/json" \
+ -d '{
+   "name": "iceberg_rest",
+   "type": "RELATIONAL",
+   "provider": "lakehouse-iceberg",
+   "comment": "Lakekeeper Proxy",
+   "properties": {
+     "catalog-backend": "rest",
+     "uri": "http://lakekeeper:8181/catalog",
+     "warehouse": "s3://warehouse/",
+     "authentication.type": "simple"
+   }
+  }'
