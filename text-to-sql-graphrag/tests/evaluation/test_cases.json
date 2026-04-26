@@ -1,0 +1,345 @@
+[
+  {
+    "id": "easy_01",
+    "difficulty": "easy",
+    "category": "single_table_select",
+    "question": "Show me all events from yesterday",
+    "expected_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+    "expected_tables": ["fct_events"],
+    "expected_columns": ["event_id", "event_name", "event_timestamp"],
+    "notes": "Simple date filter on a single fact table"
+  },
+  {
+    "id": "easy_02",
+    "difficulty": "easy",
+    "category": "count",
+    "question": "How many users do we have?",
+    "expected_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+    "expected_tables": ["dim_users"],
+    "expected_columns": [],
+    "notes": "Basic count on dimension table"
+  },
+  {
+    "id": "easy_03",
+    "difficulty": "easy",
+    "category": "filter",
+    "question": "List all premium users",
+    "expected_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+    "expected_tables": ["dim_users"],
+    "expected_columns": ["user_id", "display_name", "subscription_tier"],
+    "notes": "String equality filter"
+  },
+  {
+    "id": "easy_04",
+    "difficulty": "easy",
+    "category": "count_filter",
+    "question": "How many page views happened today?",
+    "expected_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+    "expected_tables": ["fct_pageviews"],
+    "expected_columns": [],
+    "notes": "Count with date filter"
+  },
+  {
+    "id": "easy_05",
+    "difficulty": "easy",
+    "category": "distinct",
+    "question": "What are all the different event types we track?",
+    "expected_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+    "expected_tables": ["fct_events"],
+    "expected_columns": ["event_name"],
+    "notes": "DISTINCT on a single column"
+  },
+  {
+    "id": "easy_06",
+    "difficulty": "easy",
+    "category": "top_n",
+    "question": "Show me the top 10 most visited pages",
+    "expected_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+    "expected_tables": ["fct_pageviews"],
+    "expected_columns": ["page_path"],
+    "notes": "GROUP BY with ORDER BY and LIMIT"
+  },
+  {
+    "id": "easy_07",
+    "difficulty": "easy",
+    "category": "sum",
+    "question": "What is the total revenue from purchases?",
+    "expected_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+    "expected_tables": ["fct_conversions"],
+    "expected_columns": ["revenue"],
+    "notes": "SUM with filter"
+  },
+  {
+    "id": "easy_08",
+    "difficulty": "easy",
+    "category": "boolean_filter",
+    "question": "How many sessions were bounces?",
+    "expected_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": [],
+    "notes": "Boolean filter"
+  },
+
+  {
+    "id": "medium_01",
+    "difficulty": "medium",
+    "category": "group_by",
+    "question": "Show me the number of sessions per country",
+    "expected_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["country_code"],
+    "notes": "GROUP BY with ordering"
+  },
+  {
+    "id": "medium_02",
+    "difficulty": "medium",
+    "category": "aggregation",
+    "question": "What is the average session duration by device type?",
+    "expected_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["device_type", "session_duration_seconds"],
+    "notes": "AVG aggregation with GROUP BY"
+  },
+  {
+    "id": "medium_03",
+    "difficulty": "medium",
+    "category": "date_range",
+    "question": "How many conversions happened last week?",
+    "expected_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+    "expected_tables": ["fct_conversions"],
+    "expected_columns": ["conversion_type"],
+    "notes": "Date range filter with GROUP BY"
+  },
+  {
+    "id": "medium_04",
+    "difficulty": "medium",
+    "category": "join",
+    "question": "Show me all purchase events with the user's display name",
+    "expected_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+    "expected_tables": ["fct_conversions", "dim_users"],
+    "expected_columns": ["display_name", "revenue"],
+    "notes": "Simple JOIN between fact and dimension"
+  },
+  {
+    "id": "medium_05",
+    "difficulty": "medium",
+    "category": "multiple_aggregations",
+    "question": "What is the bounce rate and average pages per session by device type?",
+    "expected_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["device_type", "is_bounce", "page_view_count"],
+    "notes": "Multiple aggregations including computed ratio"
+  },
+  {
+    "id": "medium_06",
+    "difficulty": "medium",
+    "category": "having",
+    "question": "Which countries have more than 1000 sessions?",
+    "expected_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["country_code"],
+    "notes": "GROUP BY with HAVING clause"
+  },
+  {
+    "id": "medium_07",
+    "difficulty": "medium",
+    "category": "date_trunc",
+    "question": "Show me daily page view trends for the last 30 days",
+    "expected_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+    "expected_tables": ["fct_pageviews"],
+    "expected_columns": ["view_date"],
+    "notes": "Time-series trend query"
+  },
+  {
+    "id": "medium_08",
+    "difficulty": "medium",
+    "category": "join_aggregate",
+    "question": "Total revenue by campaign name",
+    "expected_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+    "expected_tables": ["fct_conversions", "dim_campaigns"],
+    "expected_columns": ["campaign_name", "revenue"],
+    "notes": "JOIN on composite key (UTM params) with aggregation"
+  },
+  {
+    "id": "medium_09",
+    "difficulty": "medium",
+    "category": "null_handling",
+    "question": "How many sessions come from anonymous users vs authenticated users?",
+    "expected_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["user_id"],
+    "notes": "NULL handling with CASE expression"
+  },
+  {
+    "id": "medium_10",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "question": "Show me mobile users from Vietnam who signed up via Google OAuth",
+    "expected_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+    "expected_tables": ["dim_users"],
+    "expected_columns": ["country_code", "registration_source", "primary_device_type"],
+    "notes": "Multiple filter conditions"
+  },
+
+  {
+    "id": "hard_01",
+    "difficulty": "hard",
+    "category": "multi_join",
+    "question": "Show me the top 5 landing pages that lead to the most purchases, include the total revenue",
+    "expected_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+    "expected_tables": ["fct_sessions", "fct_conversions"],
+    "expected_columns": ["landing_page_path", "revenue"],
+    "notes": "JOIN between session and conversion facts, aggregation with TOP N"
+  },
+  {
+    "id": "hard_02",
+    "difficulty": "hard",
+    "category": "subquery",
+    "question": "Which users have a higher engagement score than the average?",
+    "expected_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+    "expected_tables": ["rpt_user_engagement"],
+    "expected_columns": ["engagement_score", "user_id"],
+    "notes": "Scalar subquery in WHERE clause"
+  },
+  {
+    "id": "hard_03",
+    "difficulty": "hard",
+    "category": "cte_comparison",
+    "question": "Compare this week's sessions vs last week's sessions by device type",
+    "expected_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["device_type", "session_date"],
+    "notes": "CTEs with week-over-week comparison and FULL OUTER JOIN"
+  },
+  {
+    "id": "hard_04",
+    "difficulty": "hard",
+    "category": "conversion_attribution",
+    "question": "What is the conversion rate by UTM source for the last 30 days?",
+    "expected_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["utm_source", "session_id", "has_conversion"],
+    "notes": "Conversion rate computation with NULLIF for division-by-zero safety"
+  },
+  {
+    "id": "hard_05",
+    "difficulty": "hard",
+    "category": "time_to_convert",
+    "question": "What is the average time to purchase by device type?",
+    "expected_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+    "expected_tables": ["fct_conversions", "fct_sessions"],
+    "expected_columns": ["device_type", "time_to_conversion_seconds"],
+    "notes": "JOIN fact tables with AVG on conversion metrics"
+  },
+  {
+    "id": "hard_06",
+    "difficulty": "medium",
+    "category": "user_journey",
+    "question": "What pages do users typically visit right before making a purchase?",
+    "expected_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+    "expected_tables": ["int_event_sequences"],
+    "expected_columns": ["page_path", "next_event_name"],
+    "notes": "Uses event sequence data for journey analysis"
+  },
+  {
+    "id": "hard_07",
+    "difficulty": "medium",
+    "category": "engagement_segmentation",
+    "question": "Break down users by engagement tier and show average revenue per tier",
+    "expected_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+    "expected_tables": ["rpt_user_engagement"],
+    "expected_columns": ["engagement_tier", "engagement_score", "revenue_last_30d"],
+    "notes": "Segmentation analysis with multiple aggregations per tier"
+  },
+  {
+    "id": "hard_08",
+    "difficulty": "hard",
+    "category": "campaign_roi",
+    "question": "Which campaigns have positive ROI? Compare daily budget to daily revenue",
+    "expected_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+    "expected_tables": ["dim_campaigns", "fct_conversions", "fct_sessions"],
+    "expected_columns": ["daily_budget", "revenue", "campaign_name"],
+    "notes": "CTE with multi-table JOIN and derived ROI calculation"
+  },
+
+  {
+    "id": "expert_01",
+    "difficulty": "expert",
+    "category": "funnel_custom",
+    "question": "Build a conversion funnel: page_view → click → add_to_cart → purchase. Show the drop-off rate at each step for mobile users last month",
+    "expected_sql": "WITH mobile_sessions AS (SELECT session_id FROM fct_sessions WHERE device_type = 'mobile' AND session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE)), funnel AS (SELECT COUNT(DISTINCT ms.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN e.event_name = 'page_view' THEN e.session_id END) AS step1_pageview, COUNT(DISTINCT CASE WHEN e.event_name = 'click' THEN e.session_id END) AS step2_click, COUNT(DISTINCT CASE WHEN e.event_name = 'add_to_cart' THEN e.session_id END) AS step3_cart, COUNT(DISTINCT CASE WHEN e.event_name = 'purchase' THEN e.session_id END) AS step4_purchase FROM mobile_sessions ms JOIN fct_events e ON ms.session_id = e.session_id) SELECT total_sessions, step1_pageview, ROUND(step2_click * 100.0 / NULLIF(step1_pageview, 0), 2) AS pageview_to_click_pct, step2_click, ROUND(step3_cart * 100.0 / NULLIF(step2_click, 0), 2) AS click_to_cart_pct, step3_cart, ROUND(step4_purchase * 100.0 / NULLIF(step3_cart, 0), 2) AS cart_to_purchase_pct, step4_purchase, ROUND(step4_purchase * 100.0 / NULLIF(total_sessions, 0), 2) AS overall_conversion_pct FROM funnel",
+    "expected_tables": ["fct_sessions", "fct_events"],
+    "expected_columns": ["device_type", "session_id", "event_name"],
+    "notes": "Multi-step funnel with step-wise conversion rates. Requires understanding of funnel semantics."
+  },
+  {
+    "id": "expert_02",
+    "difficulty": "expert",
+    "category": "cohort_retention",
+    "question": "Show me monthly retention rates: for users who registered each month, what percentage came back in the following months?",
+    "expected_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+    "expected_tables": ["dim_users", "fct_sessions"],
+    "expected_columns": ["user_id", "registered_at", "session_date"],
+    "notes": "Classic cohort retention analysis. Requires multiple CTEs, DATEDIFF month arithmetic, and self-join on cohort."
+  },
+  {
+    "id": "expert_03",
+    "difficulty": "expert",
+    "category": "window_function",
+    "question": "For each user, show their last 5 sessions with a running total of page views",
+    "expected_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["user_id", "session_id", "session_start", "page_view_count"],
+    "notes": "Window functions with ROW_NUMBER for ranking and SUM OVER for running totals"
+  },
+  {
+    "id": "expert_04",
+    "difficulty": "expert",
+    "category": "churn_prediction",
+    "question": "Find users who were active last month but have had zero sessions this month — potential churners. Include their engagement score and last visit date",
+    "expected_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+    "expected_tables": ["fct_sessions", "dim_users", "rpt_user_engagement"],
+    "expected_columns": ["user_id", "session_date", "engagement_score"],
+    "notes": "Anti-join pattern (LEFT JOIN + IS NULL) for churn detection with enrichment from multiple tables"
+  },
+  {
+    "id": "expert_05",
+    "difficulty": "expert",
+    "category": "attribution_multi_touch",
+    "question": "For users who made a purchase, show all the campaigns they interacted with leading up to the purchase and the number of touches per campaign",
+    "expected_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+    "expected_tables": ["fct_conversions", "fct_sessions"],
+    "expected_columns": ["user_id", "utm_campaign", "session_start", "conversion_timestamp"],
+    "notes": "Multi-touch attribution: track all campaign interactions prior to first purchase. Requires temporal join logic."
+  },
+  {
+    "id": "expert_06",
+    "difficulty": "expert",
+    "category": "session_depth_analysis",
+    "question": "What is the distribution of sessions by page depth (number of pages viewed) and how does conversion rate change with page depth?",
+    "expected_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["page_view_count", "has_conversion"],
+    "notes": "Bucketed distribution analysis with conversion rate per bucket and window function for percentage of total"
+  },
+  {
+    "id": "expert_07",
+    "difficulty": "expert",
+    "category": "cross_device",
+    "question": "Find users who use multiple device types. How many use desktop and mobile? Show their engagement compared to single-device users",
+    "expected_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+    "expected_tables": ["fct_sessions", "rpt_user_engagement"],
+    "expected_columns": ["user_id", "device_type", "engagement_score"],
+    "notes": "Cross-device analysis comparing multi-device vs single-device user behavior. Uses ARRAY_AGG and GROUP BY on derived categories."
+  },
+  {
+    "id": "expert_08",
+    "difficulty": "expert",
+    "category": "time_pattern",
+    "question": "What hour of the day has the highest conversion rate? Break it down by weekday vs weekend",
+    "expected_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+    "expected_tables": ["fct_sessions"],
+    "expected_columns": ["session_start", "has_conversion"],
+    "notes": "EXTRACT for temporal pattern analysis with weekday/weekend segmentation"
+  }
+]

@@ -1,0 +1,68 @@
+[project]
+name = "text-to-sql-graphrag"
+version = "0.1.0"
+description = "Text-to-SQL using GraphRAG over Neo4j with dbt metadata"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # --- Neo4j ---
+    "neo4j>=5.20.0",
+
+    # --- LLM & Agent Framework ---
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langgraph>=0.2.0",
+    "langchain-community>=0.3.0",
+
+    # --- LLM Providers (pluggable) ---
+    "langchain-ollama>=0.2.0",       # Default: free local LLM
+    "langchain-openai>=0.2.0",       # Optional: OpenAI
+    "langchain-google-genai>=2.0.0", # Optional: Gemini
+
+    # --- dbt Parsing ---
+    "dbt-artifacts-parser>=0.6.0",
+
+    # --- SQL Validation ---
+    "sqlglot>=25.0.0",
+
+    # --- Embeddings ---
+    "numpy>=1.26.0",
+
+    # --- API ---
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+
+    # --- UI ---
+    "streamlit>=1.38.0",
+    "requests>=2.32.0",
+
+    # --- Utilities ---
+    "python-dotenv>=1.0.0",
+    "structlog>=24.4.0",
+    "typer>=0.12.0",
+    "rich>=13.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+ingest = "scripts.ingest:app"
+setup-neo4j = "scripts.setup_neo4j:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

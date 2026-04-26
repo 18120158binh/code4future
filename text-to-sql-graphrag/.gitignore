@@ -1,0 +1,32 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Neo4j data (if local)
+neo4j_data/
+
+# dbt artifacts (sample data)
+sample_dbt_docs/
+
+# OS
+.DS_Store
+Thumbs.db
