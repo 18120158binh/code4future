@@ -11,7 +11,7 @@ The project is divided into four main functional blocks:
 3. **Generative Agent** (LangGraph Orchestration + Self-Correction)
 4. **User Interface & API** (FastAPI + Streamlit)
 
-`mermaid
+```mermaid
 graph TD
     %% Ingestion Flow
     subgraph Ingestion Pipeline
@@ -41,7 +41,7 @@ graph TD
     end
 
     Formatter --> API
-`
+```
 
 ## 1. Knowledge Graph Representation (Neo4j)
 
@@ -49,7 +49,7 @@ Instead of passing a flat list of tables directly to the LLM (which exceeds cont
 
 *   **Nodes**: Table, Column, Schema, Database
 *   **Relationships**: CONTAINS_SCHEMA, CONTAINS_TABLE, HAS_COLUMN, DEPENDS_ON (Lineage), FK_REFERENCES (Foreign Keys).
-*   **Vector Indexes**: 	able_desc_embedding and column_desc_embedding store semantic vectors of the LLM-enriched descriptions.
+*   **Vector Indexes**: `table_desc_embedding` and `column_desc_embedding` store semantic vectors of the LLM-enriched descriptions.
 
 ## 2. Ingestion Pipeline
 
@@ -69,7 +69,7 @@ Standard RAG (Vector Search only) fails in databases because finding "revenue" m
 
 ## 4. LangGraph Agent (Generation & Validation)
 
-`mermaid
+```mermaid
 stateDiagram-v2
     [*] --> RetrieveContext
     RetrieveContext --> GenerateSQL
@@ -78,8 +78,26 @@ stateDiagram-v2
     ValidateSQL --> FormatResponse : Valid SQL
     ValidateSQL --> HandleError : Max Retries Exceeded
     FormatResponse --> [*]
-`
+```
 
 *   **Generation**: System prompts actively specify the requested target dialect (e.g., Postgres).
 *   **Validation**: Utilizes sqlglot to parse the generated SQL offline ensuring grammatical correctness.
 *   **Self-Correction**: If sqlglot spots an invalid query, the Agent feeds the error back to the LLM autonomously (up to 3 times).
+
+## 5. Knowledge Graph Extensibility
+
+A defining advantage of this architecture is the profound extensibility of the semantic knowledge graph. Because schema relationships, metrics logic, and documentation exist uniformly as graph nodes and relationshipsâ€”decoupled from the core execution engineâ€”the knowledge base can be easily expanded in the future without systemic re-writes. 
+
+This enables robust continuous enrichment of the semantic layer:
+* **Business Glossary Linkage**: Linking raw database `Column` nodes directly to standardized overarching `BusinessTerm` nodes to unify reporting dialects.
+* **Query Caching & Few-Shot Injection**: Saving high-value, human-validated SQL queries as `VerifiedQuery` nodes linked directly to the `Table` nodes they query. The retriever can dynamically identify semantically similar `VerifiedQuery` patterns to inject as perfect few-shot examples for the LLM.
+* **Automated Complex Problem Solving**: By expanding the semantics (e.g., hooking into data quality rule results, access constraints, or pipeline orchestration status nodes), the LangGraph agent can perform multi-hop, automated problem solving. It allows the system to identify not just *how* to write a SQL query, but autonomously determine if the underlying data is fresh or reliable enough to answer the user accurately before executing.
+
+## 5. Knowledge Graph Extensibility
+
+A defining advantage of this architecture is the profound extensibility of the semantic knowledge graph. Because schema relationships, metrics logic, and documentation exist uniformly as graph nodes and relationships—decoupled from the core execution engine—the knowledge base can be easily expanded in the future without systemic re-writes. 
+
+This enables robust continuous enrichment of the semantic layer:
+* **Business Glossary Linkage**: Linking raw database \Column\ nodes directly to standardized overarching \BusinessTerm\ nodes to unify reporting dialects.
+* **Query Caching & Few-Shot Injection**: Saving high-value, human-validated SQL queries as \VerifiedQuery\ nodes linked directly to the \Table\ nodes they query. The retriever can dynamically identify semantically similar \VerifiedQuery\ patterns to inject as perfect few-shot examples for the LLM.
+* **Automated Complex Problem Solving**: By expanding the semantics (e.g., hooking into data quality rule results, access constraints, or pipeline orchestration status nodes), the LangGraph agent can perform multi-hop, automated problem solving. It allows the system to identify not just *how* to write a SQL query, but autonomously determine if the underlying data is fresh or reliable enough to answer the user accurately before executing.
