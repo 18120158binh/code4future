@@ -1,0 +1,3548 @@
+{
+  "timestamp": "2026-04-27T16:51:14.995576",
+  "duration_seconds": 53.5,
+  "llm_model": "gemini-2.5-flash",
+  "config": {
+    "top_k": 5,
+    "graph_expansion_hops": 2,
+    "sql_dialect": "postgres",
+    "dry_run": true,
+    "difficulty_filter": null,
+    "total_cases": 34
+  },
+  "results": [
+    {
+      "test_id": "easy_01",
+      "difficulty": "easy",
+      "question": "Show me all events from yesterday",
+      "rag": {
+        "generated_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+        "tables_in_context": [
+          "rpt_user_engagement",
+          "events",
+          "stg_events",
+          "fct_conversions",
+          "fct_events"
+        ],
+        "eval": {
+          "test_id": "easy_01",
+          "difficulty": "easy",
+          "question": "Show me all events from yesterday",
+          "generated_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+          "expected_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_events"
+          ],
+          "tables_found": [
+            "fct_events"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "event_id",
+            "event_name",
+            "event_timestamp"
+          ],
+          "columns_found": [
+            "anonymous_id",
+            "event_date",
+            "event_id",
+            "event_name",
+            "event_timestamp",
+            "page_path",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "fct_events",
+          "events",
+          "rpt_user_engagement",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_events",
+          "stg_devices",
+          "fct_conversions",
+          "users",
+          "dim_users",
+          "int_event_sequences",
+          "fct_sessions",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_01",
+          "difficulty": "easy",
+          "question": "Show me all events from yesterday",
+          "generated_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+          "expected_sql": "SELECT event_id, event_name, event_timestamp, user_id, anonymous_id, page_path FROM fct_events WHERE event_date = CURRENT_DATE - INTERVAL '1 day' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_events"
+          ],
+          "tables_found": [
+            "fct_events"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "event_id",
+            "event_name",
+            "event_timestamp"
+          ],
+          "columns_found": [
+            "anonymous_id",
+            "event_date",
+            "event_id",
+            "event_name",
+            "event_timestamp",
+            "page_path",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_02",
+      "difficulty": "easy",
+      "question": "How many users do we have?",
+      "rag": {
+        "generated_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+        "tables_in_context": [
+          "users",
+          "dim_users",
+          "stg_users",
+          "rpt_user_engagement",
+          "fct_sessions"
+        ],
+        "eval": {
+          "test_id": "easy_02",
+          "difficulty": "easy",
+          "question": "How many users do we have?",
+          "generated_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+          "expected_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users"
+          ],
+          "tables_found": [
+            "dim_users"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [],
+          "columns_found": [],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "fct_conversions",
+          "stg_events",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_02",
+          "difficulty": "easy",
+          "question": "How many users do we have?",
+          "generated_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+          "expected_sql": "SELECT COUNT(*) AS total_users FROM dim_users",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users"
+          ],
+          "tables_found": [
+            "dim_users"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [],
+          "columns_found": [],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_03",
+      "difficulty": "easy",
+      "question": "List all premium users",
+      "rag": {
+        "generated_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+        "tables_in_context": [
+          "users",
+          "dim_users",
+          "stg_users",
+          "rpt_user_engagement",
+          "fct_sessions"
+        ],
+        "eval": {
+          "test_id": "easy_03",
+          "difficulty": "easy",
+          "question": "List all premium users",
+          "generated_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+          "expected_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users"
+          ],
+          "tables_found": [
+            "dim_users"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "display_name",
+            "subscription_tier",
+            "user_id"
+          ],
+          "columns_found": [
+            "country_code",
+            "display_name",
+            "registered_at",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "stg_events",
+          "fct_conversions",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_03",
+          "difficulty": "easy",
+          "question": "List all premium users",
+          "generated_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+          "expected_sql": "SELECT user_id, display_name, registered_at, country_code FROM dim_users WHERE subscription_tier = 'premium' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users"
+          ],
+          "tables_found": [
+            "dim_users"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "display_name",
+            "subscription_tier",
+            "user_id"
+          ],
+          "columns_found": [
+            "country_code",
+            "display_name",
+            "registered_at",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_04",
+      "difficulty": "easy",
+      "question": "How many page views happened today?",
+      "rag": {
+        "generated_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews",
+          "stg_events"
+        ],
+        "eval": {
+          "test_id": "easy_04",
+          "difficulty": "easy",
+          "question": "How many page views happened today?",
+          "generated_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+          "expected_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_pageviews"
+          ],
+          "tables_found": [
+            "fct_pageviews"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [],
+          "columns_found": [
+            "view_date"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "events",
+          "rpt_user_engagement",
+          "stg_campaigns",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "stg_events",
+          "stg_devices",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "int_event_sequences"
+        ],
+        "eval": {
+          "test_id": "easy_04",
+          "difficulty": "easy",
+          "question": "How many page views happened today?",
+          "generated_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+          "expected_sql": "SELECT COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date = CURRENT_DATE",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_pageviews"
+          ],
+          "tables_found": [
+            "fct_pageviews"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [],
+          "columns_found": [
+            "view_date"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_05",
+      "difficulty": "easy",
+      "question": "What are all the different event types we track?",
+      "rag": {
+        "generated_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+        "tables_in_context": [
+          "int_sessions",
+          "events",
+          "stg_events",
+          "dim_users",
+          "int_event_sequences"
+        ],
+        "eval": {
+          "test_id": "easy_05",
+          "difficulty": "easy",
+          "question": "What are all the different event types we track?",
+          "generated_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+          "expected_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_events"
+          ],
+          "tables_found": [
+            "fct_events"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "event_name"
+          ],
+          "columns_found": [
+            "event_name"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "events",
+          "rpt_user_engagement",
+          "stg_campaigns",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "stg_devices",
+          "stg_events",
+          "users",
+          "dim_users",
+          "dim_campaigns",
+          "int_event_sequences",
+          "fct_events",
+          "fct_sessions",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_05",
+          "difficulty": "easy",
+          "question": "What are all the different event types we track?",
+          "generated_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+          "expected_sql": "SELECT DISTINCT event_name FROM fct_events ORDER BY event_name",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_events"
+          ],
+          "tables_found": [
+            "fct_events"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "event_name"
+          ],
+          "columns_found": [
+            "event_name"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_06",
+      "difficulty": "easy",
+      "question": "Show me the top 10 most visited pages",
+      "rag": {
+        "generated_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+        "tables_in_context": [
+          "rpt_user_engagement",
+          "fct_pageviews",
+          "int_sessions",
+          "fct_sessions",
+          "fct_events"
+        ],
+        "eval": {
+          "test_id": "easy_06",
+          "difficulty": "easy",
+          "question": "Show me the top 10 most visited pages",
+          "generated_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+          "expected_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_pageviews"
+          ],
+          "tables_found": [
+            "fct_pageviews"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "page_path"
+          ],
+          "columns_found": [
+            "page_path",
+            "view_count"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_06",
+          "difficulty": "easy",
+          "question": "Show me the top 10 most visited pages",
+          "generated_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+          "expected_sql": "SELECT page_path, COUNT(*) AS view_count FROM fct_pageviews GROUP BY page_path ORDER BY view_count DESC LIMIT 10",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_pageviews"
+          ],
+          "tables_found": [
+            "fct_pageviews"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "page_path"
+          ],
+          "columns_found": [
+            "page_path",
+            "view_count"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_07",
+      "difficulty": "easy",
+      "question": "What is the total revenue from purchases?",
+      "rag": {
+        "generated_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+        "tables_in_context": [
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "rpt_user_engagement",
+          "fct_pageviews",
+          "fct_events"
+        ],
+        "eval": {
+          "test_id": "easy_07",
+          "difficulty": "easy",
+          "question": "What is the total revenue from purchases?",
+          "generated_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+          "expected_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "revenue"
+          ],
+          "columns_found": [
+            "conversion_type",
+            "revenue"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_07",
+          "difficulty": "easy",
+          "question": "What is the total revenue from purchases?",
+          "generated_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+          "expected_sql": "SELECT SUM(revenue) AS total_revenue FROM fct_conversions WHERE conversion_type = 'purchase'",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "revenue"
+          ],
+          "columns_found": [
+            "conversion_type",
+            "revenue"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "easy_08",
+      "difficulty": "easy",
+      "question": "How many sessions were bounces?",
+      "rag": {
+        "generated_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_sessions",
+          "dim_campaigns"
+        ],
+        "eval": {
+          "test_id": "easy_08",
+          "difficulty": "easy",
+          "question": "How many sessions were bounces?",
+          "generated_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+          "expected_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [],
+          "columns_found": [
+            "is_bounce"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "fct_conversions",
+          "stg_events",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "easy_08",
+          "difficulty": "easy",
+          "question": "How many sessions were bounces?",
+          "generated_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+          "expected_sql": "SELECT COUNT(*) AS bounce_count FROM fct_sessions WHERE is_bounce = TRUE",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [],
+          "columns_found": [
+            "is_bounce"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_01",
+      "difficulty": "medium",
+      "question": "Show me the number of sessions per country",
+      "rag": {
+        "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews",
+          "rpt_funnel_analysis"
+        ],
+        "eval": {
+          "test_id": "medium_01",
+          "difficulty": "medium",
+          "question": "Show me the number of sessions per country",
+          "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+          "expected_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "country_code"
+          ],
+          "columns_found": [
+            "country_code",
+            "session_count"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "fct_conversions",
+          "stg_events",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_01",
+          "difficulty": "medium",
+          "question": "Show me the number of sessions per country",
+          "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+          "expected_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code ORDER BY session_count DESC LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "country_code"
+          ],
+          "columns_found": [
+            "country_code",
+            "session_count"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_02",
+      "difficulty": "medium",
+      "question": "What is the average session duration by device type?",
+      "rag": {
+        "generated_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews"
+        ],
+        "eval": {
+          "test_id": "medium_02",
+          "difficulty": "medium",
+          "question": "What is the average session duration by device type?",
+          "generated_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+          "expected_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "session_duration_seconds"
+          ],
+          "columns_found": [
+            "avg_duration_seconds",
+            "device_type",
+            "session_duration_seconds"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_02",
+          "difficulty": "medium",
+          "question": "What is the average session duration by device type?",
+          "generated_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+          "expected_sql": "SELECT device_type, AVG(session_duration_seconds) AS avg_duration_seconds FROM fct_sessions GROUP BY device_type ORDER BY avg_duration_seconds DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "session_duration_seconds"
+          ],
+          "columns_found": [
+            "avg_duration_seconds",
+            "device_type",
+            "session_duration_seconds"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_03",
+      "difficulty": "medium",
+      "question": "How many conversions happened last week?",
+      "rag": {
+        "generated_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+        "tables_in_context": [
+          "fct_conversions",
+          "dim_campaigns",
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_sessions"
+        ],
+        "eval": {
+          "test_id": "medium_03",
+          "difficulty": "medium",
+          "question": "How many conversions happened last week?",
+          "generated_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+          "expected_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "conversion_type"
+          ],
+          "columns_found": [
+            "conversion_count",
+            "conversion_date",
+            "conversion_type"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "campaigns",
+          "dim_users",
+          "users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_03",
+          "difficulty": "medium",
+          "question": "How many conversions happened last week?",
+          "generated_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+          "expected_sql": "SELECT conversion_type, COUNT(*) AS conversion_count FROM fct_conversions WHERE conversion_date >= CURRENT_DATE - INTERVAL '7 days' AND conversion_date < CURRENT_DATE GROUP BY conversion_type ORDER BY conversion_count DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "conversion_type"
+          ],
+          "columns_found": [
+            "conversion_count",
+            "conversion_date",
+            "conversion_type"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_04",
+      "difficulty": "medium",
+      "question": "Show me all purchase events with the user's display name",
+      "rag": {
+        "generated_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "events",
+          "rpt_user_engagement",
+          "stg_campaigns"
+        ],
+        "eval": {
+          "test_id": "medium_04",
+          "difficulty": "medium",
+          "question": "Show me all purchase events with the user's display name",
+          "generated_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+          "expected_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users",
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "dim_users",
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "display_name",
+            "revenue"
+          ],
+          "columns_found": [
+            "conversion_id",
+            "conversion_timestamp",
+            "conversion_type",
+            "display_name",
+            "order_id",
+            "revenue",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "fct_events",
+          "events",
+          "rpt_user_engagement",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_events",
+          "stg_devices",
+          "fct_conversions",
+          "users",
+          "dim_users",
+          "int_event_sequences",
+          "fct_sessions",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_04",
+          "difficulty": "medium",
+          "question": "Show me all purchase events with the user's display name",
+          "generated_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+          "expected_sql": "SELECT c.conversion_id, c.conversion_timestamp, c.revenue, c.order_id, u.display_name, u.subscription_tier FROM fct_conversions c JOIN dim_users u ON c.user_id = u.user_id WHERE c.conversion_type = 'purchase' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users",
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "dim_users",
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "display_name",
+            "revenue"
+          ],
+          "columns_found": [
+            "conversion_id",
+            "conversion_timestamp",
+            "conversion_type",
+            "display_name",
+            "order_id",
+            "revenue",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_05",
+      "difficulty": "medium",
+      "question": "What is the bounce rate and average pages per session by device type?",
+      "rag": {
+        "generated_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "fct_sessions",
+          "rpt_user_engagement",
+          "events"
+        ],
+        "eval": {
+          "test_id": "medium_05",
+          "difficulty": "medium",
+          "question": "What is the bounce rate and average pages per session by device type?",
+          "generated_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+          "expected_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "is_bounce",
+            "page_view_count"
+          ],
+          "columns_found": [
+            "device_type",
+            "is_bounce",
+            "page_view_count",
+            "total_sessions"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_05",
+          "difficulty": "medium",
+          "question": "What is the bounce rate and average pages per session by device type?",
+          "generated_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+          "expected_sql": "SELECT device_type, COUNT(*) AS total_sessions, SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) AS bounce_count, ROUND(SUM(CASE WHEN is_bounce THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bounce_rate, AVG(page_view_count) AS avg_pages_per_session FROM fct_sessions GROUP BY device_type ORDER BY total_sessions DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "is_bounce",
+            "page_view_count"
+          ],
+          "columns_found": [
+            "device_type",
+            "is_bounce",
+            "page_view_count",
+            "total_sessions"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_06",
+      "difficulty": "medium",
+      "question": "Which countries have more than 1000 sessions?",
+      "rag": {
+        "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_sessions",
+          "dim_campaigns"
+        ],
+        "eval": {
+          "test_id": "medium_06",
+          "difficulty": "medium",
+          "question": "Which countries have more than 1000 sessions?",
+          "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+          "expected_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "country_code"
+          ],
+          "columns_found": [
+            "country_code",
+            "session_count"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "events",
+          "rpt_user_engagement",
+          "stg_campaigns",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "stg_events",
+          "stg_devices",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "int_event_sequences"
+        ],
+        "eval": {
+          "test_id": "medium_06",
+          "difficulty": "medium",
+          "question": "Which countries have more than 1000 sessions?",
+          "generated_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+          "expected_sql": "SELECT country_code, COUNT(*) AS session_count FROM fct_sessions GROUP BY country_code HAVING COUNT(*) > 1000 ORDER BY session_count DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "country_code"
+          ],
+          "columns_found": [
+            "country_code",
+            "session_count"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_07",
+      "difficulty": "medium",
+      "question": "Show me daily page view trends for the last 30 days",
+      "rag": {
+        "generated_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+        "tables_in_context": [
+          "int_sessions",
+          "fct_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews"
+        ],
+        "eval": {
+          "test_id": "medium_07",
+          "difficulty": "medium",
+          "question": "Show me daily page view trends for the last 30 days",
+          "generated_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+          "expected_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_pageviews"
+          ],
+          "tables_found": [
+            "fct_pageviews"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "view_date"
+          ],
+          "columns_found": [
+            "view_date"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_07",
+          "difficulty": "medium",
+          "question": "Show me daily page view trends for the last 30 days",
+          "generated_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+          "expected_sql": "SELECT view_date, COUNT(*) AS pageview_count FROM fct_pageviews WHERE view_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY view_date ORDER BY view_date",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_pageviews"
+          ],
+          "tables_found": [
+            "fct_pageviews"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "view_date"
+          ],
+          "columns_found": [
+            "view_date"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_08",
+      "difficulty": "medium",
+      "question": "Total revenue by campaign name",
+      "rag": {
+        "generated_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "fct_sessions",
+          "rpt_user_engagement"
+        ],
+        "eval": {
+          "test_id": "medium_08",
+          "difficulty": "medium",
+          "question": "Total revenue by campaign name",
+          "generated_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+          "expected_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_campaigns",
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "dim_campaigns",
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "campaign_name",
+            "revenue"
+          ],
+          "columns_found": [
+            "campaign_name",
+            "channel",
+            "conversion_type",
+            "revenue",
+            "total_revenue",
+            "utm_campaign",
+            "utm_medium",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "campaigns",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_08",
+          "difficulty": "medium",
+          "question": "Total revenue by campaign name",
+          "generated_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+          "expected_sql": "SELECT dc.campaign_name, dc.channel, SUM(c.revenue) AS total_revenue, COUNT(*) AS purchase_count FROM fct_conversions c JOIN dim_campaigns dc ON c.utm_source = dc.utm_source AND c.utm_medium = dc.utm_medium AND c.utm_campaign = dc.utm_campaign WHERE c.conversion_type = 'purchase' GROUP BY dc.campaign_name, dc.channel ORDER BY total_revenue DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_campaigns",
+            "fct_conversions"
+          ],
+          "tables_found": [
+            "dim_campaigns",
+            "fct_conversions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "campaign_name",
+            "revenue"
+          ],
+          "columns_found": [
+            "campaign_name",
+            "channel",
+            "conversion_type",
+            "revenue",
+            "total_revenue",
+            "utm_campaign",
+            "utm_medium",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_09",
+      "difficulty": "medium",
+      "question": "How many sessions come from anonymous users vs authenticated users?",
+      "rag": {
+        "generated_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews"
+        ],
+        "eval": {
+          "test_id": "medium_09",
+          "difficulty": "medium",
+          "question": "How many sessions come from anonymous users vs authenticated users?",
+          "generated_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+          "expected_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "user_id"
+          ],
+          "columns_found": [
+            "session_count",
+            "user_id",
+            "user_type"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "events",
+          "rpt_user_engagement",
+          "stg_campaigns",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "stg_events",
+          "stg_devices",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "int_event_sequences"
+        ],
+        "eval": {
+          "test_id": "medium_09",
+          "difficulty": "medium",
+          "question": "How many sessions come from anonymous users vs authenticated users?",
+          "generated_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+          "expected_sql": "SELECT CASE WHEN user_id IS NOT NULL THEN 'authenticated' ELSE 'anonymous' END AS user_type, COUNT(*) AS session_count FROM fct_sessions GROUP BY user_type ORDER BY session_count DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "user_id"
+          ],
+          "columns_found": [
+            "session_count",
+            "user_id",
+            "user_type"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "medium_10",
+      "difficulty": "medium",
+      "question": "Show me mobile users from Vietnam who signed up via Google OAuth",
+      "rag": {
+        "generated_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+        "tables_in_context": [
+          "users",
+          "dim_users",
+          "stg_users",
+          "stg_events",
+          "rpt_user_engagement"
+        ],
+        "eval": {
+          "test_id": "medium_10",
+          "difficulty": "medium",
+          "question": "Show me mobile users from Vietnam who signed up via Google OAuth",
+          "generated_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+          "expected_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users"
+          ],
+          "tables_found": [
+            "dim_users"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "country_code",
+            "primary_device_type",
+            "registration_source"
+          ],
+          "columns_found": [
+            "country_code",
+            "display_name",
+            "primary_device_type",
+            "registered_at",
+            "registration_source",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "stg_events",
+          "fct_conversions",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "medium_10",
+          "difficulty": "medium",
+          "question": "Show me mobile users from Vietnam who signed up via Google OAuth",
+          "generated_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+          "expected_sql": "SELECT u.user_id, u.display_name, u.registered_at, u.subscription_tier FROM dim_users u WHERE u.country_code = 'VN' AND u.registration_source = 'google_oauth' AND u.primary_device_type = 'mobile' LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users"
+          ],
+          "tables_found": [
+            "dim_users"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "country_code",
+            "primary_device_type",
+            "registration_source"
+          ],
+          "columns_found": [
+            "country_code",
+            "display_name",
+            "primary_device_type",
+            "registered_at",
+            "registration_source",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_01",
+      "difficulty": "hard",
+      "question": "Show me the top 5 landing pages that lead to the most purchases, include the total revenue",
+      "rag": {
+        "generated_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions"
+        ],
+        "eval": {
+          "test_id": "hard_01",
+          "difficulty": "hard",
+          "question": "Show me the top 5 landing pages that lead to the most purchases, include the total revenue",
+          "generated_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+          "expected_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "landing_page_path",
+            "revenue"
+          ],
+          "columns_found": [
+            "conversion_id",
+            "conversion_type",
+            "has_conversion",
+            "landing_page_path",
+            "purchase_count",
+            "revenue",
+            "session_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_01",
+          "difficulty": "hard",
+          "question": "Show me the top 5 landing pages that lead to the most purchases, include the total revenue",
+          "generated_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+          "expected_sql": "SELECT s.landing_page_path, COUNT(DISTINCT c.conversion_id) AS purchase_count, SUM(c.revenue) AS total_revenue FROM fct_sessions s JOIN fct_conversions c ON s.session_id = c.session_id WHERE c.conversion_type = 'purchase' AND s.has_conversion = TRUE GROUP BY s.landing_page_path ORDER BY purchase_count DESC LIMIT 5",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "landing_page_path",
+            "revenue"
+          ],
+          "columns_found": [
+            "conversion_id",
+            "conversion_type",
+            "has_conversion",
+            "landing_page_path",
+            "purchase_count",
+            "revenue",
+            "session_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_02",
+      "difficulty": "hard",
+      "question": "Which users have a higher engagement score than the average?",
+      "rag": {
+        "generated_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+        "tables_in_context": [
+          "users",
+          "rpt_user_engagement",
+          "dim_users",
+          "stg_users",
+          "fct_sessions"
+        ],
+        "eval": {
+          "test_id": "hard_02",
+          "difficulty": "hard",
+          "question": "Which users have a higher engagement score than the average?",
+          "generated_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+          "expected_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "rpt_user_engagement"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "engagement_score",
+            "user_id"
+          ],
+          "columns_found": [
+            "display_name",
+            "engagement_score",
+            "engagement_tier",
+            "sessions_last_30d",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_02",
+          "difficulty": "hard",
+          "question": "Which users have a higher engagement score than the average?",
+          "generated_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+          "expected_sql": "SELECT user_id, display_name, engagement_score, engagement_tier, sessions_last_30d FROM rpt_user_engagement WHERE engagement_score > (SELECT AVG(engagement_score) FROM rpt_user_engagement) ORDER BY engagement_score DESC LIMIT 100",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "rpt_user_engagement"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "engagement_score",
+            "user_id"
+          ],
+          "columns_found": [
+            "display_name",
+            "engagement_score",
+            "engagement_tier",
+            "sessions_last_30d",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_03",
+      "difficulty": "hard",
+      "question": "Compare this week's sessions vs last week's sessions by device type",
+      "rag": {
+        "generated_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews"
+        ],
+        "eval": {
+          "test_id": "hard_03",
+          "difficulty": "hard",
+          "question": "Compare this week's sessions vs last week's sessions by device type",
+          "generated_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+          "expected_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "last_week",
+            "this_week"
+          ],
+          "table_precision": 0.333,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "session_date"
+          ],
+          "columns_found": [
+            "device_type",
+            "session_date",
+            "sessions",
+            "this_week_sessions"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "last_week",
+            "this_week"
+          ],
+          "extra_tables": [
+            "last_week",
+            "this_week"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "fct_conversions",
+          "stg_events",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_03",
+          "difficulty": "hard",
+          "question": "Compare this week's sessions vs last week's sessions by device type",
+          "generated_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+          "expected_sql": "WITH this_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type), last_week AS (SELECT device_type, COUNT(*) AS sessions FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '14 days' AND session_date < CURRENT_DATE - INTERVAL '7 days' GROUP BY device_type) SELECT COALESCE(tw.device_type, lw.device_type) AS device_type, COALESCE(tw.sessions, 0) AS this_week_sessions, COALESCE(lw.sessions, 0) AS last_week_sessions, COALESCE(tw.sessions, 0) - COALESCE(lw.sessions, 0) AS session_diff FROM this_week tw FULL OUTER JOIN last_week lw ON tw.device_type = lw.device_type ORDER BY this_week_sessions DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "last_week",
+            "this_week"
+          ],
+          "table_precision": 0.333,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "session_date"
+          ],
+          "columns_found": [
+            "device_type",
+            "session_date",
+            "sessions",
+            "this_week_sessions"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "last_week",
+            "this_week"
+          ],
+          "extra_tables": [
+            "last_week",
+            "this_week"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_04",
+      "difficulty": "hard",
+      "question": "What is the conversion rate by UTM source for the last 30 days?",
+      "rag": {
+        "generated_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+        "tables_in_context": [
+          "int_sessions",
+          "stg_users",
+          "rpt_user_engagement",
+          "events",
+          "rpt_funnel_analysis"
+        ],
+        "eval": {
+          "test_id": "hard_04",
+          "difficulty": "hard",
+          "question": "What is the conversion rate by UTM source for the last 30 days?",
+          "generated_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+          "expected_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "has_conversion",
+            "session_id",
+            "utm_source"
+          ],
+          "columns_found": [
+            "conversion_rate",
+            "has_conversion",
+            "session_date",
+            "session_id",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_events",
+          "stg_devices",
+          "fct_conversions",
+          "campaigns",
+          "dim_users",
+          "dim_campaigns",
+          "int_event_sequences",
+          "fct_events",
+          "fct_sessions",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_04",
+          "difficulty": "hard",
+          "question": "What is the conversion rate by UTM source for the last 30 days?",
+          "generated_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+          "expected_sql": "SELECT utm_source, COUNT(DISTINCT session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN has_conversion THEN session_id END) * 100.0 / NULLIF(COUNT(DISTINCT session_id), 0), 2) AS conversion_rate FROM fct_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days' AND utm_source IS NOT NULL GROUP BY utm_source HAVING COUNT(DISTINCT session_id) >= 10 ORDER BY conversion_rate DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "has_conversion",
+            "session_id",
+            "utm_source"
+          ],
+          "columns_found": [
+            "conversion_rate",
+            "has_conversion",
+            "session_date",
+            "session_id",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_05",
+      "difficulty": "hard",
+      "question": "What is the average time to purchase by device type?",
+      "rag": {
+        "generated_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews"
+        ],
+        "eval": {
+          "test_id": "hard_05",
+          "difficulty": "hard",
+          "question": "What is the average time to purchase by device type?",
+          "generated_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+          "expected_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "time_to_conversion_seconds"
+          ],
+          "columns_found": [
+            "avg_seconds_to_purchase",
+            "conversion_type",
+            "device_type",
+            "events_before_conversion",
+            "session_id",
+            "time_to_conversion_seconds"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_05",
+          "difficulty": "hard",
+          "question": "What is the average time to purchase by device type?",
+          "generated_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+          "expected_sql": "SELECT s.device_type, COUNT(*) AS purchase_count, AVG(c.time_to_conversion_seconds) AS avg_seconds_to_purchase, AVG(c.events_before_conversion) AS avg_events_before_purchase FROM fct_conversions c JOIN fct_sessions s ON c.session_id = s.session_id WHERE c.conversion_type = 'purchase' GROUP BY s.device_type ORDER BY avg_seconds_to_purchase",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "time_to_conversion_seconds"
+          ],
+          "columns_found": [
+            "avg_seconds_to_purchase",
+            "conversion_type",
+            "device_type",
+            "events_before_conversion",
+            "session_id",
+            "time_to_conversion_seconds"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_06",
+      "difficulty": "medium",
+      "question": "What pages do users typically visit right before making a purchase?",
+      "rag": {
+        "generated_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+        "tables_in_context": [
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "users",
+          "dim_users"
+        ],
+        "eval": {
+          "test_id": "hard_06",
+          "difficulty": "medium",
+          "question": "What pages do users typically visit right before making a purchase?",
+          "generated_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+          "expected_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "int_event_sequences"
+          ],
+          "tables_found": [
+            "int_event_sequences"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "next_event_name",
+            "page_path"
+          ],
+          "columns_found": [
+            "event_name",
+            "next_event_name",
+            "occurrences",
+            "page_path"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_06",
+          "difficulty": "medium",
+          "question": "What pages do users typically visit right before making a purchase?",
+          "generated_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+          "expected_sql": "SELECT es.page_path, COUNT(*) AS occurrences FROM int_event_sequences es WHERE es.next_event_name = 'purchase' AND es.event_name = 'page_view' GROUP BY es.page_path ORDER BY occurrences DESC LIMIT 20",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "int_event_sequences"
+          ],
+          "tables_found": [
+            "int_event_sequences"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "next_event_name",
+            "page_path"
+          ],
+          "columns_found": [
+            "event_name",
+            "next_event_name",
+            "occurrences",
+            "page_path"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_07",
+      "difficulty": "medium",
+      "question": "Break down users by engagement tier and show average revenue per tier",
+      "rag": {
+        "generated_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+        "tables_in_context": [
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "users",
+          "dim_users"
+        ],
+        "eval": {
+          "test_id": "hard_07",
+          "difficulty": "medium",
+          "question": "Break down users by engagement tier and show average revenue per tier",
+          "generated_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+          "expected_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "rpt_user_engagement"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "engagement_score",
+            "engagement_tier",
+            "revenue_last_30d"
+          ],
+          "columns_found": [
+            "avg_score",
+            "engagement_score",
+            "engagement_tier",
+            "revenue_last_30d",
+            "sessions_last_30d"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "hard_07",
+          "difficulty": "medium",
+          "question": "Break down users by engagement tier and show average revenue per tier",
+          "generated_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+          "expected_sql": "SELECT e.engagement_tier, COUNT(*) AS user_count, AVG(e.engagement_score) AS avg_score, AVG(e.sessions_last_30d) AS avg_sessions, SUM(e.revenue_last_30d) AS total_revenue, AVG(e.revenue_last_30d) AS avg_revenue_per_user FROM rpt_user_engagement e GROUP BY e.engagement_tier ORDER BY avg_score DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "rpt_user_engagement"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "engagement_score",
+            "engagement_tier",
+            "revenue_last_30d"
+          ],
+          "columns_found": [
+            "avg_score",
+            "engagement_score",
+            "engagement_tier",
+            "revenue_last_30d",
+            "sessions_last_30d"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "hard_08",
+      "difficulty": "hard",
+      "question": "Which campaigns have positive ROI? Compare daily budget to daily revenue",
+      "rag": {
+        "generated_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+        "tables_in_context": [
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "campaigns",
+          "dim_campaigns"
+        ],
+        "eval": {
+          "test_id": "hard_08",
+          "difficulty": "hard",
+          "question": "Which campaigns have positive ROI? Compare daily budget to daily revenue",
+          "generated_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+          "expected_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_campaigns",
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "campaign_revenue",
+            "dim_campaigns",
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "table_precision": 0.75,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "campaign_name",
+            "daily_budget",
+            "revenue"
+          ],
+          "columns_found": [
+            "campaign_name",
+            "channel",
+            "daily_budget",
+            "estimated_profit",
+            "first_session",
+            "last_session",
+            "revenue",
+            "session_date",
+            "session_id",
+            "total_revenue",
+            "utm_campaign",
+            "utm_medium",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "campaign_revenue"
+          ],
+          "extra_tables": [
+            "campaign_revenue"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "campaigns",
+          "stg_events",
+          "stg_devices",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_campaigns"
+        ],
+        "eval": {
+          "test_id": "hard_08",
+          "difficulty": "hard",
+          "question": "Which campaigns have positive ROI? Compare daily budget to daily revenue",
+          "generated_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+          "expected_sql": "WITH campaign_revenue AS (SELECT c.utm_source, c.utm_medium, c.utm_campaign, SUM(conv.revenue) AS total_revenue, MIN(s.session_date) AS first_session, MAX(s.session_date) AS last_session FROM fct_conversions conv JOIN fct_sessions s ON conv.session_id = s.session_id GROUP BY c.utm_source, c.utm_medium, c.utm_campaign) SELECT dc.campaign_name, dc.channel, dc.daily_budget, cr.total_revenue, DATEDIFF('day', cr.first_session, cr.last_session) + 1 AS active_days, dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS total_spend, cr.total_revenue - dc.daily_budget * (DATEDIFF('day', cr.first_session, cr.last_session) + 1) AS estimated_profit FROM dim_campaigns dc JOIN campaign_revenue cr ON dc.utm_source = cr.utm_source AND dc.utm_medium = cr.utm_medium AND dc.utm_campaign = cr.utm_campaign ORDER BY estimated_profit DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_campaigns",
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "campaign_revenue",
+            "dim_campaigns",
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "table_precision": 0.75,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "campaign_name",
+            "daily_budget",
+            "revenue"
+          ],
+          "columns_found": [
+            "campaign_name",
+            "channel",
+            "daily_budget",
+            "estimated_profit",
+            "first_session",
+            "last_session",
+            "revenue",
+            "session_date",
+            "session_id",
+            "total_revenue",
+            "utm_campaign",
+            "utm_medium",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "campaign_revenue"
+          ],
+          "extra_tables": [
+            "campaign_revenue"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_02",
+      "difficulty": "expert",
+      "question": "Show me monthly retention rates: for users who registered each month, what percentage came back in the following months?",
+      "rag": {
+        "generated_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+        "tables_in_context": [
+          "users",
+          "dim_users",
+          "stg_users",
+          "rpt_user_engagement",
+          "rpt_funnel_analysis"
+        ],
+        "eval": {
+          "test_id": "expert_02",
+          "difficulty": "expert",
+          "question": "Show me monthly retention rates: for users who registered each month, what percentage came back in the following months?",
+          "generated_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+          "expected_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "dim_users",
+            "fct_sessions",
+            "monthly_activity",
+            "retention",
+            "user_cohorts"
+          ],
+          "table_precision": 0.4,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "registered_at",
+            "session_date",
+            "user_id"
+          ],
+          "columns_found": [
+            "active_users",
+            "activity_month",
+            "cohort_month",
+            "cohort_size",
+            "months_since_signup",
+            "registered_at",
+            "session_date",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "monthly_activity",
+            "retention",
+            "user_cohorts"
+          ],
+          "extra_tables": [
+            "monthly_activity",
+            "retention",
+            "user_cohorts"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "expert_02",
+          "difficulty": "expert",
+          "question": "Show me monthly retention rates: for users who registered each month, what percentage came back in the following months?",
+          "generated_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+          "expected_sql": "WITH user_cohorts AS (SELECT user_id, DATE_TRUNC('month', registered_at) AS cohort_month FROM dim_users WHERE registered_at IS NOT NULL), monthly_activity AS (SELECT s.user_id, DATE_TRUNC('month', s.session_date) AS activity_month FROM fct_sessions s WHERE s.user_id IS NOT NULL GROUP BY s.user_id, DATE_TRUNC('month', s.session_date)), retention AS (SELECT uc.cohort_month, DATEDIFF('month', uc.cohort_month, ma.activity_month) AS months_since_signup, COUNT(DISTINCT uc.user_id) AS active_users FROM user_cohorts uc JOIN monthly_activity ma ON uc.user_id = ma.user_id WHERE ma.activity_month >= uc.cohort_month GROUP BY uc.cohort_month, months_since_signup) SELECT r.cohort_month, r.months_since_signup, r.active_users, c.cohort_size, ROUND(r.active_users * 100.0 / c.cohort_size, 2) AS retention_rate FROM retention r JOIN (SELECT cohort_month, COUNT(*) AS cohort_size FROM user_cohorts GROUP BY cohort_month) c ON r.cohort_month = c.cohort_month ORDER BY r.cohort_month, r.months_since_signup",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "dim_users",
+            "fct_sessions",
+            "monthly_activity",
+            "retention",
+            "user_cohorts"
+          ],
+          "table_precision": 0.4,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "registered_at",
+            "session_date",
+            "user_id"
+          ],
+          "columns_found": [
+            "active_users",
+            "activity_month",
+            "cohort_month",
+            "cohort_size",
+            "months_since_signup",
+            "registered_at",
+            "session_date",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "monthly_activity",
+            "retention",
+            "user_cohorts"
+          ],
+          "extra_tables": [
+            "monthly_activity",
+            "retention",
+            "user_cohorts"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_03",
+      "difficulty": "expert",
+      "question": "For each user, show their last 5 sessions with a running total of page views",
+      "rag": {
+        "generated_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences"
+        ],
+        "eval": {
+          "test_id": "expert_03",
+          "difficulty": "expert",
+          "question": "For each user, show their last 5 sessions with a running total of page views",
+          "generated_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+          "expected_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "ranked_sessions"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "page_view_count",
+            "session_id",
+            "session_start",
+            "user_id"
+          ],
+          "columns_found": [
+            "is_bounce",
+            "landing_page_path",
+            "page_view_count",
+            "session_duration_seconds",
+            "session_id",
+            "session_rank",
+            "session_start",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "ranked_sessions"
+          ],
+          "extra_tables": [
+            "ranked_sessions"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "users",
+          "fct_conversions",
+          "stg_events",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "expert_03",
+          "difficulty": "expert",
+          "question": "For each user, show their last 5 sessions with a running total of page views",
+          "generated_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+          "expected_sql": "WITH ranked_sessions AS (SELECT s.user_id, s.session_id, s.session_start, s.session_duration_seconds, s.page_view_count, s.is_bounce, s.landing_page_path, ROW_NUMBER() OVER (PARTITION BY s.user_id ORDER BY s.session_start DESC) AS session_rank FROM fct_sessions s WHERE s.user_id IS NOT NULL) SELECT user_id, session_id, session_start, session_duration_seconds, page_view_count, is_bounce, landing_page_path, SUM(page_view_count) OVER (PARTITION BY user_id ORDER BY session_start ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_pageview_total FROM ranked_sessions WHERE session_rank <= 5 ORDER BY user_id, session_start DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "ranked_sessions"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "page_view_count",
+            "session_id",
+            "session_start",
+            "user_id"
+          ],
+          "columns_found": [
+            "is_bounce",
+            "landing_page_path",
+            "page_view_count",
+            "session_duration_seconds",
+            "session_id",
+            "session_rank",
+            "session_start",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "ranked_sessions"
+          ],
+          "extra_tables": [
+            "ranked_sessions"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_04",
+      "difficulty": "expert",
+      "question": "Find users who were active last month but have had zero sessions this month \u2014 potential churners. Include their engagement score and last visit date",
+      "rag": {
+        "generated_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "stg_campaigns",
+          "fct_pageviews",
+          "rpt_funnel_analysis"
+        ],
+        "eval": {
+          "test_id": "expert_04",
+          "difficulty": "expert",
+          "question": "Find users who were active last month but have had zero sessions this month \u2014 potential churners. Include their engagement score and last visit date",
+          "generated_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+          "expected_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users",
+            "fct_sessions",
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "dim_users",
+            "fct_sessions",
+            "last_month_active",
+            "rpt_user_engagement",
+            "this_month_active"
+          ],
+          "table_precision": 0.6,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "engagement_score",
+            "session_date",
+            "user_id"
+          ],
+          "columns_found": [
+            "days_since_last_active",
+            "display_name",
+            "engagement_score",
+            "engagement_tier",
+            "last_seen_at",
+            "revenue_last_30d",
+            "session_date",
+            "sessions_last_30d",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "last_month_active",
+            "this_month_active"
+          ],
+          "extra_tables": [
+            "last_month_active",
+            "this_month_active"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "expert_04",
+          "difficulty": "expert",
+          "question": "Find users who were active last month but have had zero sessions this month \u2014 potential churners. Include their engagement score and last visit date",
+          "generated_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+          "expected_sql": "WITH last_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND session_date < DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL), this_month_active AS (SELECT DISTINCT user_id FROM fct_sessions WHERE session_date >= DATE_TRUNC('month', CURRENT_DATE) AND user_id IS NOT NULL) SELECT lm.user_id, u.display_name, u.subscription_tier, u.last_seen_at, u.days_since_last_active, e.engagement_score, e.engagement_tier, e.sessions_last_30d, e.revenue_last_30d FROM last_month_active lm LEFT JOIN this_month_active tm ON lm.user_id = tm.user_id JOIN dim_users u ON lm.user_id = u.user_id LEFT JOIN rpt_user_engagement e ON lm.user_id = e.user_id WHERE tm.user_id IS NULL ORDER BY e.engagement_score DESC NULLS LAST",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "dim_users",
+            "fct_sessions",
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "dim_users",
+            "fct_sessions",
+            "last_month_active",
+            "rpt_user_engagement",
+            "this_month_active"
+          ],
+          "table_precision": 0.6,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "engagement_score",
+            "session_date",
+            "user_id"
+          ],
+          "columns_found": [
+            "days_since_last_active",
+            "display_name",
+            "engagement_score",
+            "engagement_tier",
+            "last_seen_at",
+            "revenue_last_30d",
+            "session_date",
+            "sessions_last_30d",
+            "subscription_tier",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "last_month_active",
+            "this_month_active"
+          ],
+          "extra_tables": [
+            "last_month_active",
+            "this_month_active"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_05",
+      "difficulty": "expert",
+      "question": "For users who made a purchase, show all the campaigns they interacted with leading up to the purchase and the number of touches per campaign",
+      "rag": {
+        "generated_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+        "tables_in_context": [
+          "int_sessions",
+          "stg_users",
+          "events",
+          "rpt_funnel_analysis",
+          "stg_events"
+        ],
+        "eval": {
+          "test_id": "expert_05",
+          "difficulty": "expert",
+          "question": "For users who made a purchase, show all the campaigns they interacted with leading up to the purchase and the number of touches per campaign",
+          "generated_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+          "expected_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_conversions",
+            "fct_sessions",
+            "pre_purchase_sessions",
+            "purchasers"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "conversion_timestamp",
+            "session_start",
+            "user_id",
+            "utm_campaign"
+          ],
+          "columns_found": [
+            "conversion_timestamp",
+            "conversion_type",
+            "first_purchase_at",
+            "session_id",
+            "session_start",
+            "total_touches",
+            "unique_users",
+            "user_id",
+            "utm_campaign",
+            "utm_medium",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "pre_purchase_sessions",
+            "purchasers"
+          ],
+          "extra_tables": [
+            "pre_purchase_sessions",
+            "purchasers"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "rpt_user_engagement",
+          "events",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "campaigns",
+          "stg_events",
+          "stg_devices",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_campaigns"
+        ],
+        "eval": {
+          "test_id": "expert_05",
+          "difficulty": "expert",
+          "question": "For users who made a purchase, show all the campaigns they interacted with leading up to the purchase and the number of touches per campaign",
+          "generated_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+          "expected_sql": "WITH purchasers AS (SELECT DISTINCT user_id, MIN(conversion_timestamp) AS first_purchase_at FROM fct_conversions WHERE conversion_type = 'purchase' AND user_id IS NOT NULL GROUP BY user_id), pre_purchase_sessions AS (SELECT s.user_id, s.session_id, s.utm_source, s.utm_medium, s.utm_campaign, s.session_start FROM fct_sessions s JOIN purchasers p ON s.user_id = p.user_id WHERE s.session_start <= p.first_purchase_at AND s.utm_campaign IS NOT NULL) SELECT pps.utm_campaign, pps.utm_source, pps.utm_medium, COUNT(DISTINCT pps.user_id) AS unique_users, COUNT(DISTINCT pps.session_id) AS total_touches, ROUND(COUNT(DISTINCT pps.session_id) * 1.0 / COUNT(DISTINCT pps.user_id), 2) AS avg_touches_per_user FROM pre_purchase_sessions pps GROUP BY pps.utm_campaign, pps.utm_source, pps.utm_medium ORDER BY unique_users DESC, total_touches DESC LIMIT 20",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_conversions",
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_conversions",
+            "fct_sessions",
+            "pre_purchase_sessions",
+            "purchasers"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "conversion_timestamp",
+            "session_start",
+            "user_id",
+            "utm_campaign"
+          ],
+          "columns_found": [
+            "conversion_timestamp",
+            "conversion_type",
+            "first_purchase_at",
+            "session_id",
+            "session_start",
+            "total_touches",
+            "unique_users",
+            "user_id",
+            "utm_campaign",
+            "utm_medium",
+            "utm_source"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "pre_purchase_sessions",
+            "purchasers"
+          ],
+          "extra_tables": [
+            "pre_purchase_sessions",
+            "purchasers"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_06",
+      "difficulty": "expert",
+      "question": "What is the distribution of sessions by page depth (number of pages viewed) and how does conversion rate change with page depth?",
+      "rag": {
+        "generated_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews",
+          "rpt_funnel_analysis"
+        ],
+        "eval": {
+          "test_id": "expert_06",
+          "difficulty": "expert",
+          "question": "What is the distribution of sessions by page depth (number of pages viewed) and how does conversion rate change with page depth?",
+          "generated_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+          "expected_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "session_depth"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "has_conversion",
+            "page_view_count"
+          ],
+          "columns_found": [
+            "depth_bucket",
+            "has_conversion",
+            "page_view_count",
+            "session_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "session_depth"
+          ],
+          "extra_tables": [
+            "session_depth"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "stg_campaigns",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "campaigns",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "expert_06",
+          "difficulty": "expert",
+          "question": "What is the distribution of sessions by page depth (number of pages viewed) and how does conversion rate change with page depth?",
+          "generated_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+          "expected_sql": "WITH session_depth AS (SELECT session_id, page_view_count, has_conversion, CASE WHEN page_view_count = 1 THEN '1 page' WHEN page_view_count BETWEEN 2 AND 3 THEN '2-3 pages' WHEN page_view_count BETWEEN 4 AND 6 THEN '4-6 pages' WHEN page_view_count BETWEEN 7 AND 10 THEN '7-10 pages' ELSE '10+ pages' END AS depth_bucket FROM fct_sessions) SELECT depth_bucket, COUNT(*) AS session_count, SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) AS converting_sessions, ROUND(SUM(CASE WHEN has_conversion THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_total_sessions FROM session_depth GROUP BY depth_bucket ORDER BY MIN(page_view_count)",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "session_depth"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "has_conversion",
+            "page_view_count"
+          ],
+          "columns_found": [
+            "depth_bucket",
+            "has_conversion",
+            "page_view_count",
+            "session_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "session_depth"
+          ],
+          "extra_tables": [
+            "session_depth"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_07",
+      "difficulty": "expert",
+      "question": "Find users who use multiple device types. How many use desktop and mobile? Show their engagement compared to single-device users",
+      "rag": {
+        "generated_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews"
+        ],
+        "eval": {
+          "test_id": "expert_07",
+          "difficulty": "expert",
+          "question": "Find users who use multiple device types. How many use desktop and mobile? Show their engagement compared to single-device users",
+          "generated_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+          "expected_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions",
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "multi_device",
+            "rpt_user_engagement",
+            "user_devices"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "engagement_score",
+            "user_id"
+          ],
+          "columns_found": [
+            "avg_engagement_score",
+            "device_count",
+            "device_type",
+            "device_usage",
+            "devices",
+            "engagement_score",
+            "revenue_last_30d",
+            "sessions_last_30d",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "multi_device",
+            "user_devices"
+          ],
+          "extra_tables": [
+            "multi_device",
+            "user_devices"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "rpt_user_engagement",
+          "int_event_sequences",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_devices",
+          "fct_conversions",
+          "stg_events",
+          "users",
+          "dim_users",
+          "fct_sessions",
+          "fct_events",
+          "dim_campaigns",
+          "stg_users"
+        ],
+        "eval": {
+          "test_id": "expert_07",
+          "difficulty": "expert",
+          "question": "Find users who use multiple device types. How many use desktop and mobile? Show their engagement compared to single-device users",
+          "generated_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+          "expected_sql": "WITH user_devices AS (SELECT user_id, COUNT(DISTINCT device_type) AS device_count, ARRAY_AGG(DISTINCT device_type) AS devices FROM fct_sessions WHERE user_id IS NOT NULL GROUP BY user_id), multi_device AS (SELECT ud.user_id, ud.device_count, ud.devices, e.engagement_score, e.sessions_last_30d, e.revenue_last_30d FROM user_devices ud LEFT JOIN rpt_user_engagement e ON ud.user_id = e.user_id) SELECT CASE WHEN device_count = 1 THEN 'single_device' ELSE 'multi_device' END AS device_usage, COUNT(*) AS user_count, AVG(engagement_score) AS avg_engagement_score, AVG(sessions_last_30d) AS avg_sessions_30d, AVG(revenue_last_30d) AS avg_revenue_30d FROM multi_device GROUP BY device_usage ORDER BY avg_engagement_score DESC",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions",
+            "rpt_user_engagement"
+          ],
+          "tables_found": [
+            "fct_sessions",
+            "multi_device",
+            "rpt_user_engagement",
+            "user_devices"
+          ],
+          "table_precision": 0.5,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "device_type",
+            "engagement_score",
+            "user_id"
+          ],
+          "columns_found": [
+            "avg_engagement_score",
+            "device_count",
+            "device_type",
+            "device_usage",
+            "devices",
+            "engagement_score",
+            "revenue_last_30d",
+            "sessions_last_30d",
+            "user_id"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [
+            "multi_device",
+            "user_devices"
+          ],
+          "extra_tables": [
+            "multi_device",
+            "user_devices"
+          ],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "test_id": "expert_08",
+      "difficulty": "expert",
+      "question": "What hour of the day has the highest conversion rate? Break it down by weekday vs weekend",
+      "rag": {
+        "generated_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+        "tables_in_context": [
+          "int_sessions",
+          "rpt_user_engagement",
+          "rpt_funnel_analysis",
+          "fct_conversions",
+          "fct_sessions"
+        ],
+        "eval": {
+          "test_id": "expert_08",
+          "difficulty": "expert",
+          "question": "What hour of the day has the highest conversion rate? Break it down by weekday vs weekend",
+          "generated_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+          "expected_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "has_conversion",
+            "session_start"
+          ],
+          "columns_found": [
+            "day_type",
+            "has_conversion",
+            "hour_of_day",
+            "session_date",
+            "session_id",
+            "session_start"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      },
+      "graphrag": {
+        "generated_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+        "tables_in_context": [
+          "devices",
+          "int_sessions",
+          "stg_users",
+          "rpt_user_engagement",
+          "events",
+          "fct_pageviews",
+          "rpt_funnel_analysis",
+          "stg_events",
+          "stg_devices",
+          "campaigns",
+          "fct_conversions",
+          "dim_users",
+          "users",
+          "dim_campaigns",
+          "int_event_sequences",
+          "fct_events",
+          "fct_sessions",
+          "stg_campaigns"
+        ],
+        "eval": {
+          "test_id": "expert_08",
+          "difficulty": "expert",
+          "question": "What hour of the day has the highest conversion rate? Break it down by weekday vs weekend",
+          "generated_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+          "expected_sql": "SELECT EXTRACT(HOUR FROM s.session_start) AS hour_of_day, CASE WHEN EXTRACT(DOW FROM s.session_start) IN (0, 6) THEN 'weekend' ELSE 'weekday' END AS day_type, COUNT(DISTINCT s.session_id) AS total_sessions, COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) AS converting_sessions, ROUND(COUNT(DISTINCT CASE WHEN s.has_conversion THEN s.session_id END) * 100.0 / NULLIF(COUNT(DISTINCT s.session_id), 0), 2) AS conversion_rate FROM fct_sessions s WHERE s.session_date >= CURRENT_DATE - INTERVAL '90 days' GROUP BY hour_of_day, day_type ORDER BY day_type, hour_of_day",
+          "sql_is_valid": true,
+          "tables_expected": [
+            "fct_sessions"
+          ],
+          "tables_found": [
+            "fct_sessions"
+          ],
+          "table_precision": 1.0,
+          "table_recall": 1.0,
+          "columns_expected": [
+            "has_conversion",
+            "session_start"
+          ],
+          "columns_found": [
+            "day_type",
+            "has_conversion",
+            "hour_of_day",
+            "session_date",
+            "session_id",
+            "session_start"
+          ],
+          "column_recall": 1.0,
+          "has_correct_structure": true,
+          "hallucinated_tables": [],
+          "extra_tables": [],
+          "missing_tables": [],
+          "errors": []
+        }
+      }
+    }
+  ]
+}
